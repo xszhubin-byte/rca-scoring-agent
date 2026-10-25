@@ -1,0 +1,13 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema","title":"RCA Scoring v1.0","type":"object","additionalProperties":false,
+ "required":["schema_version","defect_id","owner_input","gerrit","evidence","dimensions","overall","manual_review_required"],
+ "properties":{
+ "schema_version":{"const":"1.0"},"defect_id":{"type":["string","null"]},
+ "owner_input":{"type":"object","required":["root_cause","solution","symptom"],"properties":{"root_cause":{"type":"string"},"solution":{"type":"string"},"symptom":{"type":["string","null"]}},"additionalProperties":false},
+ "gerrit":{"type":"array","items":{"type":"object","required":["change_id","revision","commit_message","url","files"],"properties":{"change_id":{"type":"string"},"revision":{"type":["string","null"]},"commit_message":{"type":["string","null"]},"url":{"type":["string","null"]},"files":{"type":"array","items":{"type":"string"}}},"additionalProperties":false}},
+ "evidence":{"type":"array","items":{"type":"object","required":["id","type","reference","summary"],"properties":{"id":{"type":"string"},"type":{"enum":["commit","diff","log","test","other"]},"reference":{"type":"string"},"summary":{"type":"string"}},"additionalProperties":false}},
+ "dimensions":{"type":"object","required":["normative","authenticity","relevance","depth","prevention"],"additionalProperties":false,"properties":{"normative":{"$ref":"#/$defs/dimension"},"authenticity":{"$ref":"#/$defs/dimension"},"relevance":{"$ref":"#/$defs/dimension"},"depth":{"$ref":"#/$defs/dimension"},"prevention":{"$ref":"#/$defs/dimension"}}},
+ "overall":{"type":"object","required":["score","level","comment"],"properties":{"score":{"type":["number","null"],"minimum":0,"maximum":100},"level":{"enum":["A","B","C","D","E",null]},"comment":{"type":"string"}},"additionalProperties":false},"manual_review_required":{"type":"boolean"}
+ },
+ "$defs":{"dimension":{"type":"object","required":["score","level","status","comment","evidence_ids","subscores"],"properties":{"score":{"type":["number","null"],"minimum":0,"maximum":100},"level":{"enum":["A","B","C","D","E",null]},"status":{"enum":["verified","partially_supported","insufficient_evidence","contradicted","not_applicable"]},"comment":{"type":"string","maxLength":200},"evidence_ids":{"type":"array","items":{"type":"string"}},"subscores":{"type":"object","additionalProperties":{"type":["number","null"],"minimum":0,"maximum":100}}},"additionalProperties":false}}
+}

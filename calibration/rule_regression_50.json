@@ -1,0 +1,352 @@
+[
+  {
+    "test_id": "RULE-01",
+    "type": "missing_owner",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6442",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-02",
+    "type": "commit_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6449",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-03",
+    "type": "diff_missing",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6459",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-04",
+    "type": "test_claim_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6460",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-05",
+    "type": "contradiction",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6462",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-06",
+    "type": "multi_commit",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6465",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-07",
+    "type": "security",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6466",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-08",
+    "type": "dependency",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6482",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-09",
+    "type": "revert",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6493",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-10",
+    "type": "edge_case",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6510",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-11",
+    "type": "missing_owner",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6528",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-12",
+    "type": "commit_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6532",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-13",
+    "type": "diff_missing",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6540",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-14",
+    "type": "test_claim_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6543",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-15",
+    "type": "contradiction",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6551",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-16",
+    "type": "multi_commit",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6553",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-17",
+    "type": "security",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6564",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-18",
+    "type": "dependency",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6585",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-19",
+    "type": "revert",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6594",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-20",
+    "type": "edge_case",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6597",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-21",
+    "type": "missing_owner",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6598",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-22",
+    "type": "commit_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6600",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-23",
+    "type": "diff_missing",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6609",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-24",
+    "type": "test_claim_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6610",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-25",
+    "type": "contradiction",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6619",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-26",
+    "type": "multi_commit",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6625",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-27",
+    "type": "security",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6641",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-28",
+    "type": "dependency",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6647",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-29",
+    "type": "revert",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6658",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-30",
+    "type": "edge_case",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6661",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-31",
+    "type": "missing_owner",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6665",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-32",
+    "type": "commit_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6667",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-33",
+    "type": "diff_missing",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6679",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-34",
+    "type": "test_claim_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6683",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-35",
+    "type": "contradiction",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6687",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-36",
+    "type": "multi_commit",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6696",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-37",
+    "type": "security",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6441",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-38",
+    "type": "dependency",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6475",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-39",
+    "type": "revert",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6509",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-40",
+    "type": "edge_case",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6518",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-41",
+    "type": "missing_owner",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6527",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-42",
+    "type": "commit_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6542",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-43",
+    "type": "diff_missing",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6550",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-44",
+    "type": "test_claim_only",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6568",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-45",
+    "type": "contradiction",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6571",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-46",
+    "type": "multi_commit",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6574",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-47",
+    "type": "security",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6586",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-48",
+    "type": "dependency",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6604",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-49",
+    "type": "revert",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6614",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  },
+  {
+    "test_id": "RULE-50",
+    "type": "edge_case",
+    "expected": "manual_review_or_evidence_gate",
+    "real_pr_reference": "https://github.com/apache/camel-k/pull/6621",
+    "note": "规则场景为构造测试，真实PR仅用于溯源；不代表该PR存在所述问题"
+  }
+]

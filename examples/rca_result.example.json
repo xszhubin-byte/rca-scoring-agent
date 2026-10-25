@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "defect_id": "DEMO-001",
+  "owner_input": {
+    "symptom": "设备重连后偶发崩溃",
+    "root_cause": "重连回调中未校验 session 指针有效性，导致空指针访问。",
+    "solution": "在回调中增加状态与空指针检查，并补充重连回归测试。"
+  },
+  "gerrit": [],
+  "evidence": [],
+  "dimensions": {
+    "normative": {
+      "score": 84.3,
+      "level": "B",
+      "status": "partially_supported",
+      "comment": "原因和方案描述清楚，缺少代码定位及关联提交。",
+      "evidence_ids": [],
+      "subscores": {
+        "completeness": 75,
+        "clarity": 90,
+        "structure": 85,
+        "terminology": 85,
+        "concision": 95
+      }
+    },
+    "authenticity": {
+      "score": null,
+      "level": null,
+      "status": "insufficient_evidence",
+      "comment": "未提供 Gerrit 记录，无法验证根因真实性。",
+      "evidence_ids": [],
+      "subscores": {
+        "commit_consistency": null,
+        "diff_support": null,
+        "scenario_consistency": null,
+        "traceability": null,
+        "cross_source_consistency": null
+      }
+    },
+    "relevance": {
+      "score": 75.3,
+      "level": "C",
+      "status": "partially_supported",
+      "comment": "文字方案与根因方向一致，尚未通过代码验证。",
+      "evidence_ids": [],
+      "subscores": {
+        "root_fix_match": 80,
+        "causal_closure": 75,
+        "coverage": 65,
+        "targeting": 80,
+        "solution_soundness": 75
+      }
+    },
+    "depth": {
+      "score": 73.0,
+      "level": "C",
+      "status": "partially_supported",
+      "comment": "指出直接机制，但尚未说明指针为何失效。",
+      "evidence_ids": [],
+      "subscores": {
+        "symptom_vs_cause": 85,
+        "trigger_conditions": 75,
+        "causal_chain": 80,
+        "systemic_mechanism": 55,
+        "contributing_factors": 60
+      }
+    },
+    "prevention": {
+      "score": 34.0,
+      "level": "E",
+      "status": "insufficient_evidence",
+      "comment": "声称补充测试，但未提供测试执行记录。",
+      "evidence_ids": [],
+      "subscores": {
+        "regression_evidence": 40,
+        "edge_tests": 30,
+        "similar_issue_sweep": 20,
+        "preventive_action": 45,
+        "followup": 30
+      }
+    }
+  },
+  "overall": {
+    "score": null,
+    "level": null,
+    "comment": "演示数据；缺少 Gerrit 及测试证据，综合评分暂不可确定。"
+  },
+  "manual_review_required": true
+}

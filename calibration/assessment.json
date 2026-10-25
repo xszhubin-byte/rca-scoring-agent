@@ -1,0 +1,15 @@
+{
+  "sample_count": 50,
+  "release_index_cases": 46,
+  "pr_pages_inspected": 4,
+  "full_diff_inspected": 0,
+  "complete_five_dimension_scores": 0,
+  "valid_accuracy_mae": null,
+  "outcome": "evidence_completeness_audit_only",
+  "findings": [
+    "真实PR不等于真实Owner RCA填写记录",
+    "PR标题不足以核验Diff和测试",
+    "无人工金标准不可计算评分准确率",
+    "不能把缺失证据按0分计入综合分"
+  ]
+}

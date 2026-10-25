@@ -1,0 +1,2302 @@
+[
+  {
+    "case_id": "CAMELK-6442",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6442",
+    "public_summary": "restore missing PVC RBAC permissions",
+    "scenario_category": "permissions",
+    "source_level": "pr_page_inspected",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6449",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6449",
+    "public_summary": "check status instead of spec",
+    "scenario_category": "state",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6459",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6459",
+    "public_summary": "add back missing rbac",
+    "scenario_category": "permissions",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6460",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6460",
+    "public_summary": "do not remove yaml route parameter",
+    "scenario_category": "configuration",
+    "source_level": "pr_page_inspected",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6462",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6462",
+    "public_summary": "revert watch rbac",
+    "scenario_category": "permissions",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6465",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6465",
+    "public_summary": "mount sanitize to return refName and confName",
+    "scenario_category": "configuration",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6466",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6466",
+    "public_summary": "gitops idempotent push",
+    "scenario_category": "idempotency",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6482",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6482",
+    "public_summary": "remove default params from status",
+    "scenario_category": "state",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6493",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6493",
+    "public_summary": "watch lease",
+    "scenario_category": "permissions",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6510",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6510",
+    "public_summary": "enable Quarkus runtime > 3.31",
+    "scenario_category": "compatibility",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6528",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6528",
+    "public_summary": "use build complete and deploy phase",
+    "scenario_category": "state",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6532",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6532",
+    "public_summary": "minor changes in quarkus >= 3.31",
+    "scenario_category": "compatibility",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6540",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6540",
+    "public_summary": "proper version deprecation notice",
+    "scenario_category": "user-facing",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6543",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6543",
+    "public_summary": "parameterize resource names to enable multi-operator sharding",
+    "scenario_category": "configuration",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6551",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6551",
+    "public_summary": "include image status after custom publishing task",
+    "scenario_category": "state",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6553",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6553",
+    "public_summary": "gitops newline to append in all profile",
+    "scenario_category": "formatting",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6564",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6564",
+    "public_summary": "helm autogen resources",
+    "scenario_category": "build",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6585",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6585",
+    "public_summary": "remove unused server field",
+    "scenario_category": "maintenance",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6594",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6594",
+    "public_summary": "revert platform usage",
+    "scenario_category": "regression",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6597",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6597",
+    "public_summary": "platformless installation",
+    "scenario_category": "configuration",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6598",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6598",
+    "public_summary": "deprecate image pull delegation",
+    "scenario_category": "api",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6600",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6600",
+    "public_summary": "deprecate profile",
+    "scenario_category": "api",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6609",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6609",
+    "public_summary": "do not pass nil pointer to event recorder",
+    "scenario_category": "nil-pointer",
+    "source_level": "pr_page_inspected",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6610",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6610",
+    "public_summary": "trait doc generation",
+    "scenario_category": "generation",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6619",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6619",
+    "public_summary": "trait regen",
+    "scenario_category": "generation",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6625",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6625",
+    "public_summary": "verify presence of Build resource",
+    "scenario_category": "testing",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6641",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6641",
+    "public_summary": "report builder task strategy errors",
+    "scenario_category": "error-handling",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6647",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6647",
+    "public_summary": "default plain quarkus runtime",
+    "scenario_category": "configuration",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6658",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6658",
+    "public_summary": "knative service watch rbac",
+    "scenario_category": "permissions",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6661",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6661",
+    "public_summary": "default security as non root",
+    "scenario_category": "security",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6665",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6665",
+    "public_summary": "ignore NotFound when a Build is deleted mid-reconcile",
+    "scenario_category": "race",
+    "source_level": "pr_page_inspected",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6667",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6667",
+    "public_summary": "skip auto-inferred trait defaults in status.traits",
+    "scenario_category": "state",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6679",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6679",
+    "public_summary": "restrict builder.nodeSelector keys via operator allow list",
+    "scenario_category": "security",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6683",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6683",
+    "public_summary": "disable builder.tasks injection via operator env var",
+    "scenario_category": "security",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6687",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6687",
+    "public_summary": "restrict affinity.nodeAffinityLabels keys via operator allow list",
+    "scenario_category": "security",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6696",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6696",
+    "public_summary": "remove unused call",
+    "scenario_category": "maintenance",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6441",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6441",
+    "public_summary": "multi-certificate and system truststore support",
+    "scenario_category": "security",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6475",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6475",
+    "public_summary": "upgrade go to 1.25.6",
+    "scenario_category": "dependency",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6509",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6509",
+    "public_summary": "filter git project path",
+    "scenario_category": "path",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6518",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6518",
+    "public_summary": "use base image SHA for reproducible builds",
+    "scenario_category": "reproducibility",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6527",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6527",
+    "public_summary": "bump golang.org/x/net",
+    "scenario_category": "dependency",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6542",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6542",
+    "public_summary": "gateway trait",
+    "scenario_category": "feature",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6550",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6550",
+    "public_summary": "upgrade lint to 2.9.0",
+    "scenario_category": "tooling",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6568",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6568",
+    "public_summary": "bump go-shellwords dependency",
+    "scenario_category": "dependency",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6571",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6571",
+    "public_summary": "move action declarations from reconcile to init",
+    "scenario_category": "lifecycle",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6574",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6574",
+    "public_summary": "camel monitor renaming",
+    "scenario_category": "refactor",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6586",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6586",
+    "public_summary": "deprecate IntegrationPlatform API usage",
+    "scenario_category": "api",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6604",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6604",
+    "public_summary": "migrate strimzi duck types to v1",
+    "scenario_category": "compatibility",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6614",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6614",
+    "public_summary": "integration apply test backport",
+    "scenario_category": "testing",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  },
+  {
+    "case_id": "CAMELK-6621",
+    "project": "apache/camel-k",
+    "github_pr": "https://github.com/apache/camel-k/pull/6621",
+    "public_summary": "golang 1.26.3 CI",
+    "scenario_category": "tooling",
+    "source_level": "release_note_index",
+    "owner_root_cause": null,
+    "owner_solution": null,
+    "commit_sha": null,
+    "diff_verified": false,
+    "test_verified": false,
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "authenticity": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "relevance": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "depth": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      },
+      "prevention": {
+        "score": null,
+        "status": "insufficient_evidence",
+        "comment": "缺少完整Owner RCA及代码证据，禁止推断数值评分"
+      }
+    },
+    "overall": {
+      "score": null,
+      "status": "not_scorable"
+    },
+    "manual_review_required": true,
+    "next_action": "获取PR正文、完整Diff、测试记录，并明确使用作者描述作为代理RCA还是独立Owner RCA"
+  }
+]

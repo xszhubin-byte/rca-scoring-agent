@@ -1,0 +1,14 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/settings.local.json
+# Private evidence and generated results
+.rca-cache/
+rca-results/
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
