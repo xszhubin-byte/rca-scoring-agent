@@ -1,0 +1,17 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 138.36,
+  "usage": [
+    {
+      "input_tokens": 26214,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 7385,
+      "reasoning_output_tokens": 123
+    }
+  ],
+  "tool_item_types": [],
+  "resolved_model": null,
+  "prompt_sha256": "8ff2ff49e15a11466ed8704179c1aad74c3360a210f5035a1478196afe6db26d",
+  "cli_version": "codex-cli 0.164.0-alpha.11.1"
+}

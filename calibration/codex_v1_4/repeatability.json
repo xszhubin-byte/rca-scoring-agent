@@ -1,0 +1,1177 @@
+[
+  {
+    "run": "repeat-02",
+    "case_id": "CAMELK-6665",
+    "eligibility_agreement": true,
+    "comparable_subscores": 22,
+    "nullness_disagreements": 0,
+    "mean_absolute_self_delta": 1.409,
+    "max_absolute_self_delta": 5,
+    "review": {
+      "case_id": "CAMELK-6665",
+      "input_origin": "pr_author_proxy",
+      "model_proxy_eligible": true,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": true,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6665",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "`Reconcile` reads the `Build` from the cache, which can return a stale copy of a `Build` that was already deleted.",
+          "solution": "Fix: treat `NotFound` from a build action and from the status `update()` as benign, return without requeue or error, like the top-level fetch already does."
+        },
+        "gerrit": [],
+        "evidence": [
+          {
+            "id": "d1",
+            "type": "diff",
+            "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+            "summary": "Observed fixed-SHA patches; no claim of local upstream execution."
+          }
+        ],
+        "dimensions": {
+          "normative": {
+            "score": 90.9,
+            "level": "A",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author clearly describes the symptom, deletion timing, stale-cache cause and two repair sites; explicit file and validation references are absent.",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "completeness": 88,
+              "clarity": 95,
+              "structure": 85,
+              "terminology": 95,
+              "concision": 95
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Observed guards return an empty result and nil error at both stated sites. The test injects Build Update NotFound and asserts those outputs. Cache behavior and getBuilderPod safety re",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": 84.6,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The guards directly suppress the reported benign deletion error. The action guard accepts any NotFound without checking its resource; the supplied evidence cannot establish that every",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "root_fix_match": 90,
+              "causal_closure": 85,
+              "coverage": 75,
+              "targeting": 90,
+              "solution_soundness": 78
+            }
+          },
+          "depth": {
+            "score": 91.6,
+            "level": "A",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author separates misleading error logging from deletion, identifies the stale-cache timing window, and connects status writing to error propagation. The related Get-path safety ar",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "symptom_vs_cause": 95,
+              "trigger_conditions": 95,
+              "causal_chain": 92,
+              "systemic_mechanism": 90,
+              "contributing_factors": 80
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. The visible test design injects status-write NotFound and checks no error or requeue; action NotFound and other errors lack added coverage. The author reports checking another Get pat",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": 70,
+              "similar_issue_sweep": 65,
+              "preventive_action": 85,
+              "followup": 0
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Exploratory PR-author proxy, not an Owner RCA score or human-calibrated accuracy."
+        },
+        "manual_review_required": true
+      }
+    }
+  },
+  {
+    "run": "repeat-02",
+    "case_id": "CAMELK-6667",
+    "eligibility_agreement": true,
+    "comparable_subscores": 22,
+    "nullness_disagreements": 0,
+    "mean_absolute_self_delta": 1.636,
+    "max_absolute_self_delta": 5,
+    "review": {
+      "case_id": "CAMELK-6667",
+      "input_origin": "pr_author_proxy",
+      "model_proxy_eligible": true,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": true,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6667",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "stops auto-inferred defaults from leaking into serialized API trait fields",
+          "solution": "**service trait**: auto-detected `enabled` is carried in a local variable instead of mutating `t.Enabled`"
+        },
+        "gerrit": [],
+        "evidence": [
+          {
+            "id": "d1",
+            "type": "diff",
+            "reference": "https://api.github.com/repos/apache/camel-k/compare/1c88a8de91fa1e841368280b2c768e9dd5b0ec11...37dd66e467efa50def1d6ba82219cd3b6b1abf05?per_page=100",
+            "summary": "Observed fixed-SHA patches; no claim of local upstream execution."
+          }
+        ],
+        "dimensions": {
+          "normative": {
+            "score": 92.6,
+            "level": "A",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author separates mechanism, implementation, scope and claimed validation. The previous approach and current revision are distinguishable, though the restoration claim lacks a prec",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "completeness": 92,
+              "clarity": 92,
+              "structure": 95,
+              "terminology": 93,
+              "concision": 90
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Observed changes remove writes to exported inferred fields and add status assertions matching the body. The claimed restored trait.Apply merge has no changed implementation in this ag",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": 87.7,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. Local/private inferred state directly addresses serialization while preserving effective configuration. Tests assert Service creation, empty inferred status and retention of explicit ",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "root_fix_match": 93,
+              "causal_closure": 85,
+              "coverage": 78,
+              "targeting": 95,
+              "solution_soundness": 88
+            }
+          },
+          "depth": {
+            "score": 89.4,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author identifies conflation of inferred runtime state with serialized API configuration and explains why suppressing all executed traits breaks another contract. GitOps and platf",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "symptom_vs_cause": 90,
+              "trigger_conditions": 85,
+              "causal_chain": 88,
+              "systemic_mechanism": 95,
+              "contributing_factors": 90
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Visible test design checks inferred versus explicit values and updates related expectations. The author names four similar traits and proposes follow-up PRs without tracked assignment",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": 85,
+              "similar_issue_sweep": 85,
+              "preventive_action": 90,
+              "followup": 70
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Exploratory PR-author proxy, not an Owner RCA score or human-calibrated accuracy."
+        },
+        "manual_review_required": true
+      }
+    }
+  },
+  {
+    "run": "repeat-02",
+    "case_id": "CAMELK-6679",
+    "eligibility_agreement": false,
+    "comparable_subscores": 0,
+    "nullness_disagreements": 22,
+    "mean_absolute_self_delta": null,
+    "max_absolute_self_delta": null,
+    "review": {
+      "case_id": "CAMELK-6679",
+      "input_origin": "pr_author_proxy",
+      "model_proxy_eligible": true,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": true,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6679",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "which node-selector label keys CR authors can\r\n  set via the `builder.nodeSelector` trait, preventing unauthorized node targeting in shared\r\n  clusters.",
+          "solution": "When set → only listed keys pass through; unlisted keys are dropped and logged at info level"
+        },
+        "gerrit": [],
+        "evidence": [
+          {
+            "id": "d1",
+            "type": "diff",
+            "reference": "https://api.github.com/repos/apache/camel-k/compare/a1fbde7c53f1a051467436b82e6de4386a008806...1e26e57e7530d5e43fa6d50f3a91ffa509854ad1?per_page=100",
+            "summary": "Observed fixed-SHA patches; no claim of local upstream execution."
+          }
+        ],
+        "dimensions": {
+          "normative": {
+            "score": 92.7,
+            "level": "A",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author states the capability, shared-cluster risk, configuration, compatibility behavior and exact changed paths. No concrete incident or threat-boundary example is supplied.",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "completeness": 90,
+              "clarity": 95,
+              "structure": 95,
+              "terminology": 93,
+              "concision": 90
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. The observed diff replaces direct selector assignment with filtering, parses the named variable and logs dropped keys. Tests and changed documentation agree with that behavior but are",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": 88.2,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. Filtering directly restricts keys at builder-task construction when configured. Defaults remain permissive by design; key permission does not restrict values, and dropping every selec",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "root_fix_match": 93,
+              "causal_closure": 85,
+              "coverage": 82,
+              "targeting": 95,
+              "solution_soundness": 85
+            }
+          },
+          "depth": {
+            "score": 81.5,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The body identifies the CR-author/operator policy boundary and shared-cluster trigger. It gives little explanation of label trust, allowed values, alternate scheduling paths or effect",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "symptom_vs_cause": 85,
+              "trigger_conditions": 85,
+              "causal_chain": 80,
+              "systemic_mechanism": 85,
+              "contributing_factors": 65
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Visible tests cover parsing, nil/empty selectors, partial/full matches, all dropped and Apply wiring. Not-set tests depend on ambient environment; whitespace-only configuration lacks ",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": 88,
+              "similar_issue_sweep": 0,
+              "preventive_action": 90,
+              "followup": 0
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Exploratory PR-author proxy, not an Owner RCA score or human-calibrated accuracy."
+        },
+        "manual_review_required": true
+      }
+    }
+  },
+  {
+    "run": "repeat-02",
+    "case_id": "CAMELK-6683",
+    "eligibility_agreement": false,
+    "comparable_subscores": 0,
+    "nullness_disagreements": 23,
+    "mean_absolute_self_delta": null,
+    "max_absolute_self_delta": null,
+    "review": {
+      "case_id": "CAMELK-6683",
+      "input_origin": "pr_author_proxy",
+      "model_proxy_eligible": true,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": true,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6683",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "`builder.tasks` trait, preventing CR authors from running arbitrary build containers in\r\n  environments where that capability should be restricted.",
+          "solution": "When set to `\"false\"` (case-insensitive) → `builder.tasks` values are ignored; an info message is logged"
+        },
+        "gerrit": [],
+        "evidence": [
+          {
+            "id": "d1",
+            "type": "diff",
+            "reference": "https://api.github.com/repos/apache/camel-k/compare/da4dab92198f2919ee0912954ba90c958259c9bc...3c58b379547bbc7ce2a794aa6cd32143c4777f93?per_page=100",
+            "summary": "Observed fixed-SHA patches; no claim of local upstream execution."
+          }
+        ],
+        "dimensions": {
+          "normative": {
+            "score": 91.4,
+            "level": "A",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author organizes capability, configuration, implementation and validation claims clearly, with some repetition. Writing is assessed separately from the patch contradiction.",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "completeness": 92,
+              "clarity": 93,
+              "structure": 95,
+              "terminology": 90,
+              "concision": 80
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Manual review required: the body and changed docs claim custom injection is disabled, but observed applyTasksFilter retains every input named quarkus-native without checking provenanc",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": 35.5,
+            "level": "E",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The filter blocks ordinary task names but trusts a user-controllable name as evidence of operator origin. Inspection indicates a quarkus-native-named entry survives to determineCustom",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "root_fix_match": 35,
+              "causal_closure": 25,
+              "coverage": 35,
+              "targeting": 75,
+              "solution_soundness": 25
+            }
+          },
+          "depth": {
+            "score": 65.5,
+            "level": "D",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The body identifies arbitrary task injection, operator policy and misleading strategy validation. It does not analyze task provenance or the trust distinction needed to preserve opera",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "symptom_vs_cause": 80,
+              "trigger_conditions": 85,
+              "causal_chain": 65,
+              "systemic_mechanism": 45,
+              "contributing_factors": 40
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Visible tests cover boolean settings, ordinary task removal, default allowance and name-based retention; the retention test encodes the trust weakness. Missing cases include spoofed p",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": 45,
+              "similar_issue_sweep": 0,
+              "preventive_action": 30,
+              "followup": 0
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Exploratory PR-author proxy, not an Owner RCA score or human-calibrated accuracy."
+        },
+        "manual_review_required": true
+      }
+    }
+  },
+  {
+    "run": "repeat-02",
+    "case_id": "CAMELK-6687",
+    "eligibility_agreement": false,
+    "comparable_subscores": 0,
+    "nullness_disagreements": 22,
+    "mean_absolute_self_delta": null,
+    "max_absolute_self_delta": null,
+    "review": {
+      "case_id": "CAMELK-6687",
+      "input_origin": "pr_author_proxy",
+      "model_proxy_eligible": true,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": true,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6687",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "which label keys CR authors can use in\r\n  `affinity.nodeAffinityLabels`, preventing unauthorized node targeting in shared clusters.",
+          "solution": "any expression whose label key\r\n    is not in the list is dropped and logged at info level"
+        },
+        "gerrit": [],
+        "evidence": [
+          {
+            "id": "d1",
+            "type": "diff",
+            "reference": "https://api.github.com/repos/apache/camel-k/compare/f25034da71810f698dcaa13b29049faa54a1692d...dcdb319f1a413937f9e69351e570cbb01eff2b2b?per_page=100",
+            "summary": "Observed fixed-SHA patches; no claim of local upstream execution."
+          }
+        ],
+        "dimensions": {
+          "normative": {
+            "score": 91.6,
+            "level": "A",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author provides risk, configuration, compatibility, malformed-expression behavior, paths and validation claims. References to an expression's singular key underdescribe compound s",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "completeness": 92,
+              "clarity": 93,
+              "structure": 95,
+              "terminology": 90,
+              "concision": 82
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Observed filtering checks every parsed requirement and retains parse failures, matching the core body description. Visible assertions cover simple key filtering through Apply. Manual/",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": 84.3,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The configured guard directly limits parsed keys before affinity construction. Compound expressions are dropped as a whole when any key is disallowed. All-dropped input exits without ",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "root_fix_match": 90,
+              "causal_closure": 82,
+              "coverage": 75,
+              "targeting": 93,
+              "solution_soundness": 80
+            }
+          },
+          "depth": {
+            "score": 83.7,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The body identifies the operator/CR-author policy boundary and discusses parsing errors and compatibility. It omits compound-selector semantics, scheduling consequences of removing co",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "symptom_vs_cause": 85,
+              "trigger_conditions": 88,
+              "causal_chain": 82,
+              "systemic_mechanism": 85,
+              "contributing_factors": 75
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Visible test design covers parsing whitespace, pass-through, partial/all matches, all dropped and Apply wiring. Compound selectors, malformed expressions and alternate operators lack ",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": 72,
+              "similar_issue_sweep": 60,
+              "preventive_action": 85,
+              "followup": 0
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Exploratory PR-author proxy, not an Owner RCA score or human-calibrated accuracy."
+        },
+        "manual_review_required": true
+      }
+    }
+  },
+  {
+    "run": "repeat-03",
+    "case_id": "CAMELK-6665",
+    "eligibility_agreement": true,
+    "comparable_subscores": 22,
+    "nullness_disagreements": 0,
+    "mean_absolute_self_delta": 1.273,
+    "max_absolute_self_delta": 7,
+    "review": {
+      "case_id": "CAMELK-6665",
+      "input_origin": "pr_author_proxy",
+      "model_proxy_eligible": true,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": true,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6665",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "`Reconcile` reads the `Build` from the cache, which can return a stale copy of a `Build` that was already deleted.",
+          "solution": "Fix: treat `NotFound` from a build action and from the status `update()` as benign, return without requeue or error, like the top-level fetch already does."
+        },
+        "gerrit": [],
+        "evidence": [
+          {
+            "id": "d1",
+            "type": "diff",
+            "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+            "summary": "Observed fixed-SHA patches; no claim of local upstream execution."
+          }
+        ],
+        "dimensions": {
+          "normative": {
+            "score": 92.1,
+            "level": "A",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author clearly connects stale cache state, deletion timing, the misleading error, and the proposed handling. Cause and fix occupy separate paragraphs; validation and an exact chan",
+            "evidence_ids": [],
+            "subscores": {
+              "completeness": 90,
+              "clarity": 96,
+              "structure": 86,
+              "terminology": 95,
+              "concision": 96
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. The observed controller diff adds both claimed NotFound exits. The test injects a Build Update NotFound and asserts no error and an empty reconcile result. Cache behavior, top-level f",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": 86.6,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. Both exits directly address the reported benign deletion failure. Observed test assertions cover the status-write scenario, but not action errors or preservation of unrelated errors. ",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "root_fix_match": 94,
+              "causal_closure": 85,
+              "coverage": 76,
+              "targeting": 91,
+              "solution_soundness": 82
+            }
+          },
+          "depth": {
+            "score": 92.1,
+            "level": "A",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author distinguishes noisy error reporting from the cache/deletion race and explains stale read → failed status write → reconciler error. The explanation identifies eventual cache",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "symptom_vs_cause": 95,
+              "trigger_conditions": 95,
+              "causal_chain": 92,
+              "systemic_mechanism": 90,
+              "contributing_factors": 85
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. The visible test designs a reproducible injected status-write failure and asserts both error suppression and no requeue. Action-path and non-NotFound cases are absent. The author ment",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": 72,
+              "similar_issue_sweep": 65,
+              "preventive_action": 85,
+              "followup": 0
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Exploratory PR-author proxy, not an Owner RCA score or human-calibrated accuracy."
+        },
+        "manual_review_required": true
+      }
+    }
+  },
+  {
+    "run": "repeat-03",
+    "case_id": "CAMELK-6667",
+    "eligibility_agreement": true,
+    "comparable_subscores": 22,
+    "nullness_disagreements": 0,
+    "mean_absolute_self_delta": 1.0,
+    "max_absolute_self_delta": 7,
+    "review": {
+      "case_id": "CAMELK-6667",
+      "input_origin": "pr_author_proxy",
+      "model_proxy_eligible": true,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": true,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6667",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "Previous approach (stopping executed traits from being written to `Status.Traits`) was incorrect — it broke the `feat(api): store executed traits in status` contract used by GitOps export and platform/profile propagation.",
+          "solution": "This revision keeps executed traits in status but stops auto-inferred defaults from leaking into serialized API trait fields (Option B):"
+        },
+        "gerrit": [],
+        "evidence": [
+          {
+            "id": "d1",
+            "type": "diff",
+            "reference": "https://api.github.com/repos/apache/camel-k/compare/1c88a8de91fa1e841368280b2c768e9dd5b0ec11...37dd66e467efa50def1d6ba82219cd3b6b1abf05?per_page=100",
+            "summary": "Observed fixed-SHA patches; no claim of local upstream execution."
+          }
+        ],
+        "dimensions": {
+          "normative": {
+            "score": 93.4,
+            "level": "A",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author separates diagnosis, implementation, scope, and validation claims, names affected fields and tests, and identifies deferred traits. The original leakage trigger and downstr",
+            "evidence_ids": [],
+            "subscores": {
+              "completeness": 93,
+              "clarity": 92,
+              "structure": 97,
+              "terminology": 94,
+              "concision": 90
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Observed changes keep inferred expose/enabled values outside exported fields and apply RunAsUser directly to the security context. Added test assertions distinguish inferred status va",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": 85.9,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The observed code directly separates inferred runtime state from serialized API configuration. Test assertions preserve service creation and explicit container.port status recording. ",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "root_fix_match": 91,
+              "causal_closure": 82,
+              "coverage": 77,
+              "targeting": 94,
+              "solution_soundness": 87
+            }
+          },
+          "depth": {
+            "score": 88.2,
+            "level": "B",
+            "status": "partially_supported",
+            "comment": "PR-author proxy. The author identifies the underlying boundary problem: auto-inferred runtime values mutate exported API fields, while suppressing executed traits violates another contract. HTTP servi",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "symptom_vs_cause": 89,
+              "trigger_conditions": 85,
+              "causal_chain": 85,
+              "systemic_mechanism": 94,
+              "contributing_factors": 91
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "PR-author proxy. Visible tests assert inferred defaults do not enter status while explicit values remain, and existing OpenShift/service expectations are revised. Direct expose precedence and downstre",
+            "evidence_ids": [
+              "d1"
+            ],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": 85,
+              "similar_issue_sweep": 85,
+              "preventive_action": 88,
+              "followup": 72
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Exploratory PR-author proxy, not an Owner RCA score or human-calibrated accuracy."
+        },
+        "manual_review_required": true
+      }
+    }
+  },
+  {
+    "run": "repeat-03",
+    "case_id": "CAMELK-6679",
+    "eligibility_agreement": true,
+    "comparable_subscores": 0,
+    "nullness_disagreements": 0,
+    "mean_absolute_self_delta": null,
+    "max_absolute_self_delta": null,
+    "review": {
+      "case_id": "CAMELK-6679",
+      "input_origin": "missing",
+      "model_proxy_eligible": false,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": false,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6679",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "",
+          "solution": ""
+        },
+        "gerrit": [],
+        "evidence": [],
+        "dimensions": {
+          "normative": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "completeness": null,
+              "clarity": null,
+              "structure": null,
+              "terminology": null,
+              "concision": null
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "root_fix_match": null,
+              "causal_closure": null,
+              "coverage": null,
+              "targeting": null,
+              "solution_soundness": null
+            }
+          },
+          "depth": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "symptom_vs_cause": null,
+              "trigger_conditions": null,
+              "causal_chain": null,
+              "systemic_mechanism": null,
+              "contributing_factors": null
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": null,
+              "similar_issue_sweep": null,
+              "preventive_action": null,
+              "followup": null
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Evidence audit only; no quality score."
+        },
+        "manual_review_required": true
+      }
+    }
+  },
+  {
+    "run": "repeat-03",
+    "case_id": "CAMELK-6683",
+    "eligibility_agreement": true,
+    "comparable_subscores": 0,
+    "nullness_disagreements": 0,
+    "mean_absolute_self_delta": null,
+    "max_absolute_self_delta": null,
+    "review": {
+      "case_id": "CAMELK-6683",
+      "input_origin": "missing",
+      "model_proxy_eligible": false,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": false,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6683",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "",
+          "solution": ""
+        },
+        "gerrit": [],
+        "evidence": [],
+        "dimensions": {
+          "normative": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "completeness": null,
+              "clarity": null,
+              "structure": null,
+              "terminology": null,
+              "concision": null
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "root_fix_match": null,
+              "causal_closure": null,
+              "coverage": null,
+              "targeting": null,
+              "solution_soundness": null
+            }
+          },
+          "depth": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "symptom_vs_cause": null,
+              "trigger_conditions": null,
+              "causal_chain": null,
+              "systemic_mechanism": null,
+              "contributing_factors": null
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": null,
+              "similar_issue_sweep": null,
+              "preventive_action": null,
+              "followup": null
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Evidence audit only; no quality score."
+        },
+        "manual_review_required": true
+      }
+    }
+  },
+  {
+    "run": "repeat-03",
+    "case_id": "CAMELK-6687",
+    "eligibility_agreement": true,
+    "comparable_subscores": 0,
+    "nullness_disagreements": 0,
+    "mean_absolute_self_delta": null,
+    "max_absolute_self_delta": null,
+    "review": {
+      "case_id": "CAMELK-6687",
+      "input_origin": "missing",
+      "model_proxy_eligible": false,
+      "review_violations": [],
+      "suppressions": [],
+      "accepted_for_exploratory_scoring": false,
+      "result": {
+        "schema_version": "1.0",
+        "defect_id": "CAMELK-6687",
+        "owner_input": {
+          "symptom": null,
+          "root_cause": "",
+          "solution": ""
+        },
+        "gerrit": [],
+        "evidence": [],
+        "dimensions": {
+          "normative": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "completeness": null,
+              "clarity": null,
+              "structure": null,
+              "terminology": null,
+              "concision": null
+            }
+          },
+          "authenticity": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "commit_consistency": null,
+              "diff_support": null,
+              "scenario_consistency": null,
+              "traceability": null,
+              "cross_source_consistency": null
+            }
+          },
+          "relevance": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "root_fix_match": null,
+              "causal_closure": null,
+              "coverage": null,
+              "targeting": null,
+              "solution_soundness": null
+            }
+          },
+          "depth": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "symptom_vs_cause": null,
+              "trigger_conditions": null,
+              "causal_chain": null,
+              "systemic_mechanism": null,
+              "contributing_factors": null
+            }
+          },
+          "prevention": {
+            "score": null,
+            "level": null,
+            "status": "insufficient_evidence",
+            "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+            "evidence_ids": [],
+            "subscores": {
+              "regression_evidence": null,
+              "edge_tests": null,
+              "similar_issue_sweep": null,
+              "preventive_action": null,
+              "followup": null
+            }
+          }
+        },
+        "overall": {
+          "score": null,
+          "level": null,
+          "comment": "Evidence audit only; no quality score."
+        },
+        "manual_review_required": true
+      }
+    }
+  }
+]

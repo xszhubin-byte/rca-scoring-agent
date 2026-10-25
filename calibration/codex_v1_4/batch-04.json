@@ -1,0 +1,184 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6553",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue reference, the body contains no substantive cause or solution. The title and patch cannot establish proxy eligibility. No scores or human gold labels are produced.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility failed; writing quality is unscored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No substantive body claims to assess. The observed patch appends a newline; CI success is metadata, not verification of the mechanism.",
+          "file_references": ["pkg/util/gitops/gitops.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "The code change cannot substitute for an explicit body cause and solution.",
+          "file_references": ["pkg/util/gitops/gitops.go"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No eligible causal explanation; dimension and overall remain unknown.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility failed. No test changes are supplied; the attempted raw log fetch returned 410, so specific test execution is unavailable.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (fetch returned 410)"]
+    },
+    {
+      "case_id": "CAMELK-6564",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. The body is empty after removing HTML template comments, so neither substantive cause nor solution is present. Patch content cannot establish eligibility. No scores or human gold labels are produced.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility failed; writing quality is unscored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No substantive body claims to assess. Observed patches template RBAC names and add generator substitutions. CI success is metadata only.",
+          "file_references": ["helm/camel-k/templates/rbacs-common.yaml", "helm/camel-k/templates/rbacs-descoped.yaml", "helm/camel-k/templates/rbacs-namespaced.yaml", "script/gen_helm.sh"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Observed template and generator changes cannot replace the missing body cause and solution.",
+          "file_references": ["helm/camel-k/templates/rbacs-common.yaml", "helm/camel-k/templates/rbacs-descoped.yaml", "helm/camel-k/templates/rbacs-namespaced.yaml", "script/gen_helm.sh"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No eligible causal explanation; dimension and overall remain unknown.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility failed. Generator substitutions are visible, but no test changes are supplied. Raw log fetch returned 410; execution is unavailable.",
+          "file_references": ["script/gen_helm.sh"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (fetch returned 410)"]
+    },
+    {
+      "case_id": "CAMELK-6585",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. Excluding HTML comments and the issue reference leaves no substantive body text. Neither cause nor solution is stated; title and patches cannot establish eligibility. No scores or human gold labels are produced.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility failed; writing quality is unscored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No substantive body claims to assess. Observed code removes server injection and marks the API field deprecated while retaining its JSON name. CI success is metadata only.",
+          "file_references": ["pkg/builder/project.go", "pkg/apis/camel/v1/build_types.go", "pkg/client/camel/applyconfiguration/camel/v1/mavenbuildspec.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Code removal and generated documentation changes cannot supply the missing author explanation.",
+          "file_references": ["pkg/builder/project.go", "pkg/apis/camel/v1/build_types.go", "pkg/apis/camel/v1/zz_generated.deepcopy.go", "pkg/client/camel/applyconfiguration/camel/v1/mavenbuildspec.go", "docs/modules/ROOT/partials/apis/camel-k-crds.adoc", "helm/camel-k/crds/camel-k-crds.yaml", "pkg/resources/config/crd/bases/camel.apache.org_builds.yaml"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No eligible causal explanation; dimension and overall remain unknown.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility failed. The diff deletes server-injection tests; this is a test-design observation, not execution evidence. Raw log fetch returned 410.",
+          "file_references": ["pkg/builder/project_test.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (fetch returned 410)"]
+    },
+    {
+      "case_id": "CAMELK-6594",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. Removing HTML template comments leaves an empty body, with neither substantive cause nor solution. The patches cannot make the body eligible. No scores or human gold labels are produced.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility failed; writing quality is unscored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No substantive body claims to assess. Observed code changes an error guard and adds platform trait configuration. CI metadata includes a kafka failure and other successes; it does not establish a causal contradiction or specific test outcomes.",
+          "file_references": ["pkg/trait/quarkus.go", "pkg/trait/trait_configure.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "The observed changes cannot substitute for the missing body cause and solution.",
+          "file_references": ["pkg/trait/quarkus.go", "pkg/trait/trait_configure.go"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No eligible causal explanation; dimension and overall remain unknown.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility failed. Visible test edits add fake clients and contexts without new platform-specific assertions in the supplied hunks. Execution is unavailable because raw log fetch returned 410.",
+          "file_references": ["pkg/trait/trait_configure_test.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (fetch returned 410)", "Diagnostic evidence explaining the kafka CI failure"]
+    },
+    {
+      "case_id": "CAMELK-6597",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. The body contains only HTML template comments and whitespace, so explicit substantive cause and solution are absent. Title, documentation and test patches cannot establish eligibility. No scores or human gold labels are produced.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility failed; writing quality is unscored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No substantive body claims to assess. Observed patches remove the platform template and add operator environment configuration. CI success is metadata only.",
+          "file_references": ["helm/camel-k/templates/default-itp.yaml", "helm/camel-k/templates/operator-deployment.yaml", "helm/camel-k/values.yaml"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Installation, documentation and test changes cannot replace an explicit body cause and solution.",
+          "file_references": ["e2e/install/helm/setup_test.go", "helm/camel-k/README.md", "helm/camel-k/templates/NOTES.txt", "helm/camel-k/templates/default-itp.yaml", "helm/camel-k/templates/operator-deployment.yaml", "helm/camel-k/values.yaml"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No eligible causal explanation; dimension and overall remain unknown.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility failed. The visible installation test switches registry configuration to environment variables and removes platform-readiness checking. These are test-design observations only; raw log fetch returned 410.",
+          "file_references": ["e2e/install/helm/setup_test.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (fetch returned 410)"]
+    }
+  ]
+}

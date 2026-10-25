@@ -1,0 +1,373 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6625",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue reference, the PR body contains no substantive cause or solution. Title and patches cannot establish proxy eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Ineligible proxy body; writing scores and overall are unavailable.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "No substantive author explanation to verify. Successful CI conclusions are metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Patch content cannot substitute for the missing body cause and solution.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "No eligible causal account.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "All scores withheld for ineligibility; raw logs returned 410 and establish no specific test execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Substantive PR-body cause and solution.",
+        "Raw test execution logs; attempted fetch returned 410."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6641",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "the Integration status uses `IntegrationKit.Status.Failure` when appending the detailed failure reason, and this path was not populated for this builder trait failure.",
+      "proxy_solution_quote": "Set `IntegrationKit.Status.Failure` when the builder trait reports a fatal IntegrationKit configuration error.",
+      "eligibility_reason": "The substantive PR body explicitly identifies the missing failure field and its repair. This is an exploratory pr_author_proxy assessment, not an Owner RCA, human gold label, or calibrated accuracy measurement. Scores are single-model judgments; overall remains null because required evidence is unavailable.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 88,
+            "clarity": 95,
+            "structure": 92,
+            "terminology": 95,
+            "concision": 94
+          },
+          "reason": "The author clearly separates trigger, generic-error symptom, missing status field, repair, and intended assertions. Exact changed filenames and observed validation results are absent from the body. These scores judge writing only.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 94,
+            "scenario_consistency": 90,
+            "traceability": 94,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed builder.go changes populate Failure.Reason from message and set Time before status update, supporting the author's claim. Builder test additions assert Failure presence and the routine-strategy reason in two existing scenarios; the controller test asserts propagation from an explicitly seeded Failure. Commit messages and independent technical corroboration are unavailable. CI success and step names are metadata, not execution proof.",
+          "file_references": [
+            "pkg/trait/builder.go",
+            "pkg/trait/builder_test.go",
+            "pkg/controller/integration/build_kit_test.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 96,
+            "causal_closure": 86,
+            "coverage": 82,
+            "targeting": 96,
+            "solution_soundness": 91
+          },
+          "reason": "The observed repair directly supplies the field the author says the consumer requires. Visible assertions cover producer output and consumer message propagation separately. They do not demonstrate the complete producer-to-consumer flow executing, and the unchanged consumer implementation is not supplied. The shared fatal-error helper provides a focused repair, with broader callers and lifecycle behavior unverified.",
+          "file_references": [
+            "pkg/trait/builder.go",
+            "pkg/trait/builder_test.go",
+            "pkg/controller/integration/build_kit_test.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 95,
+            "trigger_conditions": 94,
+            "causal_chain": 93,
+            "systemic_mechanism": 89,
+            "contributing_factors": 84
+          },
+          "reason": "The author distinguishes generic Integration errors from the omitted Failure field, specifies builder.tasks with a non-pod strategy, and explains the producer/consumer status mismatch. The existing specific condition versus the separately consumed Failure field explains the contributing dual-channel reporting mechanism. The account does not explain how that contract omission originated.",
+          "file_references": [
+            "pkg/trait/builder.go",
+            "pkg/trait/builder_test.go",
+            "pkg/controller/integration/build_kit_test.go"
+          ]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 82,
+            "similar_issue_sweep": 0,
+            "preventive_action": 90,
+            "followup": 0
+          },
+          "reason": "Visible test design checks Failure presence and exact reason in invalid-strategy and override scenarios, plus downstream message inclusion. The shared helper and assertions help prevent recurrence. No similar-path audit or follow-up plan is documented; these omissions receive zero. Regression execution remains unavailable: the raw log fetch returned 410, and successful CI metadata proves no specific test ran. Prevention dimension and overall remain null.",
+          "file_references": [
+            "pkg/trait/builder.go",
+            "pkg/trait/builder_test.go",
+            "pkg/controller/integration/build_kit_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA; PR body is only an author proxy.",
+        "Actual commit message.",
+        "Independent technical corroboration.",
+        "Raw test execution logs; attempted fetch returned 410.",
+        "Unchanged Integration failure-consumer implementation and complete producer-to-consumer execution evidence.",
+        "Documented similar-path audit and follow-up plan."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6647",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. Excluding HTML comments and the issue link leaves no substantive body cause or solution; neither title nor extensive patches can establish eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Ineligible proxy body; writing scores and overall are unavailable.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "No substantive author explanation to verify. Successful CI conclusions are metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Patch content cannot substitute for the missing body cause and solution.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "No eligible causal account.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "All scores withheld for ineligibility; raw logs returned 410 and establish no specific test execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Substantive PR-body cause and solution.",
+        "Raw test execution logs; attempted fetch returned 410."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6658",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. The body contains only HTML template comments and whitespace, with no substantive cause or solution.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Ineligible proxy body; writing scores and overall are unavailable.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "No substantive author explanation to verify. Successful CI conclusions are metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Title and patches cannot supply the missing body cause and solution.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "No eligible causal account.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "All scores withheld for ineligibility; raw logs returned 410 and establish no specific test execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Substantive PR-body cause and solution.",
+        "Raw test execution logs; attempted fetch returned 410."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6661",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. Excluding HTML comments and the issue reference leaves no substantive body cause or solution. Title and patches cannot establish eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Ineligible proxy body; writing scores and overall are unavailable.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "No substantive author explanation to verify. Successful CI conclusions are metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Patch content cannot substitute for the missing body cause and solution.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "No eligible causal account.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "All scores withheld for ineligibility; raw logs returned 410 and establish no specific test execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Substantive PR-body cause and solution.",
+        "Raw test execution logs; attempted fetch returned 410."
+      ]
+    }
+  ]
+}

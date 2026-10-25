@@ -11,5 +11,18 @@
     "PR标题不足以核验Diff和测试",
     "无人工金标准不可计算评分准确率",
     "不能把缺失证据按0分计入综合分"
-  ]
+  ],
+  "record_role": "Initial audit retained; current evidence and execution state is under continuation.",
+  "continuation": {
+    "date": "2026-10-25",
+    "fixed_sha_diffs": 50,
+    "raw_logs_available": 0,
+    "codex_primary_cases": 50,
+    "codex_primary_proxy_cases": 6,
+    "owner_gold_records": 0,
+    "v1_4_summary": "executed_v1_4/summary.json",
+    "codex_summary": "codex_v1_4/summary.json",
+    "v2_status": "experimental_research_candidate",
+    "v2_report": "EXECUTION_REPORT.md"
+  }
 }

@@ -1,0 +1,4802 @@
+[
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6442",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/6f4baae720285ee1ffee0f269591d2858d3a7b0e...678b52d612d66d9495574e8dbb19833d8b2a315e?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6449",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/e1876efff147247aad5ba6875bf326ac321429e3...7388b700890673648c8e10b7664764b823fa12ed?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6459",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/5f39fb5632eae5399f6182a54dd676a94283279a...3c91ca1c1f7f57579ec9e605c14fbd187d7aa30e?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6460",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/5f39fb5632eae5399f6182a54dd676a94283279a...67e9a573c3d6d0240f31d1ce30fa650714f74436?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6462",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/c32f691d0b039246697ab65f0770fd266ddde296...2d30b887a43e4b549b36fff417c2c39507d940a4?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6465",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/98241e09dcd8747f49756f0ad077739975bfae52...2cde2fa826897c6ed26743ae91bf66824335f078?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6466",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/9f943f08b33a46844304e356aa00427a667aa251...4b56e0ea40ef98dd05c386d93db2a5c8cb75d034?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6482",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/02859c617fad10ee76d129368ceddd8bf1ff9ce2...51c2a69e17734f22ad2888639bb145a8e076255c?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6493",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/0ff1f79a6e5c9a9eb023e48f7335fb12c559e9a2...9c9a28b1737a2401504b1982a05422fadf8596d5?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6510",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/ad7ada269a664360d21c57b924eef1ce72258c6a...18ad8277f30187ca1450769d9023a1a7c1bca6e0?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6528",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/41f81b9c72d69866220a50287ab0ecbebf0c45fe...5b5f640ee54ce74606494ffaf785fb3c4c156a41?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6532",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/3773bc49e5a9172b6cd01728e5add6fbeb4fbdc0...59c16f105cf59f497b89089059aca951cc933df1?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6540",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/7f72d844d9b6f68f269bd99a9b1aeb59f69dc991...38b462f2c35bfee18d424939361fc74957a074ca?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6543",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/82723bfd4c17910206c68283409e566c4d102c2f...032f7d4450d4aa4141332b98e86f9805fd30bc0a?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6551",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/e0717d0ddc545edc4e21fe4edd28f06f6e44db77...29634beda80d8ff6908ad8a76be2c00fc09cec45?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6553",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/e0717d0ddc545edc4e21fe4edd28f06f6e44db77...0d33b23ad29c9160a7f8ac48a1daa6aefb05553b?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6564",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/b512d197d6882ce38213b28b5768fafb1ec1d3a5...6380219658fb8312089025ad188ab2f9e7458c7f?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6585",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/5bb7fe5e8d69fb4adf8a7362a5bea26a566f086e...002fb8758b19269cf0877f4b0c9ce8ea7c0c9edd?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6594",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/6a1508689c8b19d1312b076945be66d225733958...f43cb6b788a97f3af5600d6173ebc398a368bbf7?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6597",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/e8fccf2436c11bf8397594384e1c0ef55ccf0351...3d148c6f3374f8314c7a20071391d362985e7941?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6598",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/7315095cb54a57fd56936e1aef26888709c43da7...1d6a23963a221710a9702c37adf5700d54d4fe5e?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6600",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/6f8323e02979d1aad695cba498c863518799de54...6633cc66affcba9f0a765c9b9f739ab081dcfe0f?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6609",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/135389a00563bb9eb6b37de7c79c71cb60fded26...6bc18ef3e1e240cee00baade9cdbd88c589497bc?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6610",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/135389a00563bb9eb6b37de7c79c71cb60fded26...9f1c4918080d20d5f81c08f38805db7c56652e27?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6619",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/68c1ec4fb2b9f00aa3d2c5c457199492d9628b0b...035f38639ae5445a94325ec4280eab7e6a4aafe2?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6625",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/e4180ccbc7cc527df3b00e1ac6200b256c52c09d...b7c9e2c8ff2c506f7a321e1a41da922f406f947d?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6641",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/ca8a63769b824ae1f24bcc217f698e770a0ee013...68f479db031dce88fce2a8137a8fbcd91f1c2893?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6647",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/51aa34e85b1429387391c67e738694930097c8b4...61a7614b2478dd0b5cca0e1a2981e5f24a2210c7?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6658",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/56df7765b0d08c287608035e6a3e956a9b5cdbfb...9ae6c49d71f9fe9192ed9fae9b51b35f5932b593?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6661",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/f6a38f0a54a799b027ea52eac97d2c093b152fd2...388459238e67ba2aa3561a5a54169b4095af73dd?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6665",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6667",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/1c88a8de91fa1e841368280b2c768e9dd5b0ec11...37dd66e467efa50def1d6ba82219cd3b6b1abf05?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6679",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/a1fbde7c53f1a051467436b82e6de4386a008806...1e26e57e7530d5e43fa6d50f3a91ffa509854ad1?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6683",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/da4dab92198f2919ee0912954ba90c958259c9bc...3c58b379547bbc7ce2a794aa6cd32143c4777f93?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6687",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/f25034da71810f698dcaa13b29049faa54a1692d...dcdb319f1a413937f9e69351e570cbb01eff2b2b?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6696",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/97c4bd8589e8d608a67d21ec18dc65be6f1f8aef...1618929a45628cdd8d3ccef59d6dcad7a3f6a786?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6441",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/6f4baae720285ee1ffee0f269591d2858d3a7b0e...f3e6d956a69979c8eb5159b356039e68106a9a21?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6475",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/31f380d664ee1ee6cc2d7c93f0405da0d3f49645...9fd9bf38fee11b470f762235f9d695673f1936df?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6509",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/96a70f1afffce486134d811d38c507fd9cc41d7c...06e3ea3d21344d625aa65a416cf3680103fe5afb?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6518",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/a530521b039810b0b11375ab98e2d28d4ec9242d...8296104dc6a8b74ee4576e735ce0c4c2410196bf?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6527",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/3dbd9d2e9d0e8ed0f1d0efa1b52ee66203d34e16...fa4ec59a3bd2ba95805668396dc02a7351d98343?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6542",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/a1d857981c6b2f99cf6b2cb47695e48a6740d71b...8aaeb815efe1a00ca65ea183949173a9dd8e2b83?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6550",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/e721840dd9b34aa41112599e4354446b350b8364...91dbcc101783df276bdb59b1ff91d7004bd1e01b?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6568",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/ca6c5f8693c0c4ab7e4512b0e8deacf58454b99b...f5cbdd9afece6e00ac74b9bb6a2139d20e82e416?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6571",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/8cb70f141a482a2975132c3f220303047e780834...4faee3a925fa98b0a4e2d1df4c50229aa7265073?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6574",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/c349d1d1e1f90cc35c778c10e80ecc845f08e65c...ed2098c427abdbd8f8920b2a3a252c400df8a3ff?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6586",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/982302e1ec3b9ba5464ebd02d59dcc9768b63c4c...57d1cfe2c885e319723eff5007ed6342fa8599fb?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6604",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/96d20ac3caaa87aada267eedfc9fecbd43206dbe...53bf5cf54448bdba58e00bfa7c110e84a37636e7?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6614",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/fc5c2226b5bcb0bc97fdaea9f4f1741f28e1b324...ea89fddfe84e602b5253b2ac9f59742ef4546b9b?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  },
+  {
+    "schema_version": "1.0",
+    "defect_id": "CAMELK-6621",
+    "owner_input": {
+      "symptom": null,
+      "root_cause": "",
+      "solution": ""
+    },
+    "gerrit": [],
+    "evidence": [
+      {
+        "id": "diff_snapshot",
+        "type": "diff",
+        "reference": "https://api.github.com/repos/apache/camel-k/compare/a158ca3d1be4cb619e216eef739aec546299d466...28fbbc50bdaf50d4fb9fbf636f5b953a838690b6?per_page=100",
+        "summary": "Fixed-SHA diff retrieved; no owner claim was inferred."
+      }
+    ],
+    "dimensions": {
+      "normative": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "completeness": null,
+          "clarity": null,
+          "structure": null,
+          "terminology": null,
+          "concision": null
+        }
+      },
+      "authenticity": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "commit_consistency": null,
+          "diff_support": null,
+          "scenario_consistency": null,
+          "traceability": null,
+          "cross_source_consistency": null
+        }
+      },
+      "relevance": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "root_fix_match": null,
+          "causal_closure": null,
+          "coverage": null,
+          "targeting": null,
+          "solution_soundness": null
+        }
+      },
+      "depth": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "symptom_vs_cause": null,
+          "trigger_conditions": null,
+          "causal_chain": null,
+          "systemic_mechanism": null,
+          "contributing_factors": null
+        }
+      },
+      "prevention": {
+        "score": null,
+        "level": null,
+        "status": "insufficient_evidence",
+        "comment": "Missing owner-authored RCA; public PR text is not owner input.",
+        "evidence_ids": [],
+        "subscores": {
+          "regression_evidence": null,
+          "edge_tests": null,
+          "similar_issue_sweep": null,
+          "preventive_action": null,
+          "followup": null
+        }
+      }
+    },
+    "overall": {
+      "score": null,
+      "level": null,
+      "comment": "Evidence audit only; no quality score."
+    },
+    "manual_review_required": true
+  }
+]

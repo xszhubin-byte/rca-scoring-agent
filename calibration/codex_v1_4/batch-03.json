@@ -1,0 +1,215 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6528",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After removing HTML comments and the issue reference, the PR body contains no substantive cause or solution. Title and patches cannot establish proxy eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility failed; writing is not scored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No eligible author explanation to compare with the patches. CI success is metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "No substantive body cause and solution; dimension and overall are null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No eligible causal account.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility failed. Visible test assertions do not establish execution; the supplied raw-log fetch returned 410.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs"]
+    },
+    {
+      "case_id": "CAMELK-6532",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. Removing HTML template comments leaves an empty PR body. Cause and solution cannot be inferred from the title or patch.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility failed; writing is not scored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No eligible author explanation to compare with the patches. CI success is metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "No substantive body cause and solution; dimension and overall are null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No eligible causal account.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility failed. Visible test assertions do not establish execution; the supplied raw-log fetch returned 410.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs"]
+    },
+    {
+      "case_id": "CAMELK-6540",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After removing HTML comments and the issue reference, the PR body contains no substantive cause or solution. The visible conditional change cannot supply missing body evidence.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility failed; writing is not scored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No eligible author explanation to compare with the patches. CI success is metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "No substantive body cause and solution; dimension and overall are null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No eligible causal account.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility failed; the supplied raw-log fetch returned 410, and CI metadata cannot verify specific test execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs"]
+    },
+    {
+      "case_id": "CAMELK-6543",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "installing multiple operators via Helm fails because **all resource names are hardcoded** to `camel-k-*` regardless of the Helm release name or custom value.",
+      "proxy_solution_quote": "Parameterize all hardcoded Kubernetes resource names in Helm chart templates using the existing `{{ include \"camel-k.fullname\" . }}` helper",
+      "eligibility_reason": "The body explicitly states a naming-collision cause and helper-based solution. This is an exploratory pr_author_proxy assessment by one model, not an Owner RCA, human gold label, or calibrated accuracy measurement. Unknown components prevent a complete overall score; overall is null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": 90, "clarity": 92, "structure": 94, "terminology": 90, "concision": 72},
+          "reason": "The author separates problem, fix, compatibility, scenarios and limitation, with concrete reproduction commands. Repeated installation examples reduce concision. These scores assess writing, not verification of its claims.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": 86, "scenario_consistency": 88, "traceability": 93, "cross_source_consistency": null},
+          "reason": "Observed patches replace fixed names and corresponding selectors, service-account references and RBAC references, supporting the stated collision mechanism. Commit messages and independent technical corroboration are unavailable. The helper implementation and runtime builder behavior are not supplied, so identical rendering and full runtime compatibility remain author claims. Checks at head 032f7d4450d4aa4141332b98e86f9805fd30bc0a report success as metadata only. Dimension is null because components are unknown.",
+          "file_references": [
+            "helm/camel-k/templates/operator-deployment.yaml",
+            "helm/camel-k/templates/operator-svcs.yaml",
+            "helm/camel-k/templates/rbacs-common.yaml",
+            "helm/camel-k/templates/rbacs-descoped.yaml",
+            "helm/camel-k/templates/rbacs-namespaced.yaml"
+          ]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": 93, "causal_closure": 76, "coverage": 82, "targeting": 94, "solution_soundness": 78},
+          "reason": "Observed changes directly address fixed-name collisions and maintain matching deployment and RBAC references across global and namespaced templates. Actual resolution is unverified. The author's builder-account limitation leaves a runtime/RBAC concern: changed builder bindings target per-release accounts, while the body says runtime builders use camel-k-builder. Full compatibility, helper behavior and all deployment patterns cannot be established from these patches.",
+          "file_references": [
+            "helm/camel-k/templates/operator-deployment.yaml",
+            "helm/camel-k/templates/operator-svcs.yaml",
+            "helm/camel-k/templates/rbacs-common.yaml",
+            "helm/camel-k/templates/rbacs-descoped.yaml",
+            "helm/camel-k/templates/rbacs-namespaced.yaml"
+          ]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": 94, "trigger_conditions": 94, "causal_chain": 91, "systemic_mechanism": 90, "contributing_factors": 85},
+          "reason": "The author distinguishes installation failure from fixed naming, identifies a second release as the trigger, and explains cluster scope and Helm ownership rejection. The account connects release-independent names to collisions and release-derived names to isolation. Prior partial remediation and builder naming are discussed, but their external history and runtime details are unverified. The changed RBAC templates support the core naming mechanism.",
+          "file_references": [
+            "helm/camel-k/templates/rbacs-descoped.yaml",
+            "helm/camel-k/templates/rbacs-namespaced.yaml",
+            "helm/camel-k/templates/rbacs-common.yaml"
+          ]
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": 0, "similar_issue_sweep": 90, "preventive_action": 75, "followup": 20},
+          "reason": "No test additions or edge-case test assertions appear in the complete five-file diff; usage examples and a support matrix are author claims, not test results. The patches show a broad sweep of analogous names and references and reuse one naming helper. The builder limitation is recorded without an assigned or tracked corrective action. Raw-log fetch for job 68316687533 returned 410; CI success does not prove specific tests ran. Dimension and overall are null.",
+          "file_references": [
+            "helm/camel-k/templates/operator-deployment.yaml",
+            "helm/camel-k/templates/operator-svcs.yaml",
+            "helm/camel-k/templates/rbacs-common.yaml",
+            "helm/camel-k/templates/rbacs-descoped.yaml",
+            "helm/camel-k/templates/rbacs-namespaced.yaml"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA",
+        "Actual commit message",
+        "Raw test execution logs; supplied fetch returned 410",
+        "Rendered-chart comparisons and multi-release installation results",
+        "Helper implementation supporting default-name compatibility",
+        "Runtime evidence establishing builder ServiceAccount and RBAC compatibility",
+        "Independent evidence for cited documentation and prior PR history",
+        "Tracked corrective follow-up for the builder-account limitation"
+      ]
+    },
+    {
+      "case_id": "CAMELK-6551",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After removing HTML comments and the issue reference, the PR body contains no substantive cause or solution. Code and test additions cannot make the body eligible.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility failed; writing is not scored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No eligible author explanation to compare with the patches. CI success is metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "No substantive body cause and solution; dimension and overall are null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No eligible causal account.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility failed. Visible unit and end-to-end assertions establish test design only; the supplied raw-log fetch returned 410.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs"]
+    }
+  ]
+}

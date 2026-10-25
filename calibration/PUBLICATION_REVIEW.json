@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-25",
+  "visibility": "public",
+  "payload_file_count_before_this_record": 84,
+  "credential_pattern_findings": [],
+  "private_execution_logs_published": false,
+  "credentials_or_environment_values_read_for_publication": false,
+  "source_notes": "Public Apache Camel K source excerpts and synthetic fixtures only. Email-like matches in upstream diffs are public Apache documentation examples or non-email @ file syntax, not private contacts. Raw local CLI events and stderr excluded.",
+  "limits": "Pattern review is not a guarantee for every secret format."
+}

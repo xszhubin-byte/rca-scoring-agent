@@ -1,0 +1,406 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6527",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "Sending certain HTTP/2 frames can cause a server to panic in\r\n    golang.org/x/net",
+      "proxy_solution_quote": "Fixed in: golang.org/x/net@v0.51.0",
+      "eligibility_reason": "The body explicitly identifies a frame-triggered dependency panic and a fixed version. Eligible only as an exploratory pr_author_proxy; no Owner RCA or human gold label exists. Scores are single-model judgments, not calibrated accuracy.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 75,
+            "clarity": 85,
+            "structure": 80,
+            "terminology": 85,
+            "concision": 85
+          },
+          "reason": "The body supplies a symptom, broad trigger, affected module, fixed version and example traces. It omits the precise frame/state mechanism and an explicit change explanation. These scores assess writing only.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 35,
+            "scenario_consistency": 30,
+            "traceability": 65,
+            "cross_source_consistency": 30
+          },
+          "reason": "Observed go.mod and go.sum changes select v0.51.0, supporting the stated destination. However, the body reports v0.50.0 while the actual baseline is v0.49.0; this positive version discrepancy requires manual review and caps authenticity at 39 if aggregated. Dependency implementation and reported server-panic reachability are unverified; listed traces include client paths. Actual commit messages are unavailable. CI success is metadata only. Authenticity dimension and overall remain null because commit consistency is unavailable.",
+          "file_references": [
+            "go.mod",
+            "go.sum"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 80,
+            "causal_closure": 55,
+            "coverage": 60,
+            "targeting": 85,
+            "solution_soundness": 70
+          },
+          "reason": "Observed dependency manifests implement the author's claimed fixed-version selection. The upstream repair, precise vulnerable branches and resolved behavior are unavailable, limiting causal closure and soundness verification. The accompanying x/crypto upgrade is unexplained.",
+          "file_references": [
+            "go.mod",
+            "go.sum"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 65,
+            "trigger_conditions": 55,
+            "causal_chain": 50,
+            "systemic_mechanism": 30,
+            "contributing_factors": 0
+          },
+          "reason": "The author attributes panic to certain HTTP/2 frames in a named dependency and supplies example call traces. Frame types, connection state, internal failure mechanism and contributing factors are absent. The manifest patches establish version selection, not the panic mechanism.",
+          "file_references": [
+            "go.mod",
+            "go.sum"
+          ]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 0,
+            "similar_issue_sweep": 0,
+            "preventive_action": 65,
+            "followup": 0
+          },
+          "reason": "The dependency upgrade is a concrete preventive action. The complete supplied diff adds no regression or edge tests, and the body documents no similar-path sweep or follow-up. Raw log retrieval returned 410; successful CI metadata cannot establish test execution. Prevention dimension and overall remain null.",
+          "file_references": [
+            "go.mod",
+            "go.sum"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Actual commit message.",
+        "Explanation of the reported v0.50.0 versus observed v0.49.0 baseline discrepancy.",
+        "Upstream implementation establishing the panic mechanism and repair.",
+        "Verified affected application scenario and frame-level reproducer.",
+        "Test execution records; attempted raw log retrieval returned 410."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6542",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "After ignoring issue links and template comments, the body supplies only a verification caveat about minikube tunnel. It lacks an explicit substantive cause and repair explanation. Patches cannot establish body eligibility. No Owner RCA exists; no proxy scores or overall are assigned.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Body eligibility gate failed.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Body eligibility gate failed. CI success is metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Gateway implementation cannot supply the missing body cause and solution.",
+          "file_references": [
+            "pkg/trait/gateway.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "An environmental verification prerequisite alone is insufficient causal analysis.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Visible unit and integration test assertions are test-design evidence only. Eligibility failed, and raw logs returned 410.",
+          "file_references": [
+            "pkg/trait/gateway_test.go",
+            "e2e/gateway/gateway_test.go",
+            ".github/workflows/gateway.yml"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive cause and solution in the PR body.",
+        "Test execution records; attempted raw log retrieval returned 410."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6550",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "The body explicitly reports the linter build-Go versus target-Go incompatibility but states no solution. The title and script/Makefile upgrade cannot fill that omission. No Owner RCA exists; all proxy subscores and overall remain null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Body eligibility gate failed because the solution is missing.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Body eligibility gate failed. Successful CI metadata does not verify the quoted error or its resolution.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "The observed version change cannot make a body without a solution eligible.",
+          "file_references": [
+            "script/Makefile"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The reported compatibility cause alone does not satisfy the two-part eligibility requirement.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Eligibility failed; raw logs returned 410 and no test execution is established.",
+          "file_references": [
+            "script/Makefile"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit solution in the PR body.",
+        "Test execution records; attempted raw log retrieval returned 410."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6568",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "The body states a dependency upgrade and lists upstream commit subjects, but provides no substantive causal explanation. Subjects about dollarQuote state management and unmatched parentheses name changes without explaining a failure mechanism. No Owner RCA exists; proxy subscores and overall remain null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Body eligibility gate failed because substantive cause is missing.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Embedded upstream commit subjects are body claims, not inspected upstream patches or independent verification. CI success is metadata only.",
+          "file_references": [
+            "go.mod",
+            "go.sum"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Observed manifests establish the version upgrade but cannot supply a substantive body cause.",
+          "file_references": [
+            "go.mod",
+            "go.sum"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "A release change list does not explain the underlying cause and failure chain.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "An upstream subject claiming tests is not visible test-design or execution evidence. Eligibility failed; raw logs returned 410.",
+          "file_references": [
+            "go.mod",
+            "go.sum"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Substantive causal explanation in the PR body.",
+        "Upstream parser implementation and test patches.",
+        "Test execution records; attempted raw log retrieval returned 410."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6571",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "The body describes a refactoring solution and its prior declaration location, but does not explain why that location causes a failure or undesirable behavior. An issue reference cannot supply the missing substantive cause. No Owner RCA exists; proxy subscores and overall remain null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Body eligibility gate failed despite a structured summary and claimed test plan.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Manual review is warranted: the author claims actionFactory/newActions and fresh instances, while the final diff stores and reuses action instances. Only the integration test file changes, contrary to the broader test description. Eligibility remains failed; no authenticity score is assigned. Six individual commit messages and patches are unavailable.",
+          "file_references": [
+            "pkg/controller/catalog/catalog_controller.go",
+            "pkg/controller/integration/integration_controller.go",
+            "pkg/controller/integration/integration_controller_test.go",
+            "pkg/controller/integrationkit/integrationkit_controller.go",
+            "pkg/controller/integrationplatform/integrationplatform_controller.go",
+            "pkg/controller/pipe/pipe_controller.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Observed changes move construction to initialization across five controllers, but cannot establish a missing body cause or validate shared-instance safety.",
+          "file_references": [
+            "pkg/controller/catalog/catalog_controller.go",
+            "pkg/controller/integration/integration_controller.go",
+            "pkg/controller/integrationkit/integrationkit_controller.go",
+            "pkg/controller/integrationplatform/integrationplatform_controller.go",
+            "pkg/controller/pipe/pipe_controller.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The author identifies construction timing but states no resulting failure, trigger or causal mechanism.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Visible TestActions assertions check types/order in manually assembled synthetic and non-synthetic lists; they do not establish fresh instances or exercise production initialization. Checked test-plan commands are author claims. CI success is metadata only, and raw logs returned 410. Eligibility failed.",
+          "file_references": [
+            "pkg/controller/integration/integration_controller_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive cause in the PR body.",
+        "Reconciliation of factory/fresh-instance claims with stored-instance implementation.",
+        "Individual evidence for all six commits.",
+        "Test execution records; attempted raw log retrieval returned 410."
+      ]
+    }
+  ]
+}

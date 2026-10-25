@@ -1,0 +1,367 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6665",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "`Reconcile` reads the `Build` from the cache, which can return a stale copy of a `Build` that was already deleted.",
+      "proxy_solution_quote": "Fix: treat `NotFound` from a build action and from the status `update()` as benign, return without requeue or error, like the top-level fetch already does.",
+      "eligibility_reason": "After excluding comments and the issue link, the body explicitly supplies cause and solution. This is an exploratory PR-author proxy, not Owner RCA, a human gold label, or calibrated accuracy. Unknown dimensions leave overall null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 88,
+            "clarity": 95,
+            "structure": 85,
+            "terminology": 95,
+            "concision": 95
+          },
+          "reason": "The author clearly describes the symptom, deletion timing, stale-cache cause and two repair sites; explicit file and validation references are absent.",
+          "file_references": ["pkg/controller/build/build_controller.go"]
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 88,
+            "scenario_consistency": 90,
+            "traceability": 95,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed guards return an empty result and nil error at both stated sites. The test injects Build Update NotFound and asserts those outputs. Cache behavior and getBuilderPod safety remain author claims outside the supplied hunks. Commit messages and independent technical corroboration are unavailable.",
+          "file_references": ["pkg/controller/build/build_controller.go", "pkg/controller/build/build_controller_test.go"]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 90,
+            "causal_closure": 85,
+            "coverage": 75,
+            "targeting": 90,
+            "solution_soundness": 78
+          },
+          "reason": "The guards directly suppress the reported benign deletion error. The action guard accepts any NotFound without checking its resource; the supplied evidence cannot establish that every such error means the Build disappeared. The visible test covers the status-write scenario only.",
+          "file_references": ["pkg/controller/build/build_controller.go", "pkg/controller/build/build_controller_test.go"]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 95,
+            "trigger_conditions": 95,
+            "causal_chain": 92,
+            "systemic_mechanism": 90,
+            "contributing_factors": 80
+          },
+          "reason": "The author separates misleading error logging from deletion, identifies the stale-cache timing window, and connects status writing to error propagation. The related Get-path safety argument is specific but unverified.",
+          "file_references": ["pkg/controller/build/build_controller.go"]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 70,
+            "similar_issue_sweep": 65,
+            "preventive_action": 85,
+            "followup": 0
+          },
+          "reason": "The visible test design injects status-write NotFound and checks no error or requeue; action NotFound and other errors lack added coverage. The author reports checking another Get path. No follow-up is documented. CI success and step names are metadata only; raw-log retrieval returned 410, so execution is unknown.",
+          "file_references": ["pkg/controller/build/build_controller.go", "pkg/controller/build/build_controller_test.go"]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Commit messages and independent scenario evidence.",
+        "Raw test execution logs; attempted retrieval returned 410.",
+        "Full action/Get context establishing resource-specific NotFound safety.",
+        "Compare is diverged; deployment and merge-result behavior are unverified."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6667",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "stops auto-inferred defaults from leaking into serialized API trait fields",
+      "proxy_solution_quote": "**service trait**: auto-detected `enabled` is carried in a local variable instead of mutating `t.Enabled`",
+      "eligibility_reason": "The body explicitly identifies inferred-default serialization and describes concrete repairs, independently of its title and issue link. Scores are exploratory single-model PR-author proxy judgments, not Owner RCA or human gold labels. Unknown dimensions leave overall null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 92,
+            "clarity": 92,
+            "structure": 95,
+            "terminology": 93,
+            "concision": 90
+          },
+          "reason": "The author separates mechanism, implementation, scope and claimed validation. The previous approach and current revision are distinguishable, though the restoration claim lacks a precise revision reference.",
+          "file_references": ["pkg/trait/container.go", "pkg/trait/service.go", "pkg/trait/trait_test.go"]
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 85,
+            "scenario_consistency": 90,
+            "traceability": 90,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed changes remove writes to exported inferred fields and add status assertions matching the body. The claimed restored trait.Apply merge has no changed implementation in this aggregate diff; intermediate history is unavailable, so this is unverified rather than a demonstrated contradiction. Claimed local passes are not execution evidence.",
+          "file_references": ["pkg/trait/container.go", "pkg/trait/service.go", "pkg/trait/trait_test.go", "pkg/trait/service_test.go"]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 93,
+            "causal_closure": 85,
+            "coverage": 78,
+            "targeting": 95,
+            "solution_soundness": 88
+          },
+          "reason": "Local/private inferred state directly addresses serialization while preserving effective configuration. Tests assert Service creation, empty inferred status and retention of explicit container.port. Other named traits remain outside scope, and the merge contract implementation is not visible.",
+          "file_references": ["pkg/trait/container.go", "pkg/trait/service.go", "pkg/trait/trait_test.go", "pkg/trait/container_test.go", "pkg/trait/security_context_test.go"]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 90,
+            "trigger_conditions": 85,
+            "causal_chain": 88,
+            "systemic_mechanism": 95,
+            "contributing_factors": 90
+          },
+          "reason": "The author identifies conflation of inferred runtime state with serialized API configuration and explains why suppressing all executed traits breaks another contract. GitOps and platform/profile consequences are author claims, not independently demonstrated here.",
+          "file_references": ["pkg/trait/container.go", "pkg/trait/service.go", "pkg/trait/trait_test.go"]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 85,
+            "similar_issue_sweep": 85,
+            "preventive_action": 90,
+            "followup": 70
+          },
+          "reason": "Visible test design checks inferred versus explicit values and updates related expectations. The author names four similar traits and proposes follow-up PRs without tracked assignments. CI success is metadata; raw logs returned 410, leaving claimed go test and lint execution unverified.",
+          "file_references": ["pkg/trait/trait_test.go", "pkg/trait/service_test.go", "pkg/trait/container_test.go", "pkg/trait/mount_test.go", "pkg/trait/route_test.go", "pkg/trait/security_context_test.go"]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Messages and intermediate patches for the three commits.",
+        "Implementation context confirming the claimed restored trait.Apply merge.",
+        "Raw test execution logs; attempted retrieval returned 410.",
+        "Tracked follow-up changes for the four named remaining traits."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6679",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "which node-selector label keys CR authors can\r\n  set via the `builder.nodeSelector` trait, preventing unauthorized node targeting in shared\r\n  clusters.",
+      "proxy_solution_quote": "When set → only listed keys pass through; unlisted keys are dropped and logged at info level",
+      "eligibility_reason": "The body explicitly identifies CR-controlled node-selector keys as the unauthorized-targeting mechanism and supplies an operator allow-list solution. Scores are exploratory single-model PR-author proxy judgments, not Owner RCA or human gold labels. Unknown dimensions leave overall null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 90,
+            "clarity": 95,
+            "structure": 95,
+            "terminology": 93,
+            "concision": 90
+          },
+          "reason": "The author states the capability, shared-cluster risk, configuration, compatibility behavior and exact changed paths. No concrete incident or threat-boundary example is supplied.",
+          "file_references": ["pkg/platform/env_platform.go", "pkg/trait/builder.go"]
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 95,
+            "scenario_consistency": 92,
+            "traceability": 98,
+            "cross_source_consistency": null
+          },
+          "reason": "The observed diff replaces direct selector assignment with filtering, parses the named variable and logs dropped keys. Tests and changed documentation agree with that behavior but are not independent runtime corroboration. Commit messages are unavailable.",
+          "file_references": ["pkg/platform/env_platform.go", "pkg/trait/builder.go", "pkg/trait/builder_test.go", "docs/modules/ROOT/pages/installation/builds.adoc", "docs/modules/traits/pages/builder.adoc"]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 93,
+            "causal_closure": 85,
+            "coverage": 82,
+            "targeting": 95,
+            "solution_soundness": 85
+          },
+          "reason": "Filtering directly restricts keys at builder-task construction when configured. Defaults remain permissive by design; key permission does not restrict values, and dropping every selector removes this scheduling constraint. The evidence supports this scoped control, not comprehensive node-targeting prevention.",
+          "file_references": ["pkg/platform/env_platform.go", "pkg/trait/builder.go", "pkg/trait/builder_test.go"]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 85,
+            "trigger_conditions": 85,
+            "causal_chain": 80,
+            "systemic_mechanism": 85,
+            "contributing_factors": 65
+          },
+          "reason": "The body identifies the CR-author/operator policy boundary and shared-cluster trigger. It gives little explanation of label trust, allowed values, alternate scheduling paths or effects of dropping constraints.",
+          "file_references": ["pkg/trait/builder.go", "pkg/platform/env_platform.go"]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 88,
+            "similar_issue_sweep": 0,
+            "preventive_action": 90,
+            "followup": 0
+          },
+          "reason": "Visible tests cover parsing, nil/empty selectors, partial/full matches, all dropped and Apply wiring. Not-set tests depend on ambient environment; whitespace-only configuration lacks an explicit test. The guard and docs provide prevention, but no similar-path sweep or follow-up is documented. CI is metadata only; raw logs returned 410.",
+          "file_references": ["pkg/platform/env_platform_test.go", "pkg/trait/builder_test.go", "pkg/trait/builder.go", "docs/modules/ROOT/pages/installation/builds.adoc", "docs/modules/traits/pages/builder.adoc"]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Commit messages and intermediate patches for the two commits.",
+        "Raw test execution logs; attempted retrieval returned 410.",
+        "Independent shared-cluster reproduction and review of alternate node-targeting paths.",
+        "Deployment configuration enabling the optional restriction."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6683",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "`builder.tasks` trait, preventing CR authors from running arbitrary build containers in\r\n  environments where that capability should be restricted.",
+      "proxy_solution_quote": "When set to `\"false\"` (case-insensitive) → `builder.tasks` values are ignored; an info message is logged",
+      "eligibility_reason": "The body explicitly identifies arbitrary-container injection through builder.tasks and proposes an operator disable switch. Eligibility does not imply correctness. These are exploratory single-model proxy judgments, not Owner RCA or human gold labels. Unknown dimensions leave overall null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 92,
+            "clarity": 93,
+            "structure": 95,
+            "terminology": 90,
+            "concision": 80
+          },
+          "reason": "The author organizes capability, configuration, implementation and validation claims clearly, with some repetition. Writing is assessed separately from the patch contradiction.",
+          "file_references": ["pkg/platform/env_platform.go", "pkg/trait/builder.go", "pkg/trait/builder_test.go"]
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 30,
+            "scenario_consistency": 30,
+            "traceability": 60,
+            "cross_source_consistency": 20
+          },
+          "reason": "Manual review required: the body and changed docs claim custom injection is disabled, but observed applyTasksFilter retains every input named quarkus-native without checking provenance, image or command. The added test explicitly supplies such an entry and expects retention. Known authenticity evidence is capped at 39; the full dimension is null because commit evidence is missing. CI success cannot resolve this contradiction.",
+          "file_references": ["pkg/trait/builder.go", "pkg/trait/builder_test.go", "docs/modules/ROOT/pages/installation/builds.adoc", "docs/modules/traits/pages/builder.adoc"]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 35,
+            "causal_closure": 25,
+            "coverage": 35,
+            "targeting": 75,
+            "solution_soundness": 25
+          },
+          "reason": "The filter blocks ordinary task names but trusts a user-controllable name as evidence of operator origin. Inspection indicates a quarkus-native-named entry survives to determineCustomTasks, undermining the stated security boundary. This is a code-derived bypass concern, not an executed exploit.",
+          "file_references": ["pkg/trait/builder.go", "pkg/trait/builder_test.go"]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 80,
+            "trigger_conditions": 85,
+            "causal_chain": 65,
+            "systemic_mechanism": 45,
+            "contributing_factors": 40
+          },
+          "reason": "The body identifies arbitrary task injection, operator policy and misleading strategy validation. It does not analyze task provenance or the trust distinction needed to preserve operator-generated tasks safely.",
+          "file_references": ["pkg/trait/builder.go", "pkg/trait/builder_test.go"]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 45,
+            "similar_issue_sweep": 0,
+            "preventive_action": 30,
+            "followup": 0
+          },
+          "reason": "Visible tests cover boolean settings, ordinary task removal, default allowance and name-based retention; the retention test encodes the trust weakness. Missing cases include spoofed privileged names, whitespace and disabled non-pod validation. Local/manual passes are author claims; CI success is metadata and raw logs returned 410.",
+          "file_references": ["pkg/platform/env_platform_test.go", "pkg/trait/builder_test.go", "pkg/trait/builder.go"]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Commit messages and intermediate patches for the three commits.",
+        "Raw test execution logs; attempted retrieval returned 410.",
+        "Independent records for claimed local and manual validation.",
+        "A provenance check distinguishing operator-injected tasks from identically named user entries.",
+        "Manual review resolving the positive body/documentation versus patch contradiction."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6687",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "which label keys CR authors can use in\r\n  `affinity.nodeAffinityLabels`, preventing unauthorized node targeting in shared clusters.",
+      "proxy_solution_quote": "any expression whose label key\r\n    is not in the list is dropped and logged at info level",
+      "eligibility_reason": "The body explicitly identifies CR-controlled affinity keys as the targeting mechanism and describes parsing and allow-list filtering. Scores are exploratory single-model PR-author proxy judgments, not Owner RCA or human gold labels. Unknown dimensions leave overall null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 92,
+            "clarity": 93,
+            "structure": 95,
+            "terminology": 90,
+            "concision": 82
+          },
+          "reason": "The author provides risk, configuration, compatibility, malformed-expression behavior, paths and validation claims. References to an expression's singular key underdescribe compound selectors.",
+          "file_references": ["pkg/trait/affinity.go", "pkg/platform/env_platform.go"]
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 92,
+            "scenario_consistency": 88,
+            "traceability": 95,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed filtering checks every parsed requirement and retains parse failures, matching the core body description. Visible assertions cover simple key filtering through Apply. Manual/local passes remain author claims; failed common-platformless and knative-test checks are metadata without diagnostic logs and do not establish a contradiction or defect cause.",
+          "file_references": ["pkg/trait/affinity.go", "pkg/trait/affinity_test.go", "pkg/platform/env_platform_test.go"]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 90,
+            "causal_closure": 82,
+            "coverage": 75,
+            "targeting": 93,
+            "solution_soundness": 80
+          },
+          "reason": "The configured guard directly limits parsed keys before affinity construction. Compound expressions are dropped as a whole when any key is disallowed. All-dropped input exits without adding affinity, potentially broadening scheduling; malformed-input downstream handling is not visible in full. Protection remains optional and scoped.",
+          "file_references": ["pkg/trait/affinity.go", "pkg/trait/affinity_test.go", "pkg/platform/env_platform.go"]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 85,
+            "trigger_conditions": 88,
+            "causal_chain": 82,
+            "systemic_mechanism": 85,
+            "contributing_factors": 75
+          },
+          "reason": "The body identifies the operator/CR-author policy boundary and discusses parsing errors and compatibility. It omits compound-selector semantics, scheduling consequences of removing constraints and alternate targeting paths.",
+          "file_references": ["pkg/trait/affinity.go", "pkg/platform/env_platform.go"]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 72,
+            "similar_issue_sweep": 60,
+            "preventive_action": 85,
+            "followup": 0
+          },
+          "reason": "Visible test design covers parsing whitespace, pass-through, partial/all matches, all dropped and Apply wiring. Compound selectors, malformed expressions and alternate operators lack added tests; unset tests depend on ambient environment. The author references the analogous builder control but documents no broad sweep or follow-up. Mixed CI results are metadata only; raw logs returned 410.",
+          "file_references": ["pkg/platform/env_platform_test.go", "pkg/trait/affinity_test.go", "pkg/trait/affinity.go", "docs/modules/ROOT/pages/installation/builds.adoc", "docs/modules/traits/pages/affinity.adoc"]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Commit message and independent technical corroboration.",
+        "Raw test execution logs; attempted retrieval returned 410.",
+        "Diagnostics explaining failed common-platformless and knative-test metadata.",
+        "Independent records for claimed local and manual validation.",
+        "Complete downstream malformed-expression handling and compound-selector validation.",
+        "Compare is diverged; deployment and merge-result behavior are unverified."
+      ]
+    }
+  ]
+}

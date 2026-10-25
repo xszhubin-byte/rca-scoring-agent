@@ -1,0 +1,1269 @@
+{
+  "type": "object",
+  "properties": {
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "claims": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "kind": {
+                  "enum": [
+                    "causal",
+                    "fix",
+                    "test_execution",
+                    "ci_status",
+                    "impact",
+                    "process",
+                    "effectiveness"
+                  ]
+                },
+                "text": {
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "supported",
+                    "refuted",
+                    "unresolved"
+                  ]
+                },
+                "evidence_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "critical": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id",
+                "kind",
+                "text",
+                "status",
+                "evidence_ids",
+                "critical"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "items": {
+            "type": "object",
+            "properties": {
+              "P1": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "P2": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "P3": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "P4": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "C1": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "C2": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "C3": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "C4": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "O1": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "O2": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "O3": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "O4": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "R1": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "R2": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "R3": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "R4": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "V1": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "V2": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "V3": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "V4": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "L1": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "L2": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "L3": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              },
+              "L4": {
+                "type": "object",
+                "properties": {
+                  "basis": {
+                    "enum": [
+                      "observed",
+                      "not_demonstrated",
+                      "unknown",
+                      "not_applicable"
+                    ]
+                  },
+                  "score": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "evidence_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "claim_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "na_reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "basis",
+                  "score",
+                  "reason",
+                  "evidence_ids",
+                  "claim_ids",
+                  "na_reason"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "P1",
+              "P2",
+              "P3",
+              "P4",
+              "C1",
+              "C2",
+              "C3",
+              "C4",
+              "O1",
+              "O2",
+              "O3",
+              "O4",
+              "R1",
+              "R2",
+              "R3",
+              "R4",
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "L1",
+              "L2",
+              "L3",
+              "L4"
+            ],
+            "additionalProperties": false
+          },
+          "closure_requested": {
+            "enum": [
+              "planned",
+              "implemented",
+              "executed",
+              "effectiveness_observed"
+            ]
+          }
+        },
+        "required": [
+          "case_id",
+          "claims",
+          "items",
+          "closure_requested"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "cases"
+  ],
+  "additionalProperties": false
+}

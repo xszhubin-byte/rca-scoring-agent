@@ -1,0 +1,247 @@
+{
+  "synthetic": true,
+  "source_pr": "https://github.com/apache/camel-k/pull/6665",
+  "source_revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+  "cases": [
+    {
+      "context": {
+        "case_id": "SYNTHETIC-concise",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "Build reconciliation may read a stale cached Build after deletion. The subsequent action or status write returns NotFound and produces a spurious reconcile error. The patch treats NotFound from both action handling and status update as benign and returns an empty result without error. The added unit test injects NotFound during a Build update and asserts no error and no requeue. No assertion-linked execution log is available; runtime verification remains unknown.",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ]
+    },
+    {
+      "context": {
+        "case_id": "SYNTHETIC-verbose",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "Build reconciliation may read a stale cached Build after deletion. The subsequent action or status write returns NotFound and produces a spurious reconcile error. The patch treats NotFound from both action handling and status update as benign and returns an empty result without error. The added unit test injects NotFound during a Build update and asserts no error and no requeue. No assertion-linked execution log is available; runtime verification remains unknown.\n\nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. ",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ]
+    },
+    {
+      "context": {
+        "case_id": "SYNTHETIC-contradicted-fix",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "The diff adds a sync.Mutex field and Lock/Unlock calls in build_controller.go. This mutex is the implemented fix for the Build error. The regression passed.",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ]
+    },
+    {
+      "context": {
+        "case_id": "SYNTHETIC-artifact-only",
+        "mode": "artifact_review",
+        "profile": "routine",
+        "text": null,
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ]
+    },
+    {
+      "context": {
+        "case_id": "SYNTHETIC-ci-claim",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "Build reconciliation may read a stale cached Build after deletion. The subsequent action or status write returns NotFound and produces a spurious reconcile error. The patch treats NotFound from both action handling and status update as benign and returns an empty result without error. The added unit test injects NotFound during a Build update and asserts no error and no requeue. The common CI suite is green, therefore TestReconcileBuildDeletedDuringReconcile and all its assertions definitely passed on this revision.",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "ci",
+          "kind": "ci_status",
+          "reference": "fixture:green-suite-only",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ]
+    }
+  ]
+}

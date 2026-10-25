@@ -1,0 +1,376 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6442",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. The body identifies missing operator permissions and explains why the mount trait requires them, but does not explicitly state a solution. Required permissions alone do not establish an author-described repair; the title and patch cannot supply eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Not scored. Observed patches add the three permissions across four role manifests, but cannot supply the missing body solution. CI success is metadata only.",
+          "file_references": [
+            "helm/camel-k/templates/rbacs-descoped.yaml",
+            "helm/camel-k/templates/rbacs-namespaced.yaml",
+            "pkg/resources/config/rbac/descoped/operator-cluster-role.yaml",
+            "pkg/resources/config/rbac/namespaced/operator-role.yaml"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Not scored because the body lacks an explicit solution; overall is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Not scored. Raw log retrieval returned 410; CI metadata does not establish regression execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive solution in the PR body.",
+        "Test execution evidence; attempted raw log retrieval returned 410.",
+        "No eligible proxy score or overall score. This assessment is an exploratory single-model judgment, not calibrated accuracy or a human gold label."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6449",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After ignoring HTML comments and the issue link, the body only says the trait could also be configured by profiles. It does not explicitly explain the failing mechanism or state a solution. Neither may be inferred from the title or patch.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Not scored. Observed patches switch mount reads from spec to status, adjust test setup, and guard error logging. These changes cannot supply missing body claims; CI success is metadata only.",
+          "file_references": [
+            "pkg/controller/integration/integration_controller.go",
+            "pkg/controller/integration/monitor.go",
+            "pkg/controller/integration/monitor_test.go",
+            "pkg/controller/pipe/initialize.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Not scored because explicit body cause and solution are insufficient; overall is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Not scored. Visible test changes establish test design only; raw log retrieval returned 410 and execution is unavailable.",
+          "file_references": [
+            "pkg/controller/integration/monitor_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive failing mechanism and solution in the PR body.",
+        "Test execution evidence; attempted raw log retrieval returned 410.",
+        "No eligible proxy score or overall score. This assessment is an exploratory single-model judgment, not calibrated accuracy or a human gold label."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6459",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After ignoring HTML template comments and the issue link, the body contains no substantive text, cause, or solution. The title and patches cannot establish eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Not scored: there are no substantive author body claims to assess. Supplied patches cannot replace them, and CI success is metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Not scored because body cause and solution are absent; overall is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Not scored. Raw log retrieval returned 410; CI metadata does not establish regression execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive cause and solution in the PR body.",
+        "Test execution evidence; attempted raw log retrieval returned 410.",
+        "No eligible proxy score or overall score. This assessment is an exploratory single-model judgment, not calibrated accuracy or a human gold label."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6460",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After ignoring HTML template comments and the issue link, the body contains no substantive cause or solution. The title and aggregate two-commit patch cannot establish eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Not scored. Observed YAML changes move parameter deletion inside the eligible URI branch; the added test asserts unchanged SFTP content. These cannot supply missing author body claims.",
+          "file_references": [
+            "pkg/util/source/inspector_yaml.go",
+            "pkg/util/source/inspector_yaml_test.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Not scored because body cause and solution are absent; overall is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Not scored. The added test is test-design evidence only. Raw log retrieval returned 410; CI success does not establish its execution.",
+          "file_references": [
+            "pkg/util/source/inspector_yaml_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive cause and solution in the PR body.",
+        "Test execution evidence; attempted raw log retrieval returned 410.",
+        "No eligible proxy score or overall score. This assessment is an exploratory single-model judgment, not calibrated accuracy or a human gold label."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6462",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. Ignoring HTML template comments leaves an empty body, with neither substantive cause nor solution. The title and patches cannot establish eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Not scored: there are no substantive author body claims to assess. Supplied patches cannot replace them, and CI success is metadata only.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Not scored because body cause and solution are absent; overall is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "Not scored because the body fails proxy eligibility.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Not scored. Raw log retrieval returned 410; CI metadata does not establish regression execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive cause and solution in the PR body.",
+        "Test execution evidence; attempted raw log retrieval returned 410.",
+        "No eligible proxy score or overall score. This assessment is an exploratory single-model judgment, not calibrated accuracy or a human gold label."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6465",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue link, the PR body contains no substantive cause or solution. Title and patch cannot establish proxy eligibility. All scores and overall are unavailable; this is not a human gold label.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "No eligible author explanation to assess.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed patches cannot supply missing author claims. CI success is metadata only.",
+          "file_references": ["pkg/trait/mount.go", "pkg/trait/mount_support.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Eligibility gate prevents scoring the patch as an author RCA.",
+          "file_references": ["pkg/trait/mount.go", "pkg/trait/mount_support.go"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "All subscores are unavailable under the eligibility gate. Raw log retrieval returned 410; CI metadata does not establish test execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs"]
+    },
+    {
+      "case_id": "CAMELK-6466",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue link, the PR body contains no substantive cause or solution. Patch comments cannot establish body eligibility. All scores and overall are unavailable; this is not a human gold label.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "No eligible author explanation to assess.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed code and patch comments cannot supply missing body claims. CI success is metadata only.",
+          "file_references": ["pkg/trait/gitops.go", "pkg/trait/gitops_test.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Eligibility gate prevents scoring implementation changes as an author RCA.",
+          "file_references": ["docs/modules/ROOT/pages/running/gitops.adoc", "pkg/controller/integrationplatform/kamelets.go", "pkg/trait/gitops.go", "pkg/trait/gitops_test.go"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body; explanations inside the diff do not satisfy this gate.",
+          "file_references": ["pkg/trait/gitops.go"]
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Visible test assertions are test-design evidence only. All scores remain null because the body is ineligible; raw log retrieval returned 410.",
+          "file_references": ["pkg/trait/gitops_test.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs"]
+    },
+    {
+      "case_id": "CAMELK-6482",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue link, the PR body contains no substantive cause or solution. Title and patch cannot establish proxy eligibility. All scores and overall are unavailable; this is not a human gold label.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "No eligible author explanation to assess.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed default-handling changes cannot supply missing body claims. Security failure and other CI successes are metadata, without diagnostic logs.",
+          "file_references": ["pkg/apis/camel/v1/trait/gitops.go", "pkg/trait/gitops.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Eligibility gate prevents scoring code and generated schema changes as an author RCA.",
+          "file_references": ["helm/camel-k/crds/camel-k-crds.yaml", "pkg/apis/camel/v1/trait/gitops.go", "pkg/resources/config/crd/bases/camel.apache.org_integrationplatforms.yaml", "pkg/resources/config/crd/bases/camel.apache.org_integrationprofiles.yaml", "pkg/resources/config/crd/bases/camel.apache.org_integrations.yaml", "pkg/resources/config/crd/bases/camel.apache.org_pipes.yaml", "pkg/trait/gitops.go"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "All subscores are unavailable under the eligibility gate. Raw log retrieval returned 410; neither CI successes nor the security failure establish specific regression results.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs and security-failure diagnostics"]
+    },
+    {
+      "case_id": "CAMELK-6493",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue link, the PR body contains no substantive cause or solution. Title and patch cannot establish proxy eligibility. All scores and overall are unavailable; this is not a human gold label.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "No eligible author explanation to assess.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed additions of watch permissions cannot supply missing body claims. CI success is metadata only.",
+          "file_references": ["helm/camel-k/templates/rbacs-descoped.yaml", "helm/camel-k/templates/rbacs-namespaced.yaml", "pkg/resources/config/rbac/descoped/operator-cluster-role-leases.yaml", "pkg/resources/config/rbac/namespaced/operator-role-leases.yaml"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Eligibility gate prevents scoring permission changes as an author RCA.",
+          "file_references": ["helm/camel-k/templates/rbacs-descoped.yaml", "helm/camel-k/templates/rbacs-namespaced.yaml", "pkg/resources/config/rbac/descoped/operator-cluster-role-leases.yaml", "pkg/resources/config/rbac/namespaced/operator-role-leases.yaml"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "All subscores are unavailable under the eligibility gate. Raw log retrieval returned 410; CI metadata does not establish test execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs"]
+    },
+    {
+      "case_id": "CAMELK-6510",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue link, the PR body contains no substantive cause or solution. Title and patch cannot establish proxy eligibility. All scores and overall are unavailable; this is not a human gold label.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "No eligible author explanation to assess.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed dependency-path and Maven-plugin changes cannot supply missing body claims. Kafka failure and other CI successes are metadata, without diagnostic logs.",
+          "file_references": ["pkg/apis/camel/v1/integrationkit_types_support.go", "pkg/builder/quarkus.go", "pkg/trait/jvm.go", "pkg/util/maven/maven_types.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Eligibility gate prevents scoring implementation changes as an author RCA.",
+          "file_references": ["pkg/apis/camel/v1/integrationkit_types_support.go", "pkg/builder/quarkus.go", "pkg/trait/jvm.go", "pkg/util/maven/maven_types.go"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "All subscores are unavailable under the eligibility gate. Raw log retrieval returned 410; neither CI successes nor the Kafka failure establish specific regression results.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs and Kafka-failure diagnostics"]
+    }
+  ]
+}

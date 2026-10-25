@@ -1,0 +1,34 @@
+{
+  "synthetic_cases": 5,
+  "independent_cli_runs": 1,
+  "invariants": [
+    {
+      "name": "all_responses_pass_deterministic_evidence_constraints",
+      "passed": true
+    },
+    {
+      "name": "critical_wrong_patch_requires_revision",
+      "passed": true
+    },
+    {
+      "name": "artifact_review_remains_possible_without_owner_text",
+      "passed": true
+    },
+    {
+      "name": "ci_status_does_not_verify_specific_test_execution",
+      "passed": true
+    },
+    {
+      "name": "verbosity_does_not_change_technical_scores_materially",
+      "passed": true,
+      "mean_absolute_item_delta": 0.0,
+      "nullness_changes": 0,
+      "threshold_is_provisional": true
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "human_gold_labels": 0,
+  "accuracy_claim": null,
+  "limitation": "Single small constructed probe; not real-case accuracy or proof six dimensions are optimal."
+}

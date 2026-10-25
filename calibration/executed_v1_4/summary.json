@@ -1,0 +1,21 @@
+{
+  "real_cases": 50,
+  "diff_complete": 50,
+  "pr_body_present": 50,
+  "pr_body_beyond_template_and_issue_link": 22,
+  "with_changed_test_files": 30,
+  "with_check_runs": 50,
+  "with_successful_test_named_checks": 50,
+  "with_workflow_jobs": 50,
+  "with_retrieval_errors": 0,
+  "raw_log_attempts": 50,
+  "raw_logs_available": 0,
+  "abstained_owner_scores": 50,
+  "controlled_probe_count": 450,
+  "controlled_probe_passed": 450,
+  "unique_controlled_scenarios": 9,
+  "upstream_tests_executed": 0,
+  "human_gold_labels": 0,
+  "model_accuracy_mae": null,
+  "model_agreement_kappa": null
+}

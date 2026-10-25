@@ -1,0 +1,423 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6665",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "`Reconcile` reads the `Build` from the cache, which can return a stale copy of a `Build` that was already deleted.",
+      "proxy_solution_quote": "Fix: treat `NotFound` from a build action and from the status `update()` as benign, return without requeue or error, like the top-level fetch already does.",
+      "eligibility_reason": "The substantive body explicitly describes both cause and solution. This is an exploratory PR-author proxy judgment, not an Owner RCA, human gold label, or calibrated accuracy measurement.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 90,
+            "clarity": 96,
+            "structure": 86,
+            "terminology": 95,
+            "concision": 96
+          },
+          "reason": "The author clearly connects stale cache state, deletion timing, the misleading error, and the proposed handling. Cause and fix occupy separate paragraphs; validation and an exact change reference are absent from the substantive explanation.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 88,
+            "scenario_consistency": 90,
+            "traceability": 94,
+            "cross_source_consistency": null
+          },
+          "reason": "The observed controller diff adds both claimed NotFound exits. The test injects a Build Update NotFound and asserts no error and an empty reconcile result. Cache behavior, top-level fetch handling, and getBuilderPod safety remain author claims outside the shown hunks. Commit messages and independent technical corroboration are unavailable. Successful checks are metadata only.",
+          "file_references": [
+            "pkg/controller/build/build_controller.go",
+            "pkg/controller/build/build_controller_test.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 94,
+            "causal_closure": 85,
+            "coverage": 76,
+            "targeting": 91,
+            "solution_soundness": 82
+          },
+          "reason": "Both exits directly address the reported benign deletion failure. Observed test assertions cover the status-write scenario, but not action errors or preservation of unrelated errors. The action guard accepts any NotFound without identifying its resource; the author's justification that this is safe cannot be fully checked from these hunks.",
+          "file_references": [
+            "pkg/controller/build/build_controller.go",
+            "pkg/controller/build/build_controller_test.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 95,
+            "trigger_conditions": 95,
+            "causal_chain": 92,
+            "systemic_mechanism": 90,
+            "contributing_factors": 85
+          },
+          "reason": "The author distinguishes noisy error reporting from the cache/deletion race and explains stale read → failed status write → reconciler error. The explanation identifies eventual cache consistency and inconsistent handling of an expected lifecycle event; the patch supports the error-handling portion.",
+          "file_references": [
+            "pkg/controller/build/build_controller.go"
+          ]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 72,
+            "similar_issue_sweep": 65,
+            "preventive_action": 85,
+            "followup": 0
+          },
+          "reason": "The visible test designs a reproducible injected status-write failure and asserts both error suppression and no requeue. Action-path and non-NotFound cases are absent. The author mentions checking getBuilderPod, but that implementation is not supplied. Guards and a regression test provide prevention; no follow-up is documented. Raw logs returned 410, so execution is unknown and prevention aggregation and overall remain null.",
+          "file_references": [
+            "pkg/controller/build/build_controller.go",
+            "pkg/controller/build/build_controller_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Commit message and independent technical corroboration.",
+        "Raw test execution records; the attempted log fetch returned 410.",
+        "Full cache-fetch, action, update, and getBuilderPod implementations.",
+        "Tests for action NotFound and unrelated error propagation.",
+        "The comparison is diverged; supplied patches do not establish the final merged or deployed tree."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6667",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "Previous approach (stopping executed traits from being written to `Status.Traits`) was incorrect — it broke the `feat(api): store executed traits in status` contract used by GitOps export and platform/profile propagation.",
+      "proxy_solution_quote": "This revision keeps executed traits in status but stops auto-inferred defaults from leaking into serialized API trait fields (Option B):",
+      "eligibility_reason": "The body explicitly identifies a broken status contract and explains the replacement solution. This is an exploratory PR-author proxy judgment, not an Owner RCA, human gold label, or calibrated accuracy measurement.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 93,
+            "clarity": 92,
+            "structure": 97,
+            "terminology": 94,
+            "concision": 90
+          },
+          "reason": "The author separates diagnosis, implementation, scope, and validation claims, names affected fields and tests, and identifies deferred traits. The original leakage trigger and downstream user-visible consequences receive less explanation than the rejected approach.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 85,
+            "scenario_consistency": 88,
+            "traceability": 94,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed changes keep inferred expose/enabled values outside exported fields and apply RunAsUser directly to the security context. Added test assertions distinguish inferred status values from user-specified port values. The body claims trait.Apply was restored, but no trait.go change appears in the supplied aggregate diff; intermediate revisions are unavailable, so that historical claim is unverified rather than disproved. Local test/lint success is an author claim; CI success is metadata only.",
+          "file_references": [
+            "pkg/trait/container.go",
+            "pkg/trait/service.go",
+            "pkg/trait/trait_test.go",
+            "pkg/trait/service_test.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 91,
+            "causal_closure": 82,
+            "coverage": 77,
+            "targeting": 94,
+            "solution_soundness": 87
+          },
+          "reason": "The observed code directly separates inferred runtime state from serialized API configuration. Test assertions preserve service creation and explicit container.port status recording. Coverage is deliberately limited to container/service; GitOps export, platform/profile propagation, and executed-trait merge restoration are not directly demonstrated by the shown changes.",
+          "file_references": [
+            "pkg/trait/container.go",
+            "pkg/trait/service.go",
+            "pkg/trait/trait_test.go",
+            "pkg/trait/container_test.go",
+            "pkg/trait/security_context_test.go",
+            "pkg/trait/service_test.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 89,
+            "trigger_conditions": 85,
+            "causal_chain": 85,
+            "systemic_mechanism": 94,
+            "contributing_factors": 91
+          },
+          "reason": "The author identifies the underlying boundary problem: auto-inferred runtime values mutate exported API fields, while suppressing executed traits violates another contract. HTTP service inference, OpenShift identity inference, and related traits provide concrete contributing contexts. The serialization/merge path and downstream contract failures are described rather than fully exposed in the diff.",
+          "file_references": [
+            "pkg/trait/container.go",
+            "pkg/trait/service.go",
+            "pkg/trait/trait_test.go"
+          ]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 85,
+            "similar_issue_sweep": 85,
+            "preventive_action": 88,
+            "followup": 72
+          },
+          "reason": "Visible tests assert inferred defaults do not enter status while explicit values remain, and existing OpenShift/service expectations are revised. Direct expose precedence and downstream export/propagation cases are not added. The author identifies knative-service, knative, cron, and master as similar paths and proposes follow-up PRs, without tracking IDs or completion criteria. Claimed local passes and successful CI metadata do not establish execution; logs returned 410, leaving prevention aggregation and overall null.",
+          "file_references": [
+            "pkg/trait/trait_test.go",
+            "pkg/trait/container_test.go",
+            "pkg/trait/mount_test.go",
+            "pkg/trait/route_test.go",
+            "pkg/trait/security_context_test.go",
+            "pkg/trait/service_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Messages and individual revisions for the three commits, including the claimed trait.Apply restoration.",
+        "Raw test/lint execution records; the attempted log fetch returned 410.",
+        "Independent evidence for GitOps export and platform/profile propagation behavior.",
+        "Tracked follow-up work for the four named related traits."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6679",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "After excluding the issue link, the body describes a proposed allow list, its configuration, and intended security benefit. It does not substantively diagnose the existing causal failure or explain how unauthorized targeting arises. Direct assignment in the patch cannot supply the missing body diagnosis. No Owner RCA exists; this eligibility judgment is exploratory, not a human gold label or calibrated accuracy.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Proxy eligibility failed; writing subscores are withheld.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Proxy eligibility failed. Patch content and successful CI metadata cannot make the body eligible.",
+          "file_references": [
+            "pkg/platform/env_platform.go",
+            "pkg/trait/builder.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Proxy eligibility failed; no cause is reconstructed from the patch.",
+          "file_references": [
+            "pkg/trait/builder.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The stated security objective does not provide a substantive existing-failure diagnosis. All subscores and overall remain null.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Proxy eligibility failed. Visible test assertions are test-design evidence only; successful CI metadata establishes no specific test execution, and the log fetch returned 410.",
+          "file_references": [
+            "pkg/platform/env_platform_test.go",
+            "pkg/trait/builder_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive root-cause diagnosis in the PR body.",
+        "Raw test execution records; the attempted log fetch returned 410.",
+        "Commit messages and individual revisions for the two commits."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6683",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "The body supplies a toggle solution, intended security benefit, and validation claims, but no substantive diagnosis of the existing authorization or trust-boundary failure. Mentioning arbitrary build containers states the capability to restrict rather than explaining its cause. The patch cannot fill that eligibility gap. No Owner RCA exists; this judgment is exploratory, not a human gold label or calibrated accuracy.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Proxy eligibility failed; writing subscores are withheld.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Proxy eligibility failed. Separately, the body's blanket disable claim conflicts with the observed name-based quarkus-native exception: the filter retains matching names without checking provenance. That discrepancy merits manual review, but does not establish author dishonesty or justify scoring an ineligible proxy. Local/manual success claims are unverified; CI success is metadata only.",
+          "file_references": [
+            "pkg/trait/builder.go",
+            "pkg/trait/builder_test.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Proxy eligibility failed. The retained task-name exception raises a security-closure question; the supplied hunks do not establish an upstream provenance restriction.",
+          "file_references": [
+            "pkg/trait/builder.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The body explains proposed configuration behavior and a secondary validation concern, without a substantive diagnosis of the original security mechanism. All subscores and overall remain null.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Proxy eligibility failed. Visible tests assert ordinary task removal and quarkus-native retention, without distinguishing trusted injection from user-supplied matching names. They establish design observations only. Checked local/manual claims and successful CI metadata do not establish execution; logs returned 410.",
+          "file_references": [
+            "pkg/platform/env_platform_test.go",
+            "pkg/trait/builder_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive root-cause diagnosis in the PR body.",
+        "Evidence that users cannot supply a task named quarkus-native; manual review is warranted.",
+        "Raw local, manual, and CI test execution records; the attempted log fetch returned 410.",
+        "Commit messages and individual revisions for the three commits."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6687",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "The substantive body describes a proposed affinity allow list, filtering behavior, compatibility, and intended security benefit. It does not substantively diagnose the existing causal failure permitting unauthorized targeting. The patch cannot supply that missing diagnosis. No Owner RCA exists; this judgment is exploratory, not a human gold label or calibrated accuracy.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Proxy eligibility failed; writing subscores are withheld.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Proxy eligibility failed. CI metadata includes common-platformless and knative failures alongside successful checks; it identifies no failing test or defect cause and does not disprove the author's local-pass claim.",
+          "file_references": [
+            "pkg/platform/env_platform.go",
+            "pkg/trait/affinity.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Proxy eligibility failed; filtering implementation cannot substitute for an explicit body diagnosis.",
+          "file_references": [
+            "pkg/trait/affinity.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The body describes solution mechanics and malformed-input compatibility, rather than diagnosing the original causal mechanism. All subscores and overall remain null.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Proxy eligibility failed. Visible assertions cover filtering and Apply output as test-design evidence only. Local/manual validation remains an author claim; mixed CI results are metadata, and the attempted log fetch returned 410.",
+          "file_references": [
+            "pkg/platform/env_platform_test.go",
+            "pkg/trait/affinity_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive root-cause diagnosis in the PR body.",
+        "Raw local, manual, and CI test execution records; the attempted log fetch returned 410.",
+        "Failure details for common-platformless and knative metadata.",
+        "Commit message.",
+        "The comparison is diverged; supplied patches do not establish the final merged or deployed tree."
+      ]
+    }
+  ]
+}

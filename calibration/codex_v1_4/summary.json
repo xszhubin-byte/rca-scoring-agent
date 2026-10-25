@@ -1,0 +1,27 @@
+{
+  "cli": "Codex CLI",
+  "cli_version": "codex-cli 0.164.0-alpha.11.1",
+  "resolved_model": null,
+  "model_limitation": "CLI default; actual model identifier absent from captured events.",
+  "primary_cases": 50,
+  "primary_batches": 10,
+  "independent_cli_invocations": 12,
+  "proxy_eligible_by_model": 6,
+  "accepted_proxy_cases": 6,
+  "with_review_violations": 0,
+  "with_evidence_suppressions": 0,
+  "finite_overall_proxy_scores": 0,
+  "repeated_case_ratings": 10,
+  "repeat_eligibility_agreements": 7,
+  "token_usage": {
+    "input_tokens": 747825,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 43306,
+    "reasoning_output_tokens": 1281
+  },
+  "upstream_go_tests_executed": 0,
+  "human_gold_labels": 0,
+  "accuracy_mae": null,
+  "human_agreement_kappa": null
+}

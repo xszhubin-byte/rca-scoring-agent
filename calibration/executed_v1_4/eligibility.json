@@ -1,0 +1,1233 @@
+[
+  {
+    "case_id": "CAMELK-6442",
+    "head_sha": "678b52d612d66d9495574e8dbb19833d8b2a315e",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 4,
+    "expected_files": 4,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 9,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6449",
+    "head_sha": "7388b700890673648c8e10b7664764b823fa12ed",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 4,
+    "expected_files": 4,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/controller/integration/monitor_test.go"
+    ],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6459",
+    "head_sha": "3c91ca1c1f7f57579ec9e605c14fbd187d7aa30e",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 10,
+    "expected_files": 10,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 9,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6460",
+    "head_sha": "67e9a573c3d6d0240f31d1ce30fa650714f74436",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 11,
+    "expected_files": 11,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/advanced/synthetic_test.go",
+      "e2e/common/misc/pipe_test.go",
+      "e2e/common/traits/istio_test.go",
+      "e2e/support/test_support.go",
+      "pkg/util/source/inspector_yaml_test.go"
+    ],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6462",
+    "head_sha": "2d30b887a43e4b549b36fff417c2c39507d940a4",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 2,
+    "expected_files": 2,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 9,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6465",
+    "head_sha": "2cde2fa826897c6ed26743ae91bf66824335f078",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 2,
+    "expected_files": 2,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6466",
+    "head_sha": "4b56e0ea40ef98dd05c386d93db2a5c8cb75d034",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 4,
+    "expected_files": 4,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/trait/gitops_test.go"
+    ],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6482",
+    "head_sha": "51c2a69e17734f22ad2888639bb145a8e076255c",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 7,
+    "expected_files": 7,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6493",
+    "head_sha": "9c9a28b1737a2401504b1982a05422fadf8596d5",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 4,
+    "expected_files": 4,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 9,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6510",
+    "head_sha": "18ad8277f30187ca1450769d9023a1a7c1bca6e0",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 4,
+    "expected_files": 4,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 2,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6528",
+    "head_sha": "5b5f640ee54ce74606494ffaf785fb3c4c156a41",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 18,
+    "expected_files": 18,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/controller/integration/build_complete_test.go",
+      "pkg/controller/integration/build_kit_test.go",
+      "pkg/controller/integration/build_test.go",
+      "pkg/trait/gc_test.go",
+      "pkg/trait/gitops_test.go"
+    ],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6532",
+    "head_sha": "59c16f105cf59f497b89089059aca951cc933df1",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 4,
+    "expected_files": 4,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/common/traits/kamelet_test.go"
+    ],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6540",
+    "head_sha": "38b462f2c35bfee18d424939361fc74957a074ca",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 2,
+    "expected_files": 2,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6543",
+    "head_sha": "032f7d4450d4aa4141332b98e86f9805fd30bc0a",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 5,
+    "expected_files": 5,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 10,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6551",
+    "head_sha": "29634beda80d8ff6908ad8a76be2c00fc09cec45",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 5,
+    "expected_files": 5,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/common/traits/builder_test.go",
+      "pkg/controller/build/build_pod_test.go",
+      "pkg/controller/build/monitor_pod_test.go"
+    ],
+    "check_runs": 11,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6553",
+    "head_sha": "0d33b23ad29c9160a7f8ac48a1daa6aefb05553b",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 1,
+    "expected_files": 1,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 11,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6564",
+    "head_sha": "6380219658fb8312089025ad188ab2f9e7458c7f",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 4,
+    "expected_files": 4,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 10,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6585",
+    "head_sha": "002fb8758b19269cf0877f4b0c9ce8ea7c0c9edd",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 8,
+    "expected_files": 8,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/builder/project_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6594",
+    "head_sha": "f43cb6b788a97f3af5600d6173ebc398a368bbf7",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 3,
+    "expected_files": 3,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/trait/trait_configure_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6597",
+    "head_sha": "3d148c6f3374f8314c7a20071391d362985e7941",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 6,
+    "expected_files": 6,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/install/helm/setup_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6598",
+    "head_sha": "1d6a23963a221710a9702c37adf5700d54d4fe5e",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 9,
+    "expected_files": 9,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6600",
+    "head_sha": "6633cc66affcba9f0a765c9b9f739ab081dcfe0f",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 33,
+    "expected_files": 33,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/controller/integrationplatform/monitor_test.go",
+      "pkg/platform/defaults_test.go",
+      "pkg/trait/container_test.go",
+      "pkg/trait/cron_test.go",
+      "pkg/trait/jolokia_test.go",
+      "pkg/trait/security_context_test.go",
+      "pkg/trait/service_test.go",
+      "pkg/trait/trait_types_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6609",
+    "head_sha": "6bc18ef3e1e240cee00baade9cdbd88c589497bc",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 6,
+    "expected_files": 6,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/controller/build/build_controller_test.go",
+      "pkg/event/manager_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6610",
+    "head_sha": "9f1c4918080d20d5f81c08f38805db7c56652e27",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 35,
+    "expected_files": 35,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6619",
+    "head_sha": "035f38639ae5445a94325ec4280eab7e6a4aafe2",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 38,
+    "expected_files": 38,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6625",
+    "head_sha": "b7c9e2c8ff2c506f7a321e1a41da922f406f947d",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 17,
+    "expected_files": 17,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/advanced/build_order_strategy_test.go",
+      "e2e/advanced/builder_test.go",
+      "e2e/advanced/catalog_builder_test.go",
+      "e2e/advanced/incremental_build_test.go",
+      "e2e/advanced/integration_profile_test.go",
+      "e2e/advanced/operator_id_filtering_test.go",
+      "e2e/advanced/operator_restart_test.go",
+      "e2e/advanced/reset_test.go",
+      "e2e/common/cli/promote_test.go",
+      "e2e/common/config/config_test.go",
+      "e2e/common/misc/integration_fail_test.go",
+      "e2e/common/traits/builder_test.go",
+      "e2e/common/traits/camel_test.go",
+      "e2e/install/upgrade/upgrade_test.go",
+      "e2e/native/native_test.go",
+      "e2e/native/native_with_sources_test.go",
+      "e2e/support/test_support.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6641",
+    "head_sha": "68f479db031dce88fce2a8137a8fbcd91f1c2893",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 3,
+    "expected_files": 3,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/controller/integration/build_kit_test.go",
+      "pkg/trait/builder_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6647",
+    "head_sha": "61a7614b2478dd0b5cca0e1a2981e5f24a2210c7",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 43,
+    "expected_files": 43,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/advanced/catalog_builder_test.go",
+      "e2e/advanced/files/timer-kamelet-usage.yaml",
+      "e2e/install/upgrade/upgrade_test.go",
+      "e2e/support/test_support.go",
+      "pkg/builder/quarkus_test.go",
+      "pkg/controller/integration/build_kit_test.go",
+      "pkg/controller/integration/build_test.go",
+      "pkg/controller/integration/monitor_test.go",
+      "pkg/controller/integrationplatform/create_test.go",
+      "pkg/controller/integrationplatform/initialize_test.go",
+      "pkg/controller/integrationplatform/monitor_test.go",
+      "pkg/trait/trait_test.go",
+      "pkg/util/camel/camel_runtime_test.go",
+      "pkg/util/camel/catalog_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6658",
+    "head_sha": "9ae6c49d71f9fe9192ed9fae9b51b35f5932b593",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 3,
+    "expected_files": 3,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6661",
+    "head_sha": "388459238e67ba2aa3561a5a54169b4095af73dd",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 15,
+    "expected_files": 15,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/trait/container_test.go",
+      "pkg/trait/security_context_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6665",
+    "head_sha": "a98c5a9849806fee5a36b412b7b63caf12913860",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 2,
+    "expected_files": 2,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/controller/build/build_controller_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6667",
+    "head_sha": "37dd66e467efa50def1d6ba82219cd3b6b1abf05",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 8,
+    "expected_files": 8,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/trait/container_test.go",
+      "pkg/trait/mount_test.go",
+      "pkg/trait/route_test.go",
+      "pkg/trait/security_context_test.go",
+      "pkg/trait/service_test.go",
+      "pkg/trait/trait_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6679",
+    "head_sha": "1e26e57e7530d5e43fa6d50f3a91ffa509854ad1",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 6,
+    "expected_files": 6,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/platform/env_platform_test.go",
+      "pkg/trait/builder_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6683",
+    "head_sha": "3c58b379547bbc7ce2a794aa6cd32143c4777f93",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 6,
+    "expected_files": 6,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/platform/env_platform_test.go",
+      "pkg/trait/builder_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6687",
+    "head_sha": "dcdb319f1a413937f9e69351e570cbb01eff2b2b",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 6,
+    "expected_files": 6,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/platform/env_platform_test.go",
+      "pkg/trait/affinity_test.go"
+    ],
+    "check_runs": 13,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6696",
+    "head_sha": "1618929a45628cdd8d3ccef59d6dcad7a3f6a786",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 1,
+    "expected_files": 1,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/support/test_support.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 2,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6441",
+    "head_sha": "f3e6d956a69979c8eb5159b356039e68106a9a21",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 16,
+    "expected_files": 16,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/common/traits/jvm_test.go",
+      "pkg/trait/init_containers_test.go",
+      "pkg/trait/jvm_test.go"
+    ],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6475",
+    "head_sha": "9fd9bf38fee11b470f762235f9d695673f1936df",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 1,
+    "expected_files": 1,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6509",
+    "head_sha": "06e3ea3d21344d625aa65a416cf3680103fe5afb",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 12,
+    "expected_files": 12,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/builder/git_test.go"
+    ],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 2,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6518",
+    "head_sha": "8296104dc6a8b74ee4576e735ce0c4c2410196bf",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 6,
+    "expected_files": 6,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/common/traits/builder_test.go"
+    ],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 2,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6527",
+    "head_sha": "fa4ec59a3bd2ba95805668396dc02a7351d98343",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 2,
+    "expected_files": 2,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 10,
+    "test_named_checks": 3,
+    "successful_test_named_checks": 3,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6542",
+    "head_sha": "8aaeb815efe1a00ca65ea183949173a9dd8e2b83",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 26,
+    "expected_files": 26,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/gateway/files/PlatformHttpServer.java",
+      "e2e/gateway/gateway_test.go",
+      "e2e/gateway/setup/gateway.yaml",
+      "e2e/gateway/setup/setup.sh",
+      "e2e/support/test_support.go",
+      "pkg/trait/gateway_test.go"
+    ],
+    "check_runs": 11,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6550",
+    "head_sha": "91dbcc101783df276bdb59b1ff91d7004bd1e01b",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 1,
+    "expected_files": 1,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 10,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6568",
+    "head_sha": "f5cbdd9afece6e00ac74b9bb6a2139d20e82e416",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 2,
+    "expected_files": 2,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 11,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6571",
+    "head_sha": "4faee3a925fa98b0a4e2d1df4c50229aa7265073",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 6,
+    "expected_files": 6,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/controller/integration/integration_controller_test.go"
+    ],
+    "check_runs": 11,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6574",
+    "head_sha": "ed2098c427abdbd8f8920b2a3a252c400df8a3ff",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 5,
+    "expected_files": 5,
+    "diff_complete": true,
+    "changed_test_files": [
+      "pkg/trait/deployment_test.go"
+    ],
+    "check_runs": 11,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 2,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6586",
+    "head_sha": "57d1cfe2c885e319723eff5007ed6342fa8599fb",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 73,
+    "expected_files": 73,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/advanced/build_order_strategy_test.go",
+      "e2e/install/kustomize/setup_test.go",
+      "pkg/controller/integration/integration_controller_test.go",
+      "pkg/controller/integration/monitor_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6604",
+    "head_sha": "53bf5cf54448bdba58e00bfa7c110e84a37636e7",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 25,
+    "expected_files": 25,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/kafka/setup/kafka-ephemeral.yaml",
+      "e2e/kafka/setup/kafka-topic.yaml",
+      "e2e/kafka/setup/setup.sh",
+      "pkg/util/bindings/strimzi_test.go"
+    ],
+    "check_runs": 24,
+    "test_named_checks": 8,
+    "successful_test_named_checks": 7,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6614",
+    "head_sha": "ea89fddfe84e602b5253b2ac9f59742ef4546b9b",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": true,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 2,
+    "expected_files": 2,
+    "diff_complete": true,
+    "changed_test_files": [
+      "e2e/common/cli/files/my-it.yaml",
+      "e2e/common/cli/it_apply_test.go"
+    ],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  },
+  {
+    "case_id": "CAMELK-6621",
+    "head_sha": "28fbbc50bdaf50d4fb9fbf636f5b953a838690b6",
+    "pr_body_present": true,
+    "pr_body_beyond_template_and_issue_link": false,
+    "input_origin": "owner_input_missing",
+    "production_score_eligible": false,
+    "files": 1,
+    "expected_files": 1,
+    "diff_complete": true,
+    "changed_test_files": [],
+    "check_runs": 12,
+    "test_named_checks": 4,
+    "successful_test_named_checks": 4,
+    "workflow_jobs": 3,
+    "missing_evidence": [
+      "owner_authored_root_cause_and_solution",
+      "defect_specific_test_log_and_assertion_mapping",
+      "two_independent_human_gold_labels"
+    ],
+    "retrieval_errors": []
+  }
+]

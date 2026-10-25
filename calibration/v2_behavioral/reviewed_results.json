@@ -1,0 +1,173 @@
+[
+  {
+    "case_id": "SYNTHETIC-concise",
+    "accepted": true,
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "SYNTHETIC-concise",
+      "mode": "owner_rca",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 3.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 18,
+        "unknown": 2,
+        "not_demonstrated": 4
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "SYNTHETIC-verbose",
+    "accepted": true,
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "SYNTHETIC-verbose",
+      "mode": "owner_rca",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 3.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 18,
+        "unknown": 2,
+        "not_demonstrated": 4
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "SYNTHETIC-contradicted-fix",
+    "accepted": false,
+    "error": "V2: execution rating requires an execution claim"
+  },
+  {
+    "case_id": "SYNTHETIC-artifact-only",
+    "accepted": true,
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "SYNTHETIC-artifact-only",
+      "mode": "artifact_review",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.5,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": null,
+          "known": 1,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": null,
+          "known": 2,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 17,
+        "unknown": 7
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "SYNTHETIC-ci-claim",
+    "accepted": false,
+    "error": "V2: execution rating requires an execution claim"
+  }
+]

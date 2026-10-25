@@ -12,3 +12,7 @@ rca-results/
 __pycache__/
 *.py[cod]
 .venv/
+private-codex-runs/
+.codex-calibration-runs/
+*.events.jsonl
+*.stderr.txt

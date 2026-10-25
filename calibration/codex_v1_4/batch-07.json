@@ -1,0 +1,401 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6665",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "`Reconcile` reads the `Build` from the cache, which can return a stale copy of a `Build` that was already deleted.",
+      "proxy_solution_quote": "Fix: treat `NotFound` from a build action and from the status `update()` as benign, return without requeue or error, like the top-level fetch already does.",
+      "eligibility_reason": "After removing template comments and the issue reference, the body explicitly describes a stale-cache cause and error-handling solution. Owner RCA is missing. Scores are exploratory single-model PR-author proxy judgments, not human gold labels or calibrated accuracy.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 88,
+            "clarity": 95,
+            "structure": 85,
+            "terminology": 94,
+            "concision": 96
+          },
+          "reason": "The body clearly connects deletion timing, stale reads, status-write failure and the proposed fix. Cause and fix occupy separate paragraphs; validation and exact changed-file references are absent from the body.",
+          "file_references": [
+            "pkg/controller/build/build_controller.go",
+            "pkg/controller/build/build_controller_test.go"
+          ]
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 90,
+            "scenario_consistency": 88,
+            "traceability": 93,
+            "cross_source_consistency": null
+          },
+          "reason": "The observed controller diff adds benign NotFound returns at both claimed error sites. The test design injects a Build Update NotFound and asserts no error and an empty reconcile result. Cache behavior, getBuilderPod handling and actual stacktraces are author claims outside the displayed code. Commit messages and independent technical corroboration are unavailable. CI success is metadata only. Authenticity dimension and overall remain null because constituent evidence is unavailable.",
+          "file_references": [
+            "pkg/controller/build/build_controller.go",
+            "pkg/controller/build/build_controller_test.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 92,
+            "causal_closure": 85,
+            "coverage": 77,
+            "targeting": 94,
+            "solution_soundness": 80
+          },
+          "reason": "Both observed guards directly address the claimed propagation of benign NotFound errors. The visible test asserts the status-write outcome, but does not exercise action-originated NotFound or preservation of other errors. Treating every action NotFound as Build deletion relies on the author's unverified claim about other Get paths.",
+          "file_references": [
+            "pkg/controller/build/build_controller.go",
+            "pkg/controller/build/build_controller_test.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 95,
+            "trigger_conditions": 93,
+            "causal_chain": 92,
+            "systemic_mechanism": 89,
+            "contributing_factors": 85
+          },
+          "reason": "The author distinguishes noisy reconcile errors from the stale-cache deletion race, identifies the read/write timing and explains error propagation. Cache staleness and inconsistent treatment of resource disappearance supply a concrete underlying mechanism, although surrounding paths are not displayed.",
+          "file_references": [
+            "pkg/controller/build/build_controller.go"
+          ]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 65,
+            "similar_issue_sweep": 65,
+            "preventive_action": 85,
+            "followup": 0
+          },
+          "reason": "The visible regression-test design simulates a status-write NotFound and asserts no error or requeue; the action branch and other error classes lack added tests. The body claims a limited sweep of other Get paths, which the supplied hunks cannot verify. Guards and a regression test are preventive actions; no follow-up is documented. Raw logs returned 410, so execution is unavailable, the prevention dimension is null and overall is null.",
+          "file_references": [
+            "pkg/controller/build/build_controller.go",
+            "pkg/controller/build/build_controller_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Commit messages and independent technical corroboration.",
+        "Raw test execution logs; the attempted fetch returned HTTP 410.",
+        "Surrounding cache-fetch, update and getBuilderPod implementations.",
+        "The comparison is diverged; the supplied complete comparison does not establish deployment or merge-result behavior."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6667",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "Previous approach (stopping executed traits from being written to `Status.Traits`) was incorrect — it broke the `feat(api): store executed traits in status` contract used by GitOps export and platform/profile propagation.",
+      "proxy_solution_quote": "This revision keeps executed traits in status but stops auto-inferred defaults from leaking into serialized API trait fields (Option B):",
+      "eligibility_reason": "The body explicitly identifies a broken status contract and describes separating inferred runtime values from serialized fields. Owner RCA is missing. Scores are exploratory single-model PR-author proxy judgments, not human gold labels or calibrated accuracy.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": 93,
+            "clarity": 92,
+            "structure": 96,
+            "terminology": 94,
+            "concision": 90
+          },
+          "reason": "The body separates summary, scope and testing, identifies affected fields and explains the rejected approach. The original failure scenario and externally referenced status contract receive less detail than the implementation.",
+          "file_references": [
+            "pkg/trait/container.go",
+            "pkg/trait/service.go",
+            "pkg/trait/trait_test.go"
+          ]
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": 83,
+            "scenario_consistency": 88,
+            "traceability": 94,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed container and service changes avoid writing inferred values into exported fields. Added tests assert Service creation with empty status traits and retention of an explicit container port. The body claims trait.Apply restoration, but no such change appears in the complete aggregate diff; an intermediate revision could explain this, so it is an unresolved history claim rather than a proven contradiction. Commit messages and independent contract evidence are unavailable. Claimed local passes and successful CI metadata do not establish test execution. Authenticity dimension and overall are null.",
+          "file_references": [
+            "pkg/trait/container.go",
+            "pkg/trait/service.go",
+            "pkg/trait/trait_test.go",
+            "pkg/trait/service_test.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": 90,
+            "causal_closure": 82,
+            "coverage": 76,
+            "targeting": 93,
+            "solution_soundness": 85
+          },
+          "reason": "Local or unexported inferred state directly addresses serialization leakage while preserving runtime configuration. The test design covers inferred Service behavior and explicit port retention. Other writeback traits are explicitly deferred; GitOps and platform/profile propagation are not directly verified by the displayed assertions. Aggregate code supports the final separation, but cannot establish the claimed historical restoration.",
+          "file_references": [
+            "pkg/trait/container.go",
+            "pkg/trait/service.go",
+            "pkg/trait/trait_test.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": 90,
+            "trigger_conditions": 84,
+            "causal_chain": 87,
+            "systemic_mechanism": 94,
+            "contributing_factors": 90
+          },
+          "reason": "The author identifies the interface problem of sharing serialized configuration fields with inferred runtime state and explains why suppressing executed-trait status breaks another contract. HTTP inference and OpenShift security defaults are concrete triggers. Downstream GitOps and propagation failures remain author claims without supplied reproductions.",
+          "file_references": [
+            "pkg/trait/container.go",
+            "pkg/trait/service.go",
+            "pkg/trait/trait_test.go"
+          ]
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": 83,
+            "similar_issue_sweep": 85,
+            "preventive_action": 88,
+            "followup": 65
+          },
+          "reason": "Visible test designs check inferred versus explicit values and update expectations across OpenShift, mount, route and service scenarios. The body names four similar traits for later work, but supplies no tracked follow-up or completion evidence. Separating inferred state and adding contract assertions are concrete preventive actions. Claimed local passes lack execution records; raw logs returned 410. Prevention dimension and overall are null.",
+          "file_references": [
+            "pkg/trait/trait_test.go",
+            "pkg/trait/container_test.go",
+            "pkg/trait/mount_test.go",
+            "pkg/trait/route_test.go",
+            "pkg/trait/security_context_test.go",
+            "pkg/trait/service_test.go",
+            "pkg/trait/container.go",
+            "pkg/trait/service.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Messages and individual diffs for the three commits, including the claimed intermediate trait.Apply restoration.",
+        "Independent evidence for the GitOps and platform/profile status contract.",
+        "Raw execution records for claimed go test and lint passes; the attempted CI log fetch returned HTTP 410.",
+        "Tracked follow-up for the four deferred traits."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6679",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "The body describes an allow-list solution and unauthorized-targeting risk, but does not explicitly explain an existing failure's substantive cause. A cause cannot be supplied from the title, linked issue or direct-assignment patch. Owner RCA is missing; proxy scoring is therefore ineligible.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Body eligibility gate failed; dimension and overall are null.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Body eligibility gate failed; patches and CI metadata cannot establish eligibility.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Body eligibility gate failed; no repair-quality scores assigned.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The risk and proposed control do not provide an explicit substantive causal account.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Body eligibility gate failed. Visible test designs and CI success metadata do not establish execution; raw logs returned 410.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive root-cause explanation in the PR body.",
+        "Raw test execution logs; the attempted fetch returned HTTP 410.",
+        "Any future proxy assessment would be an exploratory single-model judgment, not a human gold label or calibrated accuracy."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6683",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "The body describes a new operator toggle, an arbitrary-container risk and intended disabled behavior. It does not explicitly diagnose the substantive cause of the existing authorization failure. Its explanation of skipping validation concerns the proposed disabled state. Inferring a missing authorization boundary from the patch would violate the body-only gate. Owner RCA is missing.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Body eligibility gate failed; dimension and overall are null.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Body eligibility gate failed; implementation and CI metadata cannot supply the missing body cause.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Body eligibility gate failed; no repair-quality scores assigned.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "A capability restriction and its motivation do not explicitly diagnose the prior failure mechanism.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Body eligibility gate failed. Checked local and manual test items are author claims; CI success is metadata. Raw logs returned 410, so no specific execution is established.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive root-cause explanation in the PR body.",
+        "Execution records supporting the claimed local and manual validation; the attempted CI log fetch returned HTTP 410.",
+        "Any future proxy assessment would be an exploratory single-model judgment, not a human gold label or calibrated accuracy."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6687",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "The body describes an allow-list implementation, unauthorized-targeting risk and preservation of malformed-expression handling. It does not explicitly explain the substantive cause of an existing failure. Neither the issue reference nor the patch may supply that missing causal explanation. Owner RCA is missing.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Body eligibility gate failed; dimension and overall are null.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Body eligibility gate failed. Mixed CI conclusions are metadata and do not establish a technical contradiction or specific test outcome.",
+          "file_references": []
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Body eligibility gate failed; no repair-quality scores assigned.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The proposed filter and security motivation do not constitute an explicit substantive causal diagnosis.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Body eligibility gate failed. Local and manual passes are author claims; displayed tests establish design only. Failed common-platformless and knative checks do not identify which tests failed or why. Raw logs returned 410.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive root-cause explanation in the PR body.",
+        "Raw execution records and explanations for failed CI checks; the attempted log fetch returned HTTP 410.",
+        "Any future proxy assessment would be an exploratory single-model judgment, not a human gold label or calibrated accuracy."
+      ]
+    }
+  ]
+}

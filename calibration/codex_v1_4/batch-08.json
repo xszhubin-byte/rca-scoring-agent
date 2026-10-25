@@ -1,0 +1,184 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6696",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After removing HTML comments, the body is empty; the title and patch cannot establish proxy eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility gate failed; writing is unscored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "No substantive body claims to assess. CI conclusions are metadata only.",
+          "file_references": ["e2e/support/test_support.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "The cleanup-call deletion cannot substitute for a body-authored cause and solution.",
+          "file_references": ["e2e/support/test_support.go"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "Proxy eligibility gate failed; causal depth is unscored.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Proxy eligibility gate failed. Raw logs were unavailable with HTTP 410; step names establish no specific test execution. Overall is null.",
+          "file_references": ["e2e/support/test_support.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs"]
+    },
+    {
+      "case_id": "CAMELK-6441",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. The body provides substantive solutions and examples, but no explicit substantive account of the prior defect's cause. The PEM/password distinction and references to reported issues do not explain what prior behavior caused a failure. Cause cannot be supplied from the patch.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility gate failed despite detailed feature documentation.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed patches contain certificate-list and base-truststore handling, but cannot make the body eligible. Individual messages for the five commits are unavailable; successful checks are metadata only.",
+          "file_references": ["pkg/trait/jvm_cacert.go", "pkg/trait/init_containers.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Author-described features cannot be scored against an explicit body-authored root cause because that cause is missing.",
+          "file_references": ["pkg/trait/jvm.go", "pkg/trait/jvm_cacert.go", "pkg/trait/init_containers.go"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "The body describes configuration and migration without explaining the prior cause-to-failure mechanism; eligibility gate failed.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Visible test assertions are test-design evidence only. Eligibility gate failed, so all prevention scores remain null. Raw logs returned HTTP 410; overall is null.",
+          "file_references": ["e2e/common/traits/jvm_test.go", "pkg/trait/init_containers_test.go", "pkg/trait/jvm_test.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Explicit substantive PR-body root cause", "Individual commit messages and revision history", "Raw test execution logs"]
+    },
+    {
+      "case_id": "CAMELK-6475",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": true,
+      "proxy_root_cause_quote": "Memory exhaustion in query parameter parsing in net/url",
+      "proxy_solution_quote": "Fixed in: net/url@go1.25.6",
+      "eligibility_reason": "The body includes substantive vulnerability mechanisms, affected Go versions, call traces, and explicit fixed versions for both vulnerabilities. This qualifies only as an exploratory pr_author_proxy, not an Owner RCA or human gold label. Scores are single-model judgments, not calibrated accuracy.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": 80, "clarity": 88, "structure": 72, "terminology": 92, "concision": 70},
+          "reason": "The author supplies scanner-formatted symptoms, affected versions, call traces and fixed versions. The body lacks a concise explicit repair statement, a changed-file reference and post-fix validation. Download chatter reduces concision. Writing assessment does not verify scanner claims.",
+          "file_references": ["go.mod"]
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": 92, "scenario_consistency": 78, "traceability": 88, "cross_source_consistency": 75},
+          "reason": "Observed go.mod changes 1.25.5 to 1.25.6, matching both fixed-version claims in the author-pasted report. Reported call traces are identifiable but their source files and upstream advisories were not supplied for inspection. Commit messages are unavailable. Security check 62180638665 reports success as metadata, without independently verifying remediation.",
+          "file_references": ["go.mod"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": 94, "causal_closure": 76, "coverage": 87, "targeting": 96, "solution_soundness": 85},
+          "reason": "The version change directly matches the author's reported fix version for both standard-library vulnerabilities and is narrowly targeted. The supplied patch establishes the version requirement change, but does not establish the toolchain actually used, vulnerability removal, artifact rebuild or deployment.",
+          "file_references": ["go.mod"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": 82, "trigger_conditions": 73, "causal_chain": 78, "systemic_mechanism": 68, "contributing_factors": 45},
+          "reason": "The author-pasted report distinguishes scanner failure from vulnerable standard-library behavior and names query parsing and TLS encryption-level handling, with application call traces. It provides limited input/state prerequisites and no detailed exhaustion or TLS state mechanism. Dependency on the affected toolchain is identified; broader contributing factors are largely unexplained.",
+          "file_references": ["go.mod"]
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": 0, "similar_issue_sweep": 70, "preventive_action": 75, "followup": 0},
+          "reason": "No edge tests or tracked follow-up appear in the supplied body or patch. The author-pasted scan considers both reachable vulnerabilities and other dependency findings, supporting limited sweep credit. Raising the Go requirement is a concrete preventive action. Raw logs returned HTTP 410; CI success cannot establish a post-fix scan or specific test execution. Prevention and overall aggregates are null because required evidence is unavailable.",
+          "file_references": ["go.mod"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Commit message", "Independent advisory contents and reported call-path source", "Post-fix vulnerability scan and raw test execution logs", "Build-toolchain and deployment evidence"]
+    },
+    {
+      "case_id": "CAMELK-6509",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After ignoring template comments and the issue reference, the body supplies an enabled command example but no substantive cause. The patch cannot supply the missing eligibility requirement.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility gate failed; writing is unscored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "The observed CLI and builder changes cannot establish a body-authored cause. Mixed CI conclusions are metadata only.",
+          "file_references": ["pkg/cmd/run.go", "pkg/builder/git.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "The command example describes capability without an explicit cause-to-failure account; eligibility gate failed.",
+          "file_references": ["pkg/builder/git.go", "pkg/util/io/io.go"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive cause is stated in the body; causal depth is unscored.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "The visible path-selection assertion is test-design evidence only. Eligibility gate failed; raw logs returned HTTP 410 and overall is null.",
+          "file_references": ["pkg/builder/git_test.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body root cause", "Raw test execution logs"]
+    },
+    {
+      "case_id": "CAMELK-6518",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. The body contains only an issue link; after excluding it, neither substantive cause nor solution remains. Title and patch cannot establish eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Proxy eligibility gate failed; writing is unscored.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Digest and update-script changes are observed code evidence, but no substantive body claim exists to score. CI conclusions and attempts are metadata only.",
+          "file_references": ["pkg/util/defaults/defaults.go", "script/Makefile", "script/update_base_image_sha.sh"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "An inferred reproducibility mechanism from the title or patch cannot replace missing body evidence.",
+          "file_references": ["pkg/util/defaults/defaults.go", "script/Makefile"]
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "The issue-only body provides no assessable causal explanation.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "The added log-content assertion is test-design evidence only. Eligibility gate failed; raw logs returned HTTP 410 and overall is null.",
+          "file_references": ["e2e/common/traits/builder_test.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs"]
+    }
+  ]
+}

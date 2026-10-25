@@ -1,0 +1,402 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6574",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After removing HTML comments, the body states an upstream monitoring-operator rename but supplies no explicit substantive solution. Patch details cannot establish body eligibility. This proxy is not an Owner RCA or human gold label; all dimensions and overall remain null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Scoring withheld because the body lacks the required cause-and-solution pair.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed diff renames the environment-variable constant and deployment configuration. That does not supply the missing author-body solution. Successful CI conclusions are metadata only.",
+          "file_references": [
+            "pkg/util/kubernetes/labels.go",
+            "pkg/resources/config/manager/operator-deployment.yaml"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Observed configuration and documentation changes cannot substitute for an explicit solution in the body; relevance scoring is withheld.",
+          "file_references": [
+            "docs/modules/ROOT/pages/installation/advanced/advanced.adoc",
+            "docs/modules/ROOT/pages/observability/dashboard.adoc"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The author supplies rename context without an explicit failure mechanism and repair explanation. Eligibility failure requires null scores.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "The visible test edit changes an environment-variable constant reference; it proves no execution. The attempted raw-log fetch returned 410. All prevention scores are withheld under the eligibility gate.",
+          "file_references": [
+            "pkg/trait/deployment_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive solution in the PR body.",
+        "Raw test execution logs; attempted fetch returned 410."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6586",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. The remaining body describes documentation updates and code polishing to address deprecation, without a substantive causal explanation. The title and patch cannot supply that missing cause. This is not human gold data; all dimensions and overall remain null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "Scoring withheld because the body lacks an explicit substantive cause.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed patches add deprecation annotations and document environment-based configuration, consistent with the author's broad change description. They cannot establish eligibility. CI success is metadata, and commit messages are not supplied.",
+          "file_references": [
+            "pkg/apis/camel/v1/integrationplatform_types.go",
+            "docs/modules/ROOT/pages/installation/builds.adoc",
+            "pkg/platform/env_platform.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Observed registry-service handling and documentation migration do not provide the missing body-level causal account. Scoring is withheld.",
+          "file_references": [
+            "pkg/install/optional.go",
+            "docs/modules/ROOT/pages/installation/registry.adoc"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The author names deprecation as context but explains no substantive cause, trigger, or failure mechanism. No scores are assigned.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Visible tests add readiness and resource-existence waits; these are test-design observations only. The attempted raw-log fetch returned 410, and successful job metadata proves no specific test execution. Eligibility failure withholds all scores.",
+          "file_references": [
+            "e2e/advanced/build_order_strategy_test.go",
+            "e2e/install/kustomize/setup_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive root cause in the PR body.",
+        "Commit messages and individual revision evidence.",
+        "Raw test execution logs; attempted fetch returned 410.",
+        "Reconciliation of the snapshot's 73 changed files with the smaller supplied file list, despite diff_complete=true."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6604",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After ignoring the issue reference, the body lists migration actions and claims unit-test success but gives no explicit substantive root cause. An API incompatibility cannot be inferred from the title or patch to establish eligibility. This is not human gold data; all dimensions and overall remain null.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "The body contains concrete solution actions but no substantive causal explanation; the eligibility gate withholds writing scores.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed code changes StrimziVersion to v1 and binding calls to KafkaV1, supporting migration actions. Informer regeneration is an author claim without a corresponding supplied informer patch. CI includes success, failure, and cancellation metadata; none establishes specific test outcomes.",
+          "file_references": [
+            "pkg/apis/duck/strimzi/v1/duck_types.go",
+            "pkg/util/bindings/strimzi.go",
+            "pkg/client/strimzi/clientset/internalclientset/clientset.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "Observed schema, client, binding, and generator changes support migration scope, but cannot supply the missing body cause. No relevance scores are assigned.",
+          "file_references": [
+            "pkg/apis/addtoscheme_strimzi_duck_v1.go",
+            "pkg/util/bindings/strimzi.go",
+            "script/gen_client.sh"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The author describes what changed, without explaining the failing scenario or why the previous API usage caused it. Scores remain null.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "The author claims a Strimzi-focused command passed. Visible test fixtures migrate to v1 and setup adds CRD-establishment waits, supporting design observations only. Raw logs returned 410; the advanced-job failure metadata cannot identify a failed test or contradict the specific unit-test claim. All scores are withheld.",
+          "file_references": [
+            "pkg/util/bindings/strimzi_test.go",
+            "e2e/kafka/setup/setup.sh"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive root cause in the PR body.",
+        "Raw test execution logs; attempted fetch returned 410.",
+        "Individual commit messages and revision diffs for the three-commit change.",
+        "Informer-regeneration patch supporting that author claim."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6614",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After removing HTML comments, the body speculates about failure and an unspecified business-logic error; it supplies neither a substantive cause nor a concrete solution. The test patch cannot establish eligibility. All dimensions and overall remain null; this is not human gold data.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "The speculative body lacks the required explicit cause-and-solution pair; scoring is withheld.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "Observed changes add a fixture and test, not a business-logic repair. The author's predicted failure is not an observed outcome. CI success and the Run test step are metadata only; security failure metadata has no supplied causal explanation.",
+          "file_references": [
+            "e2e/common/cli/files/my-it.yaml",
+            "e2e/common/cli/it_apply_test.go"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "The test exercises kubectl apply, but the body identifies no substantive cause or implemented repair against which to score relevance.",
+          "file_references": [
+            "e2e/common/cli/it_apply_test.go"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "An unspecified business-logic error is not a substantive causal explanation. Eligibility failure requires null scores.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "Visible assertions require readiness, a running pod, and expected log content after applying the fixture. These establish test design only. Raw-log retrieval returned 410; job and step success cannot prove this test ran. All prevention scores are withheld.",
+          "file_references": [
+            "e2e/common/cli/files/my-it.yaml",
+            "e2e/common/cli/it_apply_test.go"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Explicit substantive cause and concrete solution in the PR body.",
+        "Raw test execution logs; attempted fetch returned 410.",
+        "Observed reproduction and business-logic repair."
+      ]
+    },
+    {
+      "case_id": "CAMELK-6621",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. Removing HTML comments leaves an empty body, so neither cause nor solution is present. The title and go.mod patch cannot establish eligibility. All dimensions and overall remain null; no calibrated accuracy or human gold label is implied.",
+      "dimensions": {
+        "normative": {
+          "subscores": {
+            "completeness": null,
+            "clarity": null,
+            "structure": null,
+            "terminology": null,
+            "concision": null
+          },
+          "reason": "No substantive body text remains; all writing scores are withheld under the eligibility gate.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {
+            "commit_consistency": null,
+            "diff_support": null,
+            "scenario_consistency": null,
+            "traceability": null,
+            "cross_source_consistency": null
+          },
+          "reason": "The observed patch changes the Go directive from 1.26.2 to 1.26.3. There is no author-body causal claim to assess. CI success and step names are metadata only.",
+          "file_references": [
+            "go.mod"
+          ]
+        },
+        "relevance": {
+          "subscores": {
+            "root_fix_match": null,
+            "causal_closure": null,
+            "coverage": null,
+            "targeting": null,
+            "solution_soundness": null
+          },
+          "reason": "The version change cannot supply the absent body cause and solution; relevance scoring is withheld.",
+          "file_references": [
+            "go.mod"
+          ]
+        },
+        "depth": {
+          "subscores": {
+            "symptom_vs_cause": null,
+            "trigger_conditions": null,
+            "causal_chain": null,
+            "systemic_mechanism": null,
+            "contributing_factors": null
+          },
+          "reason": "The empty substantive body provides no causal analysis. Scores remain null rather than zero.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {
+            "regression_evidence": null,
+            "edge_tests": null,
+            "similar_issue_sweep": null,
+            "preventive_action": null,
+            "followup": null
+          },
+          "reason": "The sole supplied patch contains no tests. Raw-log retrieval returned 410; successful jobs and Run test steps do not establish specific test execution. All prevention scores are withheld.",
+          "file_references": [
+            "go.mod"
+          ]
+        }
+      },
+      "missing_evidence": [
+        "Owner-authored RCA.",
+        "Substantive PR-body cause and solution.",
+        "Raw test execution logs; attempted fetch returned 410."
+      ]
+    }
+  ]
+}

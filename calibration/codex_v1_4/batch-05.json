@@ -1,0 +1,184 @@
+{
+  "cases": [
+    {
+      "case_id": "CAMELK-6598",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue link, the PR body has no substantive cause or solution. Title and patch cannot establish proxy eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Body eligibility gate failed; writing scores and dimension aggregate are null.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed patch adds deprecation documentation and lint suppressions; there is no substantive author body claim to assess.",
+          "file_references": ["pkg/apis/camel/v1/trait/pull_secret.go", "pkg/trait/pull_secret.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "No eligible body cause–solution pair; dimension aggregate is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body; dimension aggregate is null.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility gate requires all scores null. CI conclusions are metadata; raw log retrieval returned 410 and establishes no specific test execution.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (410). All dimension aggregates and overall are null; no human gold label or calibrated accuracy is established."]
+    },
+    {
+      "case_id": "CAMELK-6600",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue link, the PR body has no substantive cause or solution. Title and patch cannot establish proxy eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Body eligibility gate failed; writing scores and dimension aggregate are null.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed patch deprecates TraitProfile and removes some profile fixtures/assertions. These changes supply no missing author body explanation.",
+          "file_references": ["pkg/apis/camel/v1/common_types.go", "pkg/platform/defaults_test.go", "pkg/controller/integrationplatform/monitor_test.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "No eligible body cause–solution pair; dimension aggregate is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body; dimension aggregate is null.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility gate requires all scores null. Visible test edits describe design changes only. CI metadata and unavailable raw logs (410) establish no specific test execution.",
+          "file_references": ["pkg/platform/defaults_test.go", "pkg/controller/integrationplatform/monitor_test.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (410). All dimension aggregates and overall are null; no human gold label or calibrated accuracy is established."]
+    },
+    {
+      "case_id": "CAMELK-6609",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue link, the PR body has no substantive cause or solution. The descriptive title and technical patch cannot establish proxy eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Body eligibility gate failed; writing scores and dimension aggregate are null.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed code changes the build error notification argument from newTarget to target and separates action results in other controllers. No substantive author body claim is available.",
+          "file_references": ["pkg/controller/build/build_controller.go", "pkg/controller/catalog/catalog_controller.go", "pkg/controller/integrationplatform/integrationplatform_controller.go"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "Patch mechanisms cannot substitute for the required body cause–solution pair; dimension aggregate is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body; dimension aggregate is null.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Visible added tests assert reconciliation outcomes and recorder invocation, supporting test-design observations only. Eligibility requires all scores null; CI success metadata and raw-log 410 do not prove these tests executed.",
+          "file_references": ["pkg/controller/build/build_controller_test.go", "pkg/event/manager_test.go", "pkg/internal/fakeRecorder.go"]
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (410). All dimension aggregates and overall are null; no human gold label or calibrated accuracy is established."]
+    },
+    {
+      "case_id": "CAMELK-6610",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML comments and the issue link, the PR body has no substantive cause or solution. Title and patch cannot establish proxy eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Body eligibility gate failed; writing scores and dimension aggregate are null.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed generator switches displayed member names to JSON tags and adds a CLI naming note; documentation changes reflect renamed properties. No substantive author body claim is available.",
+          "file_references": ["cmd/util/doc-gen/generators/traitdocgen.go", "docs/modules/traits/pages/affinity.adoc", "docs/modules/traits/pages/knative-service.adoc"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "No eligible body cause–solution pair; dimension aggregate is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body; dimension aggregate is null.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility gate requires all scores null. Mixed CI conclusions are metadata; raw log retrieval returned 410 and establishes no specific test execution or failure cause.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (410). All dimension aggregates and overall are null; no human gold label or calibrated accuracy is established."]
+    },
+    {
+      "case_id": "CAMELK-6619",
+      "owner_score_eligible": false,
+      "proxy_score_eligible": false,
+      "proxy_root_cause_quote": "",
+      "proxy_solution_quote": "",
+      "eligibility_reason": "Owner-authored RCA is missing. After excluding HTML template comments, the PR body is empty and contains neither substantive cause nor solution. Title and patch cannot establish proxy eligibility.",
+      "dimensions": {
+        "normative": {
+          "subscores": {"completeness": null, "clarity": null, "structure": null, "terminology": null, "concision": null},
+          "reason": "Body eligibility gate failed; writing scores and dimension aggregate are null.",
+          "file_references": []
+        },
+        "authenticity": {
+          "subscores": {"commit_consistency": null, "diff_support": null, "scenario_consistency": null, "traceability": null, "cross_source_consistency": null},
+          "reason": "Observed generator moves the end marker after the note; documentation removes repeated notes. RBAC also changes. None supplies an author body explanation.",
+          "file_references": ["cmd/util/doc-gen/generators/traitdocgen.go", "docs/modules/traits/pages/affinity.adoc", "helm/camel-k/templates/rbacs-common.yaml", "pkg/resources/config/rbac/builder-role.yaml"]
+        },
+        "relevance": {
+          "subscores": {"root_fix_match": null, "causal_closure": null, "coverage": null, "targeting": null, "solution_soundness": null},
+          "reason": "No eligible body cause–solution pair; dimension aggregate is null.",
+          "file_references": []
+        },
+        "depth": {
+          "subscores": {"symptom_vs_cause": null, "trigger_conditions": null, "causal_chain": null, "systemic_mechanism": null, "contributing_factors": null},
+          "reason": "No substantive causal explanation remains in the body; dimension aggregate is null.",
+          "file_references": []
+        },
+        "prevention": {
+          "subscores": {"regression_evidence": null, "edge_tests": null, "similar_issue_sweep": null, "preventive_action": null, "followup": null},
+          "reason": "Eligibility gate requires all scores null. Successful 'Run test' steps are metadata only; raw-log retrieval returned 410, so no specific test execution is established.",
+          "file_references": []
+        }
+      },
+      "missing_evidence": ["Owner-authored RCA", "Substantive PR-body cause and solution", "Raw test execution logs (410). All dimension aggregates and overall are null; no human gold label or calibrated accuracy is established."]
+    }
+  ]
+}

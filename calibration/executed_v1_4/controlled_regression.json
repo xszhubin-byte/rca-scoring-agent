@@ -1,0 +1,5902 @@
+[
+  {
+    "case_id": "CAMELK-6442",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6449",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6459",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6460",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6462",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6465",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6466",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6482",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6493",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6510",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6528",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6532",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6540",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6543",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6551",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6553",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6564",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6585",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6594",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6597",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6598",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6600",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6609",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6610",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6619",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6625",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6641",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6647",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6658",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6661",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6665",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6667",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6679",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6683",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6687",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6696",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6441",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6475",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6509",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6518",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6527",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6542",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6550",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6568",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6571",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6574",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6586",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6604",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6614",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  },
+  {
+    "case_id": "CAMELK-6621",
+    "synthetic": true,
+    "cases": [
+      {
+        "name": "all_missing_abstains",
+        "passed": true,
+        "expected": {
+          "overall": null
+        },
+        "actual": {
+          "overall": null,
+          "normative": null,
+          "authenticity": null,
+          "relevance": null,
+          "depth": null,
+          "prevention": null,
+          "review": true
+        }
+      },
+      {
+        "name": "commit_only_caps",
+        "passed": true,
+        "expected": {
+          "authenticity": 69,
+          "relevance": 79,
+          "prevention": 69,
+          "overall": 80.6
+        },
+        "actual": {
+          "overall": 80.6,
+          "normative": 95.0,
+          "authenticity": 69,
+          "relevance": 79,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "diff_without_test_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 95,
+          "relevance": 95,
+          "prevention": 69,
+          "overall": 91.1
+        },
+        "actual": {
+          "overall": 91.1,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "test_type_allows_numeric_ceiling",
+        "passed": true,
+        "expected": {
+          "overall": 95
+        },
+        "actual": {
+          "overall": 95.0,
+          "normative": 95.0,
+          "authenticity": 95.0,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 95.0,
+          "review": true
+        }
+      },
+      {
+        "name": "contradiction_cap",
+        "passed": true,
+        "expected": {
+          "authenticity": 39,
+          "review": true,
+          "overall": 77.1
+        },
+        "actual": {
+          "overall": 77.1,
+          "normative": 95.0,
+          "authenticity": 39,
+          "relevance": 95.0,
+          "depth": 95.0,
+          "prevention": 69,
+          "review": true
+        }
+      },
+      {
+        "name": "claim_cannot_be_verified",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "missing_authenticity_rejects_numeric",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "unknown_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      },
+      {
+        "name": "duplicate_evidence_id_rejected",
+        "passed": true,
+        "expected": "reject",
+        "error": "ValueError"
+      }
+    ]
+  }
+]

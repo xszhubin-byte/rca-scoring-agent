@@ -1,4 +1,28 @@
-# RCA Scoring Agent Skill v1.4
+# RCA Review Agent: V2 research candidate and V1.4 baseline
+
+Daily software-defect RCA is the primary use case. `SKILL.md` now routes to an
+experimental six-domain diagnostic framework, with evidence assurance, report
+usability and closure maturity kept separate. This is a research candidate,
+not a claim that six dimensions or any weights are optimal.
+
+Read `references/v2-design-review.md` for the critique of the original five
+dimensions, the four-/six-domain alternatives, sources and validation plan;
+`references/v2-rubric.json` contains 24 specific criteria and 120 behavioral
+anchors. `scripts/assess_v2.py` validates evidence-linked diagnostic results.
+Legacy V1.4 code, calibration inputs and raw model results remain versioned.
+
+See the [execution report and limitations](calibration/EXECUTION_REPORT.md) and
+[framework design review](references/v2-design-review.md). The initial failed
+V2 probe and the targeted corrected rerun are both preserved.
+
+## Executed public-case calibration with Codex CLI
+
+The 2026-10-25 continuation uses Codex CLI, not Claude CLI. See
+`references/codex-calibration.md` for execution, evidence boundaries and reproducibility.
+Fixed-SHA evidence is in `calibration/evidence_v1_4/`; actual Codex responses are
+in `calibration/codex_v1_4/`; validator regressions and owner-score abstentions
+are in `calibration/executed_v1_4/`. The historical Claude setup below remains
+available for legacy consumers and was not used for this calibration.
 
 ## Install
 ```bash

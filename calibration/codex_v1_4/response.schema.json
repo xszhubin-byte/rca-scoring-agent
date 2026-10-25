@@ -1,0 +1,380 @@
+{
+  "type": "object",
+  "properties": {
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "owner_score_eligible": {
+            "type": "boolean"
+          },
+          "proxy_score_eligible": {
+            "type": "boolean"
+          },
+          "proxy_root_cause_quote": {
+            "type": "string"
+          },
+          "proxy_solution_quote": {
+            "type": "string"
+          },
+          "eligibility_reason": {
+            "type": "string"
+          },
+          "dimensions": {
+            "type": "object",
+            "properties": {
+              "normative": {
+                "type": "object",
+                "properties": {
+                  "subscores": {
+                    "type": "object",
+                    "properties": {
+                      "completeness": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "clarity": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "structure": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "terminology": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "concision": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "completeness",
+                      "clarity",
+                      "structure",
+                      "terminology",
+                      "concision"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "file_references": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "subscores",
+                  "reason",
+                  "file_references"
+                ],
+                "additionalProperties": false
+              },
+              "authenticity": {
+                "type": "object",
+                "properties": {
+                  "subscores": {
+                    "type": "object",
+                    "properties": {
+                      "commit_consistency": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "diff_support": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "scenario_consistency": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "traceability": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "cross_source_consistency": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "commit_consistency",
+                      "diff_support",
+                      "scenario_consistency",
+                      "traceability",
+                      "cross_source_consistency"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "file_references": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "subscores",
+                  "reason",
+                  "file_references"
+                ],
+                "additionalProperties": false
+              },
+              "relevance": {
+                "type": "object",
+                "properties": {
+                  "subscores": {
+                    "type": "object",
+                    "properties": {
+                      "root_fix_match": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "causal_closure": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "coverage": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "targeting": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "solution_soundness": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "root_fix_match",
+                      "causal_closure",
+                      "coverage",
+                      "targeting",
+                      "solution_soundness"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "file_references": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "subscores",
+                  "reason",
+                  "file_references"
+                ],
+                "additionalProperties": false
+              },
+              "depth": {
+                "type": "object",
+                "properties": {
+                  "subscores": {
+                    "type": "object",
+                    "properties": {
+                      "symptom_vs_cause": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "trigger_conditions": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "causal_chain": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "systemic_mechanism": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "contributing_factors": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "symptom_vs_cause",
+                      "trigger_conditions",
+                      "causal_chain",
+                      "systemic_mechanism",
+                      "contributing_factors"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "file_references": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "subscores",
+                  "reason",
+                  "file_references"
+                ],
+                "additionalProperties": false
+              },
+              "prevention": {
+                "type": "object",
+                "properties": {
+                  "subscores": {
+                    "type": "object",
+                    "properties": {
+                      "regression_evidence": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "edge_tests": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "similar_issue_sweep": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "preventive_action": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "followup": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "regression_evidence",
+                      "edge_tests",
+                      "similar_issue_sweep",
+                      "preventive_action",
+                      "followup"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "file_references": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "subscores",
+                  "reason",
+                  "file_references"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "normative",
+              "authenticity",
+              "relevance",
+              "depth",
+              "prevention"
+            ],
+            "additionalProperties": false
+          },
+          "missing_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "case_id",
+          "owner_score_eligible",
+          "proxy_score_eligible",
+          "proxy_root_cause_quote",
+          "proxy_solution_quote",
+          "eligibility_reason",
+          "dimensions",
+          "missing_evidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "cases"
+  ],
+  "additionalProperties": false
+}

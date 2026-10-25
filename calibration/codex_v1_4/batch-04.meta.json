@@ -1,0 +1,27 @@
+{
+  "cli_version": "codex-cli 0.164.0-alpha.11.1",
+  "model": null,
+  "exit_code": 0,
+  "elapsed_seconds": 52.33,
+  "usage": [
+    {
+      "input_tokens": 48297,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3085,
+      "reasoning_output_tokens": 0
+    }
+  ],
+  "case_ids": [
+    "CAMELK-6553",
+    "CAMELK-6564",
+    "CAMELK-6585",
+    "CAMELK-6594",
+    "CAMELK-6597"
+  ],
+  "prompt_sha256": "9d32f860f0535e8cfefc134c6a99fb42a3657905c01e5f273192c6fb862df6bc",
+  "snapshot_sha256": "68faab0752e86c36d185fd1dcd1571b168e5db65b7d2e1d6b3179804237c7b8b",
+  "error_count": 0,
+  "output_present": true,
+  "tool_item_types": []
+}
