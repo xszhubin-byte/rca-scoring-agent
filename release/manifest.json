@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0-alpha.1",
+  "channel": "prerelease",
+  "skill_name": "rca-scoring",
+  "source_directory": "skills/rca-scoring",
+  "archive_prefix": "rca-scoring",
+  "python_minimum": "3.10",
+  "files": [
+    "SKILL.md",
+    "requirements.txt",
+    "scripts/assess_v2.py",
+    "scripts/gerrit_fetch.py",
+    "references/guide.md",
+    "references/gerrit.md",
+    "references/v2-rubric.json",
+    "references/v2-result.schema.json",
+    "examples/result.example.json"
+  ]
+}

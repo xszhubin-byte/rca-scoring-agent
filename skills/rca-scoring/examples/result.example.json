@@ -1,0 +1,207 @@
+{
+  "context": {
+    "case_id": "EXAMPLE-REPLACE-WITH-ACTUAL-DEFECT",
+    "mode": "artifact_review",
+    "profile": "routine",
+    "text": null,
+    "text_complete": false,
+    "revision": null
+  },
+  "evidence": [],
+  "claims": [],
+  "items": {
+    "P1": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "P2": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "P3": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "P4": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "C1": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "C2": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "C3": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "C4": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "O1": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "O2": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "O3": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "O4": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "R1": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "R2": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "R3": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "R4": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "V1": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "V2": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "V3": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "V4": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "L1": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "L2": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "L3": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    },
+    "L4": {
+      "basis": "unknown",
+      "score": null,
+      "reason": "Replace with located evidence and an item-specific assessment.",
+      "evidence_ids": [],
+      "claim_ids": [],
+      "na_reason": ""
+    }
+  },
+  "closure_requested": "planned"
+}

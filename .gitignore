@@ -16,3 +16,7 @@ private-codex-runs/
 .codex-calibration-runs/
 *.events.jsonl
 *.stderr.txt
+
+# Generated release assets
+dist/
+.release-smoke/

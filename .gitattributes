@@ -1,0 +1,10 @@
+skills/** text eol=lf
+tools/** text eol=lf
+tests/** text eol=lf
+docs/** text eol=lf
+release/** text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+data/** -text
+legacy/** -text
+*.zip binary

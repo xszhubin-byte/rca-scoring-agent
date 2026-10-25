@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0-alpha.1",
+  "validation_date": "2026-10-25",
+  "scope": "Repository layout and runtime-only prerelease packaging; model calibration was not rerun.",
+  "tests_passed": 25,
+  "runtime_source_files": 9,
+  "archive_files": 11,
+  "archive_bytes": 16422,
+  "archive_sha256": "61cfebdfc77571ceba2a10f306331de5771d786694ae3844f7f1163e08d244c2",
+  "skill_structure_validation": "passed",
+  "active_document_links": "passed",
+  "unpacked_independent_execution": "passed",
+  "deterministic_rebuild": "passed",
+  "migrated_offline_tools": [
+    {
+      "tool": "calibrate_snapshots.py",
+      "exit_code": 0
+    },
+    {
+      "tool": "summarize_codex_calibration.py",
+      "exit_code": 0
+    }
+  ],
+  "frozen_data_byte_identity": "passed",
+  "offline_regeneration_format_differences_restored": [],
+  "release_assets": "Generated outside source tree; attach ZIP, SHA256SUMS.txt and release-manifest.json to a GitHub prerelease."
+}
