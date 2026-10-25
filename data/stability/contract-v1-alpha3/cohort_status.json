@@ -1,0 +1,8 @@
+{
+  "status": "failed_score_repeatability",
+  "reason": "Round 1 and 2 identical-input comparison exceeded predeclared score-span gate: K01/K02 P3 and R4 differed by 2 bands; O4 differed by 3.",
+  "completed_calls": 6,
+  "raw_responses_preserved": true,
+  "unfinished_call_aborted": true,
+  "numeric_gate_unchanged": true
+}

@@ -1,0 +1,878 @@
+{
+  "cases": [
+    {
+      "case_id": "K08",
+      "claims": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "status": "supported",
+          "evidence_ids": ["patch"],
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "status": "refuted",
+          "evidence_ids": ["execution"],
+          "critical": true
+        }
+      ],
+      "items": {
+        "P1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Owner RCA identifies the spurious reconcile error and the expected benign deletion outcome.",
+          "evidence_ids": ["report"],
+          "claim_ids": []
+        ,
+        "na_reason": ""
+        },
+        "P2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Specifies deletion, a stale cached Build, and a subsequent action or status write.",
+          "evidence_ids": ["report"],
+          "claim_ids": []
+        ,
+        "na_reason": ""
+        },
+        "P3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Identifies Build reconciliation as affected but omits version boundaries and unconfirmed scope.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P4": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Defines observable acceptance as no error and an empty result with no requeue.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Explains that stale cached state permits writes after deletion and misclassifies NotFound as failure.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Connects deletion, stale reads, subsequent NotFound, and the external reconcile error.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Injected NotFound gives a testable prediction, but no contrasting cause or control is explained.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C4": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Mechanism and test design have support; the stated execution uncertainty is outdated by the separate failed record.",
+          "evidence_ids": ["report", "patch", "testcode", "execution"],
+          "claim_ids": ["q_fix", "q_execution"],
+          "na_reason": ""
+        },
+        "O1": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits how the defect entered the implementation and does not explicitly identify introduction history as unknown.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O2": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits analysis of which original validation missed deletion during reconciliation.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O3": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits why interface, review, or detection defenses failed to block this path.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits an explicit earlier detection point; describing the added test does not explain detection placement.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "R1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Maps both NotFound guards to suppressing the erroneous failure and returning an empty result.",
+          "evidence_ids": ["report", "patch"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "R2": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Names both principal error paths but does not explain other variants or excluded scope.",
+          "evidence_ids": ["report", "patch"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "R3": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits analysis of preserving other errors and distinguishing Build deletion from other NotFound causes.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "R4": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Describes a bounded guard-and-test change but omits dependency and maintenance rationale.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Explains injected Build-update NotFound and assertions for no error and no requeue; no old/new control is supplied.",
+          "evidence_ids": ["report", "testcode"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Synthetic record links target revision, named test, assertions, command, environment, and failed outcome; failure does not reduce verifiability.",
+          "evidence_ids": ["execution"],
+          "claim_ids": ["q_execution"],
+          "na_reason": ""
+        },
+        "V3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Covers the deletion/status-write boundary but omits action-path and other-error test coverage.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits verification of unaffected successful reconciliation and propagation of other errors.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L1": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits a mechanism-based search for similar paths and its scope.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L2": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "The regression test is a relevant lasting measure, but its relationship to introduction or escape defenses is unexplained.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L3": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Identifies implemented guards and a concrete regression with observable acceptance criteria.",
+          "evidence_ids": ["report", "patch", "testcode"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "L4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits an explicit closure-check plan, including how to address unsuccessful verification.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        }
+      },
+      "closure_requested": "executed"
+    },
+    {
+      "case_id": "K06",
+      "claims": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "status": "supported",
+          "evidence_ids": ["patch"],
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "status": "unresolved",
+          "evidence_ids": ["execution"],
+          "critical": true
+        }
+      ],
+      "items": {
+        "P1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Owner RCA identifies the spurious reconcile error and the expected benign deletion outcome.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Specifies deletion, a stale cached Build, and a subsequent action or status write.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Identifies Build reconciliation as affected but omits version boundaries and unconfirmed scope.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P4": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Defines observable acceptance as no error and an empty result with no requeue.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Explains that stale cached state permits writes after deletion and misclassifies NotFound as failure.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Connects deletion, stale reads, subsequent NotFound, and the external reconcile error.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Injected NotFound gives a testable prediction, but no contrasting cause or control is explained.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C4": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Separates test design from unverified runtime behavior, but leaves causal assumptions and coverage limits implicit.",
+          "evidence_ids": ["report", "patch", "testcode"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "O1": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits how the defect entered the implementation and does not explicitly identify introduction history as unknown.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O2": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits analysis of which original validation missed deletion during reconciliation.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O3": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits why interface, review, or detection defenses failed to block this path.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits an explicit earlier detection point; describing the added test does not explain detection placement.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "R1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Maps both NotFound guards to suppressing the erroneous failure and returning an empty result.",
+          "evidence_ids": ["report", "patch"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "R2": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Names both principal error paths but does not explain other variants or excluded scope.",
+          "evidence_ids": ["report", "patch"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "R3": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits analysis of preserving other errors and distinguishing Build deletion from other NotFound causes.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "R4": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Describes a bounded guard-and-test change but omits dependency and maintenance rationale.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Explains injected Build-update NotFound and assertions for no error and no requeue; no old/new control is supplied.",
+          "evidence_ids": ["report", "testcode"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V2": {
+          "basis": "unknown",
+          "score": null,
+          "reason": "The execution record targets a different revision; no qualifying target-revision execution is available.",
+          "evidence_ids": ["execution"],
+          "claim_ids": ["q_execution"],
+          "na_reason": ""
+        },
+        "V3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Covers the deletion/status-write boundary but omits action-path and other-error test coverage.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits verification of unaffected successful reconciliation and propagation of other errors.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L1": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits a mechanism-based search for similar paths and its scope.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L2": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "The regression test is a relevant lasting measure, but its relationship to introduction or escape defenses is unexplained.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L3": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Identifies implemented guards and a concrete regression with observable acceptance criteria.",
+          "evidence_ids": ["report", "patch", "testcode"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "L4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits an explicit closure-check plan; acknowledging unknown execution does not define a future check.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        }
+      },
+      "closure_requested": "implemented"
+    },
+    {
+      "case_id": "K07",
+      "claims": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "status": "supported",
+          "evidence_ids": ["patch"],
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "status": "supported",
+          "evidence_ids": ["execution"],
+          "critical": true
+        }
+      ],
+      "items": {
+        "P1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Owner RCA identifies the spurious reconcile error and the expected benign deletion outcome.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Specifies deletion, a stale cached Build, and a subsequent action or status write.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Identifies Build reconciliation as affected but omits version boundaries and unconfirmed scope.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P4": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Defines observable acceptance as no error and an empty result with no requeue.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Explains that stale cached state permits writes after deletion and misclassifies NotFound as failure.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Connects deletion, stale reads, subsequent NotFound, and the external reconcile error.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Injected NotFound gives a testable prediction, but no contrasting cause or control is explained.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C4": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Mechanism and test design have support; the stated execution uncertainty is outdated by the separate passing record.",
+          "evidence_ids": ["report", "patch", "testcode", "execution"],
+          "claim_ids": ["q_fix", "q_execution"],
+          "na_reason": ""
+        },
+        "O1": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits how the defect entered the implementation and does not explicitly identify introduction history as unknown.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O2": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits analysis of which original validation missed deletion during reconciliation.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O3": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits why interface, review, or detection defenses failed to block this path.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits an explicit earlier detection point; describing the added test does not explain detection placement.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "R1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Maps both NotFound guards to suppressing the erroneous failure and returning an empty result.",
+          "evidence_ids": ["report", "patch"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "R2": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Names both principal error paths but does not explain other variants or excluded scope.",
+          "evidence_ids": ["report", "patch"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "R3": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits analysis of preserving other errors and distinguishing Build deletion from other NotFound causes.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "R4": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Describes a bounded guard-and-test change but omits dependency and maintenance rationale.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Explains injected Build-update NotFound and assertions for no error and no requeue; no old/new control is supplied.",
+          "evidence_ids": ["report", "testcode"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Synthetic record links target revision, named test, assertions, command, environment, and passed outcome; no repeat or diagnostic control is supplied.",
+          "evidence_ids": ["execution"],
+          "claim_ids": ["q_execution"],
+          "na_reason": ""
+        },
+        "V3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Covers the deletion/status-write boundary but omits action-path and other-error test coverage.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits verification of unaffected successful reconciliation and propagation of other errors.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L1": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits a mechanism-based search for similar paths and its scope.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L2": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "The regression test is a relevant lasting measure, but its relationship to introduction or escape defenses is unexplained.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L3": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Identifies implemented guards and a concrete regression with observable acceptance criteria.",
+          "evidence_ids": ["report", "patch", "testcode"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "L4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits an explicit closure-check plan; the existing regression description does not supply one.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        }
+      },
+      "closure_requested": "executed"
+    },
+    {
+      "case_id": "K05",
+      "claims": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "status": "supported",
+          "evidence_ids": ["patch"],
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "status": "unresolved",
+          "evidence_ids": ["report", "ci", "testcode"],
+          "critical": true
+        },
+        {
+          "id": "q_ci_inference",
+          "kind": "process",
+          "text": "A green common-suite status by itself proves the named regression and all its assertions passed.",
+          "status": "refuted",
+          "evidence_ids": ["ci", "testcode"],
+          "critical": true
+        }
+      ],
+      "items": {
+        "P1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Owner RCA identifies the spurious reconcile error and the expected benign deletion outcome.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Specifies deletion, a stale cached Build, and a subsequent action or status write.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Identifies Build reconciliation as affected but omits version boundaries and unconfirmed scope.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "P4": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Defines observable acceptance as no error and an empty result with no requeue.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Explains that stale cached state permits writes after deletion and misclassifies NotFound as failure.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C2": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Connects deletion, stale reads, subsequent NotFound, and the external reconcile error.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Injected NotFound gives a testable prediction, but no contrasting cause or control is explained.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "C4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Treats green-suite status as definitive assertion-linked execution, contradicting the supplied evidence's actual specificity.",
+          "evidence_ids": ["report", "ci", "testcode"],
+          "claim_ids": ["q_execution", "q_ci_inference"],
+          "na_reason": ""
+        },
+        "O1": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits how the defect entered the implementation and does not explicitly identify introduction history as unknown.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O2": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits analysis of which original validation missed deletion during reconciliation.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O3": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits why interface, review, or detection defenses failed to block this path.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "O4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits an explicit earlier detection point; describing the added test does not explain detection placement.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "R1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Maps both NotFound guards to suppressing the erroneous failure and returning an empty result.",
+          "evidence_ids": ["report", "patch"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "R2": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Names both principal error paths but does not explain other variants or excluded scope.",
+          "evidence_ids": ["report", "patch"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "R3": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits analysis of preserving other errors and distinguishing Build deletion from other NotFound causes.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "R4": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Describes a bounded guard-and-test change but omits dependency and maintenance rationale.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V1": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Explains injected Build-update NotFound and relevant assertions; the invalid execution inference adds no discriminatory evidence.",
+          "evidence_ids": ["report", "testcode"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V2": {
+          "basis": "unknown",
+          "score": null,
+          "reason": "Green-suite status has no named-test or assertion-linked execution record for the target revision.",
+          "evidence_ids": ["ci"],
+          "claim_ids": ["q_execution", "q_ci_inference"],
+          "na_reason": ""
+        },
+        "V3": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "Covers the deletion/status-write boundary but omits action-path and other-error test coverage.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "V4": {
+          "basis": "observed",
+          "score": 1,
+          "reason": "Cites only a green common suite without mapping its coverage to unaffected behaviors or repair risks.",
+          "evidence_ids": ["report", "ci"],
+          "claim_ids": ["q_ci_inference"],
+          "na_reason": ""
+        },
+        "L1": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits a mechanism-based search for similar paths and its scope.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L2": {
+          "basis": "observed",
+          "score": 2,
+          "reason": "The regression test is a relevant lasting measure, but its relationship to introduction or escape defenses is unexplained.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        },
+        "L3": {
+          "basis": "observed",
+          "score": 3,
+          "reason": "Identifies implemented guards and a concrete regression with observable acceptance criteria, despite unverified execution.",
+          "evidence_ids": ["report", "patch", "testcode"],
+          "claim_ids": ["q_fix"],
+          "na_reason": ""
+        },
+        "L4": {
+          "basis": "observed",
+          "score": 0,
+          "reason": "Omits an explicit closure-check plan and does not distinguish implementation, verified execution, and longer-term effectiveness.",
+          "evidence_ids": ["report"],
+          "claim_ids": [],
+          "na_reason": ""
+        }
+      },
+      "closure_requested": "implemented"
+    }
+  ]
+}

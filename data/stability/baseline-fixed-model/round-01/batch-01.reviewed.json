@@ -1,0 +1,179 @@
+[
+  {
+    "case_id": "K04",
+    "accepted": false,
+    "issues": [
+      "Runtime gate: R3: cannot infer report omission without report text",
+      "Behavior mismatch: closure",
+      "Behavior mismatch: decision"
+    ],
+    "result": null
+  },
+  {
+    "case_id": "K01",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K01",
+      "mode": "owner_rca",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": 1.25,
+          "known": 4,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 19,
+        "not_demonstrated": 4,
+        "unknown": 1
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "K03",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K03",
+      "mode": "owner_rca",
+      "decision": "revise",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 0.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 0.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": 0.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 0.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": 1.0,
+          "known": 4,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 15,
+        "not_demonstrated": 8,
+        "unknown": 1
+      },
+      "critical_refuted_claims": [
+        "q_fix"
+      ],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "K02",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K02",
+      "mode": "owner_rca",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": 1.25,
+          "known": 4,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 19,
+        "not_demonstrated": 4,
+        "unknown": 1
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  }
+]

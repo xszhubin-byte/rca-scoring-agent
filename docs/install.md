@@ -1,10 +1,10 @@
 # 安装与使用
 
-当前交付版本：`2.0.0-alpha.1`，供试用和反馈，尚未证明评分准确率或维度最优性。
+当前交付版本：`2.0.0-alpha.5`，供试用和反馈，尚未证明评分准确率或维度最优性。
 
 ## 1. 获取正确的文件
 
-获取发布资产 `rca-scoring-2.0.0-alpha.1.zip` 与同一版本的 `SHA256SUMS.txt`。
+获取发布资产 `rca-scoring-2.0.0-alpha.5.zip` 与同一版本的 `SHA256SUMS.txt`。
 校验 ZIP 的 SHA-256 与清单一致。清单用于检查文件完整性，不是数字签名。
 不要把 GitHub 自动生成的整个源码压缩包当作技能安装包。
 
@@ -41,6 +41,10 @@ python .agents/skills/rca-scoring/scripts/assess_v2.py .agents/skills/rca-scorin
 
 ## 4. 使用技能
 
+当前版本先用随包的 `scripts/review_contract.py` 生成每项审查对象与来源可用性表，
+再由 Codex 评分。完整报告需要关联一条 `author_statement` 来源记录。
+来源表不预填质量分，也不把未知事实变成已核验事实。
+
 在 Codex 输入：
 
 ```text
@@ -53,3 +57,16 @@ python .agents/skills/rca-scoring/scripts/assess_v2.py .agents/skills/rca-scorin
 私有代码、日志和凭据留在自己的授权环境，发布包不附带任何 GitHub/Gerrit 密钥。
 
 需要做方法研究或重跑公开案例评测时，再克隆完整研发仓库，见[开发说明](development.md)。
+
+
+## 与稳定性测试一致的模型设置
+
+固定结构化输入的重复性验收使用显式模型标识 `gpt-6-astra` 与 `medium` 推理设置。
+切换模型、规则、证据或输入约定后，应重新测试，而不是沿用该配置的结论。
+CLI 未暴露精确后端 snapshot ID，因此本结论不承诺未来服务版本永远不变。
+
+可以用以下命令进入对应 Codex 会话，再调用技能：
+
+```text
+codex --model gpt-6-astra --config 'model_reasoning_effort="medium"'
+```

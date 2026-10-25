@@ -1,0 +1,264 @@
+{
+  "rounds": 3,
+  "cases_per_round": 12,
+  "case_ratings": 36,
+  "synthetic_cases": 8,
+  "real_artifact_cases": 4,
+  "case_reports": [
+    {
+      "case_id": "K01",
+      "decisions": [
+        "needs_evidence",
+        "needs_evidence",
+        "needs_evidence"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 1,
+      "mean_pairwise_absolute_delta": 0.058,
+      "all_runs_accepted": true,
+      "passed": true
+    },
+    {
+      "case_id": "K02",
+      "decisions": [
+        "needs_evidence",
+        "needs_evidence",
+        "needs_evidence"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 1,
+      "mean_pairwise_absolute_delta": 0.058,
+      "all_runs_accepted": true,
+      "passed": true
+    },
+    {
+      "case_id": "K03",
+      "decisions": [
+        "revise",
+        "revise",
+        "revise"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 1,
+      "mean_pairwise_absolute_delta": 0.029,
+      "all_runs_accepted": true,
+      "passed": true
+    },
+    {
+      "case_id": "K04",
+      "decisions": [
+        "needs_evidence",
+        "needs_evidence",
+        "needs_evidence"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 0,
+      "mean_pairwise_absolute_delta": 0.0,
+      "all_runs_accepted": true,
+      "passed": true
+    },
+    {
+      "case_id": "K05",
+      "decisions": [
+        "revise",
+        "revise",
+        "revise"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 1,
+      "mean_pairwise_absolute_delta": 0.029,
+      "all_runs_accepted": true,
+      "passed": true
+    },
+    {
+      "case_id": "K06",
+      "decisions": [
+        "needs_evidence",
+        "needs_evidence",
+        "needs_evidence"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 0,
+      "mean_pairwise_absolute_delta": 0.0,
+      "all_runs_accepted": true,
+      "passed": true
+    },
+    {
+      "case_id": "K07",
+      "decisions": [
+        "reviewable",
+        "reviewable",
+        "reviewable"
+      ],
+      "closures": [
+        "executed",
+        "executed",
+        "executed"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 2,
+      "mean_pairwise_absolute_delta": 0.0556,
+      "all_runs_accepted": true,
+      "passed": false
+    },
+    {
+      "case_id": "K08",
+      "decisions": [
+        "revise",
+        "revise",
+        "revise"
+      ],
+      "closures": [
+        "executed",
+        "executed",
+        "executed"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 2,
+      "mean_pairwise_absolute_delta": 0.0556,
+      "all_runs_accepted": true,
+      "passed": false
+    },
+    {
+      "case_id": "K09",
+      "decisions": [
+        "needs_evidence",
+        "needs_evidence",
+        "needs_evidence"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 0,
+      "mean_pairwise_absolute_delta": 0.0,
+      "all_runs_accepted": true,
+      "passed": true
+    },
+    {
+      "case_id": "K10",
+      "decisions": [
+        "needs_evidence",
+        "needs_evidence",
+        "needs_evidence"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 1,
+      "mean_pairwise_absolute_delta": 0.0784,
+      "all_runs_accepted": true,
+      "passed": true
+    },
+    {
+      "case_id": "K11",
+      "decisions": [
+        "needs_evidence",
+        "needs_evidence",
+        "needs_evidence"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 2,
+      "mean_pairwise_absolute_delta": 0.1961,
+      "all_runs_accepted": true,
+      "passed": false
+    },
+    {
+      "case_id": "K12",
+      "decisions": [
+        "needs_evidence",
+        "needs_evidence",
+        "needs_evidence"
+      ],
+      "closures": [
+        "implemented",
+        "implemented",
+        "implemented"
+      ],
+      "decisions_consistent": true,
+      "closures_consistent": true,
+      "claim_status_consistent": true,
+      "basis_changed_items": [],
+      "max_numeric_span": 1,
+      "mean_pairwise_absolute_delta": 0.0392,
+      "all_runs_accepted": true,
+      "passed": true
+    }
+  ],
+  "passed_cases": 9,
+  "all_passed": false,
+  "scope": "Repeatability of fixed structured claims and evidence; not free-text claim extraction or expert-label accuracy."
+}

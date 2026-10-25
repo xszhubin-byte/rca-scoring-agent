@@ -1,0 +1,1050 @@
+[
+  {
+    "document": {
+      "context": {
+        "case_id": "K01",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "Build reconciliation may read a stale cached Build after deletion. The subsequent action or status write returns NotFound and produces a spurious reconcile error. The patch treats NotFound from both action handling and status update as benign and returns an empty result without error. The added unit test injects NotFound during a Build update and asserts no error and no requeue. No assertion-linked execution log is available; runtime verification remains unknown.",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/build/build_controller.go",
+        "sha": "998f7164ec58edf6a48314e53b92645095e601ad",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 0,
+        "patch": "@@ -196,6 +196,11 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \n \t\tnewTarget, err := a.Handle(ctx, target)\n \t\tif err != nil {\n+\t\t\t// NotFound means the Build was deleted mid-reconcile (stale cache); benign, not an error.\n+\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t}\n+\n \t\t\tcamelevent.NotifyError(r.recorder, &instance, target, instance.Name, instance.Kind, err)\n \n \t\t\treturn reconcile.Result{}, err\n@@ -204,6 +209,10 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \t\tif newTarget != nil {\n \t\t\terr := r.update(ctx, targetLog, &instance, newTarget)\n \t\t\tif err != nil {\n+\t\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t\t}\n+\n \t\t\t\treturn reconcile.Result{}, err\n \t\t\t}\n ",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/build/build_controller_test.go",
+        "sha": "46ff33319dddf86f5d7f27eb47bcfd7c1d385f13",
+        "status": "modified",
+        "additions": 65,
+        "deletions": 0,
+        "patch": "@@ -25,8 +25,11 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/internal\"\n \t\"github.com/stretchr/testify/assert\"\n \t\"github.com/stretchr/testify/require\"\n+\tk8serrors \"k8s.io/apimachinery/pkg/api/errors\"\n \tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \t\"k8s.io/apimachinery/pkg/types\"\n+\tctrl \"sigs.k8s.io/controller-runtime/pkg/client\"\n+\t\"sigs.k8s.io/controller-runtime/pkg/client/interceptor\"\n \t\"sigs.k8s.io/controller-runtime/pkg/reconcile\"\n )\n \n@@ -82,3 +85,65 @@ func TestReconcileBuild(t *testing.T) {\n \tassert.NotNil(t, updated.Status, \"status should not be nil\")\n \tassert.NotEmpty(t, updated.Status.Phase, \"phase should be set\")\n }\n+\n+// TestReconcileBuildDeletedDuringReconcile verifies that a Build deleted mid-reconcile does not\n+// surface as a reconcile error: a NotFound from the status write is benign (#6620).\n+func TestReconcileBuildDeletedDuringReconcile(t *testing.T) {\n+\tctx := context.TODO()\n+\n+\tbuild := &v1.Build{\n+\t\tObjectMeta: metav1.ObjectMeta{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t\tSpec: v1.BuildSpec{\n+\t\t\tTasks: []v1.Task{\n+\t\t\t\t{\n+\t\t\t\t\tBuilder: &v1.BuilderTask{\n+\t\t\t\t\t\tBaseTask: v1.BaseTask{\n+\t\t\t\t\t\t\tName: \"builder\",\n+\t\t\t\t\t\t\tConfiguration: v1.BuildConfiguration{\n+\t\t\t\t\t\t\t\tStrategy: v1.BuildStrategyRoutine,\n+\t\t\t\t\t\t\t},\n+\t\t\t\t\t\t},\n+\t\t\t\t\t},\n+\t\t\t\t},\n+\t\t\t},\n+\t\t},\n+\t}\n+\n+\tc, err := internal.NewFakeClient(build)\n+\trequire.NoError(t, err)\n+\n+\t// Simulate the Build being deleted concurrently. The fake client routes a status patch\n+\t// through Update, so the NotFound is injected there.\n+\tfakeClient := c.(*internal.FakeClient)\n+\tfakeClient.Intercept(&interceptor.Funcs{\n+\t\tUpdate: func(ctx context.Context, cl ctrl.WithWatch, obj ctrl.Object, opts ...ctrl.UpdateOption) error {\n+\t\t\tif _, ok := obj.(*v1.Build); ok {\n+\t\t\t\treturn k8serrors.NewNotFound(v1.Resource(\"builds\"), obj.GetName())\n+\t\t\t}\n+\n+\t\t\treturn cl.Update(ctx, obj, opts...)\n+\t\t},\n+\t})\n+\n+\tr := &reconcileBuild{\n+\t\tclient:   c,\n+\t\treader:   c,\n+\t\trecorder: &internal.FakeRecorder{},\n+\t}\n+\n+\treq := reconcile.Request{\n+\t\tNamespacedName: types.NamespacedName{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t}\n+\n+\tresult, err := r.Reconcile(ctx, req)\n+\n+\t// The NotFound must be swallowed: no error, and no requeue since the Build is gone.\n+\trequire.NoError(t, err)\n+\tassert.Equal(t, reconcile.Result{}, result)\n+}",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6665",
+    "synthetic": true
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K02",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "Build reconciliation may read a stale cached Build after deletion. The subsequent action or status write returns NotFound and produces a spurious reconcile error. The patch treats NotFound from both action handling and status update as benign and returns an empty result without error. The added unit test injects NotFound during a Build update and asserts no error and no requeue. No assertion-linked execution log is available; runtime verification remains unknown.\n\nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. \nThis analysis was carefully reviewed and documented in a structured manner. ",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/build/build_controller.go",
+        "sha": "998f7164ec58edf6a48314e53b92645095e601ad",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 0,
+        "patch": "@@ -196,6 +196,11 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \n \t\tnewTarget, err := a.Handle(ctx, target)\n \t\tif err != nil {\n+\t\t\t// NotFound means the Build was deleted mid-reconcile (stale cache); benign, not an error.\n+\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t}\n+\n \t\t\tcamelevent.NotifyError(r.recorder, &instance, target, instance.Name, instance.Kind, err)\n \n \t\t\treturn reconcile.Result{}, err\n@@ -204,6 +209,10 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \t\tif newTarget != nil {\n \t\t\terr := r.update(ctx, targetLog, &instance, newTarget)\n \t\t\tif err != nil {\n+\t\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t\t}\n+\n \t\t\t\treturn reconcile.Result{}, err\n \t\t\t}\n ",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/build/build_controller_test.go",
+        "sha": "46ff33319dddf86f5d7f27eb47bcfd7c1d385f13",
+        "status": "modified",
+        "additions": 65,
+        "deletions": 0,
+        "patch": "@@ -25,8 +25,11 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/internal\"\n \t\"github.com/stretchr/testify/assert\"\n \t\"github.com/stretchr/testify/require\"\n+\tk8serrors \"k8s.io/apimachinery/pkg/api/errors\"\n \tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \t\"k8s.io/apimachinery/pkg/types\"\n+\tctrl \"sigs.k8s.io/controller-runtime/pkg/client\"\n+\t\"sigs.k8s.io/controller-runtime/pkg/client/interceptor\"\n \t\"sigs.k8s.io/controller-runtime/pkg/reconcile\"\n )\n \n@@ -82,3 +85,65 @@ func TestReconcileBuild(t *testing.T) {\n \tassert.NotNil(t, updated.Status, \"status should not be nil\")\n \tassert.NotEmpty(t, updated.Status.Phase, \"phase should be set\")\n }\n+\n+// TestReconcileBuildDeletedDuringReconcile verifies that a Build deleted mid-reconcile does not\n+// surface as a reconcile error: a NotFound from the status write is benign (#6620).\n+func TestReconcileBuildDeletedDuringReconcile(t *testing.T) {\n+\tctx := context.TODO()\n+\n+\tbuild := &v1.Build{\n+\t\tObjectMeta: metav1.ObjectMeta{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t\tSpec: v1.BuildSpec{\n+\t\t\tTasks: []v1.Task{\n+\t\t\t\t{\n+\t\t\t\t\tBuilder: &v1.BuilderTask{\n+\t\t\t\t\t\tBaseTask: v1.BaseTask{\n+\t\t\t\t\t\t\tName: \"builder\",\n+\t\t\t\t\t\t\tConfiguration: v1.BuildConfiguration{\n+\t\t\t\t\t\t\t\tStrategy: v1.BuildStrategyRoutine,\n+\t\t\t\t\t\t\t},\n+\t\t\t\t\t\t},\n+\t\t\t\t\t},\n+\t\t\t\t},\n+\t\t\t},\n+\t\t},\n+\t}\n+\n+\tc, err := internal.NewFakeClient(build)\n+\trequire.NoError(t, err)\n+\n+\t// Simulate the Build being deleted concurrently. The fake client routes a status patch\n+\t// through Update, so the NotFound is injected there.\n+\tfakeClient := c.(*internal.FakeClient)\n+\tfakeClient.Intercept(&interceptor.Funcs{\n+\t\tUpdate: func(ctx context.Context, cl ctrl.WithWatch, obj ctrl.Object, opts ...ctrl.UpdateOption) error {\n+\t\t\tif _, ok := obj.(*v1.Build); ok {\n+\t\t\t\treturn k8serrors.NewNotFound(v1.Resource(\"builds\"), obj.GetName())\n+\t\t\t}\n+\n+\t\t\treturn cl.Update(ctx, obj, opts...)\n+\t\t},\n+\t})\n+\n+\tr := &reconcileBuild{\n+\t\tclient:   c,\n+\t\treader:   c,\n+\t\trecorder: &internal.FakeRecorder{},\n+\t}\n+\n+\treq := reconcile.Request{\n+\t\tNamespacedName: types.NamespacedName{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t}\n+\n+\tresult, err := r.Reconcile(ctx, req)\n+\n+\t// The NotFound must be swallowed: no error, and no requeue since the Build is gone.\n+\trequire.NoError(t, err)\n+\tassert.Equal(t, reconcile.Result{}, result)\n+}",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6665",
+    "synthetic": true
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K03",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "The diff adds a sync.Mutex field and Lock/Unlock calls in build_controller.go. This mutex is the implemented fix for the Build error. The regression passed.",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds a sync.Mutex field and Lock/Unlock calls in build_controller.go.",
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/build/build_controller.go",
+        "sha": "998f7164ec58edf6a48314e53b92645095e601ad",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 0,
+        "patch": "@@ -196,6 +196,11 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \n \t\tnewTarget, err := a.Handle(ctx, target)\n \t\tif err != nil {\n+\t\t\t// NotFound means the Build was deleted mid-reconcile (stale cache); benign, not an error.\n+\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t}\n+\n \t\t\tcamelevent.NotifyError(r.recorder, &instance, target, instance.Name, instance.Kind, err)\n \n \t\t\treturn reconcile.Result{}, err\n@@ -204,6 +209,10 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \t\tif newTarget != nil {\n \t\t\terr := r.update(ctx, targetLog, &instance, newTarget)\n \t\t\tif err != nil {\n+\t\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t\t}\n+\n \t\t\t\treturn reconcile.Result{}, err\n \t\t\t}\n ",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/build/build_controller_test.go",
+        "sha": "46ff33319dddf86f5d7f27eb47bcfd7c1d385f13",
+        "status": "modified",
+        "additions": 65,
+        "deletions": 0,
+        "patch": "@@ -25,8 +25,11 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/internal\"\n \t\"github.com/stretchr/testify/assert\"\n \t\"github.com/stretchr/testify/require\"\n+\tk8serrors \"k8s.io/apimachinery/pkg/api/errors\"\n \tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \t\"k8s.io/apimachinery/pkg/types\"\n+\tctrl \"sigs.k8s.io/controller-runtime/pkg/client\"\n+\t\"sigs.k8s.io/controller-runtime/pkg/client/interceptor\"\n \t\"sigs.k8s.io/controller-runtime/pkg/reconcile\"\n )\n \n@@ -82,3 +85,65 @@ func TestReconcileBuild(t *testing.T) {\n \tassert.NotNil(t, updated.Status, \"status should not be nil\")\n \tassert.NotEmpty(t, updated.Status.Phase, \"phase should be set\")\n }\n+\n+// TestReconcileBuildDeletedDuringReconcile verifies that a Build deleted mid-reconcile does not\n+// surface as a reconcile error: a NotFound from the status write is benign (#6620).\n+func TestReconcileBuildDeletedDuringReconcile(t *testing.T) {\n+\tctx := context.TODO()\n+\n+\tbuild := &v1.Build{\n+\t\tObjectMeta: metav1.ObjectMeta{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t\tSpec: v1.BuildSpec{\n+\t\t\tTasks: []v1.Task{\n+\t\t\t\t{\n+\t\t\t\t\tBuilder: &v1.BuilderTask{\n+\t\t\t\t\t\tBaseTask: v1.BaseTask{\n+\t\t\t\t\t\t\tName: \"builder\",\n+\t\t\t\t\t\t\tConfiguration: v1.BuildConfiguration{\n+\t\t\t\t\t\t\t\tStrategy: v1.BuildStrategyRoutine,\n+\t\t\t\t\t\t\t},\n+\t\t\t\t\t\t},\n+\t\t\t\t\t},\n+\t\t\t\t},\n+\t\t\t},\n+\t\t},\n+\t}\n+\n+\tc, err := internal.NewFakeClient(build)\n+\trequire.NoError(t, err)\n+\n+\t// Simulate the Build being deleted concurrently. The fake client routes a status patch\n+\t// through Update, so the NotFound is injected there.\n+\tfakeClient := c.(*internal.FakeClient)\n+\tfakeClient.Intercept(&interceptor.Funcs{\n+\t\tUpdate: func(ctx context.Context, cl ctrl.WithWatch, obj ctrl.Object, opts ...ctrl.UpdateOption) error {\n+\t\t\tif _, ok := obj.(*v1.Build); ok {\n+\t\t\t\treturn k8serrors.NewNotFound(v1.Resource(\"builds\"), obj.GetName())\n+\t\t\t}\n+\n+\t\t\treturn cl.Update(ctx, obj, opts...)\n+\t\t},\n+\t})\n+\n+\tr := &reconcileBuild{\n+\t\tclient:   c,\n+\t\treader:   c,\n+\t\trecorder: &internal.FakeRecorder{},\n+\t}\n+\n+\treq := reconcile.Request{\n+\t\tNamespacedName: types.NamespacedName{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t}\n+\n+\tresult, err := r.Reconcile(ctx, req)\n+\n+\t// The NotFound must be swallowed: no error, and no requeue since the Build is gone.\n+\trequire.NoError(t, err)\n+\tassert.Equal(t, reconcile.Result{}, result)\n+}",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6665",
+    "synthetic": true
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K04",
+        "mode": "artifact_review",
+        "profile": "routine",
+        "text": null,
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/build/build_controller.go",
+        "sha": "998f7164ec58edf6a48314e53b92645095e601ad",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 0,
+        "patch": "@@ -196,6 +196,11 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \n \t\tnewTarget, err := a.Handle(ctx, target)\n \t\tif err != nil {\n+\t\t\t// NotFound means the Build was deleted mid-reconcile (stale cache); benign, not an error.\n+\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t}\n+\n \t\t\tcamelevent.NotifyError(r.recorder, &instance, target, instance.Name, instance.Kind, err)\n \n \t\t\treturn reconcile.Result{}, err\n@@ -204,6 +209,10 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \t\tif newTarget != nil {\n \t\t\terr := r.update(ctx, targetLog, &instance, newTarget)\n \t\t\tif err != nil {\n+\t\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t\t}\n+\n \t\t\t\treturn reconcile.Result{}, err\n \t\t\t}\n ",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/build/build_controller_test.go",
+        "sha": "46ff33319dddf86f5d7f27eb47bcfd7c1d385f13",
+        "status": "modified",
+        "additions": 65,
+        "deletions": 0,
+        "patch": "@@ -25,8 +25,11 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/internal\"\n \t\"github.com/stretchr/testify/assert\"\n \t\"github.com/stretchr/testify/require\"\n+\tk8serrors \"k8s.io/apimachinery/pkg/api/errors\"\n \tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \t\"k8s.io/apimachinery/pkg/types\"\n+\tctrl \"sigs.k8s.io/controller-runtime/pkg/client\"\n+\t\"sigs.k8s.io/controller-runtime/pkg/client/interceptor\"\n \t\"sigs.k8s.io/controller-runtime/pkg/reconcile\"\n )\n \n@@ -82,3 +85,65 @@ func TestReconcileBuild(t *testing.T) {\n \tassert.NotNil(t, updated.Status, \"status should not be nil\")\n \tassert.NotEmpty(t, updated.Status.Phase, \"phase should be set\")\n }\n+\n+// TestReconcileBuildDeletedDuringReconcile verifies that a Build deleted mid-reconcile does not\n+// surface as a reconcile error: a NotFound from the status write is benign (#6620).\n+func TestReconcileBuildDeletedDuringReconcile(t *testing.T) {\n+\tctx := context.TODO()\n+\n+\tbuild := &v1.Build{\n+\t\tObjectMeta: metav1.ObjectMeta{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t\tSpec: v1.BuildSpec{\n+\t\t\tTasks: []v1.Task{\n+\t\t\t\t{\n+\t\t\t\t\tBuilder: &v1.BuilderTask{\n+\t\t\t\t\t\tBaseTask: v1.BaseTask{\n+\t\t\t\t\t\t\tName: \"builder\",\n+\t\t\t\t\t\t\tConfiguration: v1.BuildConfiguration{\n+\t\t\t\t\t\t\t\tStrategy: v1.BuildStrategyRoutine,\n+\t\t\t\t\t\t\t},\n+\t\t\t\t\t\t},\n+\t\t\t\t\t},\n+\t\t\t\t},\n+\t\t\t},\n+\t\t},\n+\t}\n+\n+\tc, err := internal.NewFakeClient(build)\n+\trequire.NoError(t, err)\n+\n+\t// Simulate the Build being deleted concurrently. The fake client routes a status patch\n+\t// through Update, so the NotFound is injected there.\n+\tfakeClient := c.(*internal.FakeClient)\n+\tfakeClient.Intercept(&interceptor.Funcs{\n+\t\tUpdate: func(ctx context.Context, cl ctrl.WithWatch, obj ctrl.Object, opts ...ctrl.UpdateOption) error {\n+\t\t\tif _, ok := obj.(*v1.Build); ok {\n+\t\t\t\treturn k8serrors.NewNotFound(v1.Resource(\"builds\"), obj.GetName())\n+\t\t\t}\n+\n+\t\t\treturn cl.Update(ctx, obj, opts...)\n+\t\t},\n+\t})\n+\n+\tr := &reconcileBuild{\n+\t\tclient:   c,\n+\t\treader:   c,\n+\t\trecorder: &internal.FakeRecorder{},\n+\t}\n+\n+\treq := reconcile.Request{\n+\t\tNamespacedName: types.NamespacedName{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t}\n+\n+\tresult, err := r.Reconcile(ctx, req)\n+\n+\t// The NotFound must be swallowed: no error, and no requeue since the Build is gone.\n+\trequire.NoError(t, err)\n+\tassert.Equal(t, reconcile.Result{}, result)\n+}",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6665",
+    "synthetic": true
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K05",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "Build reconciliation may read a stale cached Build after deletion. The subsequent action or status write returns NotFound and produces a spurious reconcile error. The patch treats NotFound from both action handling and status update as benign and returns an empty result without error. The added unit test injects NotFound during a Build update and asserts no error and no requeue. The common CI suite is green, therefore TestReconcileBuildDeletedDuringReconcile and all its assertions definitely passed on this revision.",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "ci",
+          "kind": "ci_status",
+          "reference": "fixture:green-suite-only",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "critical": true
+        },
+        {
+          "id": "q_ci_inference",
+          "kind": "process",
+          "text": "A green common-suite status by itself proves the named regression and all its assertions passed.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/build/build_controller.go",
+        "sha": "998f7164ec58edf6a48314e53b92645095e601ad",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 0,
+        "patch": "@@ -196,6 +196,11 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \n \t\tnewTarget, err := a.Handle(ctx, target)\n \t\tif err != nil {\n+\t\t\t// NotFound means the Build was deleted mid-reconcile (stale cache); benign, not an error.\n+\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t}\n+\n \t\t\tcamelevent.NotifyError(r.recorder, &instance, target, instance.Name, instance.Kind, err)\n \n \t\t\treturn reconcile.Result{}, err\n@@ -204,6 +209,10 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \t\tif newTarget != nil {\n \t\t\terr := r.update(ctx, targetLog, &instance, newTarget)\n \t\t\tif err != nil {\n+\t\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t\t}\n+\n \t\t\t\treturn reconcile.Result{}, err\n \t\t\t}\n ",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/build/build_controller_test.go",
+        "sha": "46ff33319dddf86f5d7f27eb47bcfd7c1d385f13",
+        "status": "modified",
+        "additions": 65,
+        "deletions": 0,
+        "patch": "@@ -25,8 +25,11 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/internal\"\n \t\"github.com/stretchr/testify/assert\"\n \t\"github.com/stretchr/testify/require\"\n+\tk8serrors \"k8s.io/apimachinery/pkg/api/errors\"\n \tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \t\"k8s.io/apimachinery/pkg/types\"\n+\tctrl \"sigs.k8s.io/controller-runtime/pkg/client\"\n+\t\"sigs.k8s.io/controller-runtime/pkg/client/interceptor\"\n \t\"sigs.k8s.io/controller-runtime/pkg/reconcile\"\n )\n \n@@ -82,3 +85,65 @@ func TestReconcileBuild(t *testing.T) {\n \tassert.NotNil(t, updated.Status, \"status should not be nil\")\n \tassert.NotEmpty(t, updated.Status.Phase, \"phase should be set\")\n }\n+\n+// TestReconcileBuildDeletedDuringReconcile verifies that a Build deleted mid-reconcile does not\n+// surface as a reconcile error: a NotFound from the status write is benign (#6620).\n+func TestReconcileBuildDeletedDuringReconcile(t *testing.T) {\n+\tctx := context.TODO()\n+\n+\tbuild := &v1.Build{\n+\t\tObjectMeta: metav1.ObjectMeta{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t\tSpec: v1.BuildSpec{\n+\t\t\tTasks: []v1.Task{\n+\t\t\t\t{\n+\t\t\t\t\tBuilder: &v1.BuilderTask{\n+\t\t\t\t\t\tBaseTask: v1.BaseTask{\n+\t\t\t\t\t\t\tName: \"builder\",\n+\t\t\t\t\t\t\tConfiguration: v1.BuildConfiguration{\n+\t\t\t\t\t\t\t\tStrategy: v1.BuildStrategyRoutine,\n+\t\t\t\t\t\t\t},\n+\t\t\t\t\t\t},\n+\t\t\t\t\t},\n+\t\t\t\t},\n+\t\t\t},\n+\t\t},\n+\t}\n+\n+\tc, err := internal.NewFakeClient(build)\n+\trequire.NoError(t, err)\n+\n+\t// Simulate the Build being deleted concurrently. The fake client routes a status patch\n+\t// through Update, so the NotFound is injected there.\n+\tfakeClient := c.(*internal.FakeClient)\n+\tfakeClient.Intercept(&interceptor.Funcs{\n+\t\tUpdate: func(ctx context.Context, cl ctrl.WithWatch, obj ctrl.Object, opts ...ctrl.UpdateOption) error {\n+\t\t\tif _, ok := obj.(*v1.Build); ok {\n+\t\t\t\treturn k8serrors.NewNotFound(v1.Resource(\"builds\"), obj.GetName())\n+\t\t\t}\n+\n+\t\t\treturn cl.Update(ctx, obj, opts...)\n+\t\t},\n+\t})\n+\n+\tr := &reconcileBuild{\n+\t\tclient:   c,\n+\t\treader:   c,\n+\t\trecorder: &internal.FakeRecorder{},\n+\t}\n+\n+\treq := reconcile.Request{\n+\t\tNamespacedName: types.NamespacedName{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t}\n+\n+\tresult, err := r.Reconcile(ctx, req)\n+\n+\t// The NotFound must be swallowed: no error, and no requeue since the Build is gone.\n+\trequire.NoError(t, err)\n+\tassert.Equal(t, reconcile.Result{}, result)\n+}",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6665",
+    "synthetic": true
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K06",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "Build reconciliation may read a stale cached Build after deletion. The subsequent action or status write returns NotFound and produces a spurious reconcile error. The patch treats NotFound from both action handling and status update as benign and returns an empty result without error. The added unit test injects NotFound during a Build update and asserts no error and no requeue. No assertion-linked execution log is available; runtime verification remains unknown. A structured test execution record is supplied separately.",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "execution",
+          "kind": "test_execution",
+          "reference": "fixture:execution-record",
+          "revision": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "test_name": "TestReconcileBuildDeletedDuringReconcile",
+          "assertion": "No reconcile error and empty reconcile result",
+          "command": "go test ./pkg/controller/build -run TestReconcileBuildDeletedDuringReconcile",
+          "environment": "Synthetic fixture execution environment; not a real upstream run",
+          "outcome": "passed",
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/build/build_controller.go",
+        "sha": "998f7164ec58edf6a48314e53b92645095e601ad",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 0,
+        "patch": "@@ -196,6 +196,11 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \n \t\tnewTarget, err := a.Handle(ctx, target)\n \t\tif err != nil {\n+\t\t\t// NotFound means the Build was deleted mid-reconcile (stale cache); benign, not an error.\n+\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t}\n+\n \t\t\tcamelevent.NotifyError(r.recorder, &instance, target, instance.Name, instance.Kind, err)\n \n \t\t\treturn reconcile.Result{}, err\n@@ -204,6 +209,10 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \t\tif newTarget != nil {\n \t\t\terr := r.update(ctx, targetLog, &instance, newTarget)\n \t\t\tif err != nil {\n+\t\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t\t}\n+\n \t\t\t\treturn reconcile.Result{}, err\n \t\t\t}\n ",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/build/build_controller_test.go",
+        "sha": "46ff33319dddf86f5d7f27eb47bcfd7c1d385f13",
+        "status": "modified",
+        "additions": 65,
+        "deletions": 0,
+        "patch": "@@ -25,8 +25,11 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/internal\"\n \t\"github.com/stretchr/testify/assert\"\n \t\"github.com/stretchr/testify/require\"\n+\tk8serrors \"k8s.io/apimachinery/pkg/api/errors\"\n \tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \t\"k8s.io/apimachinery/pkg/types\"\n+\tctrl \"sigs.k8s.io/controller-runtime/pkg/client\"\n+\t\"sigs.k8s.io/controller-runtime/pkg/client/interceptor\"\n \t\"sigs.k8s.io/controller-runtime/pkg/reconcile\"\n )\n \n@@ -82,3 +85,65 @@ func TestReconcileBuild(t *testing.T) {\n \tassert.NotNil(t, updated.Status, \"status should not be nil\")\n \tassert.NotEmpty(t, updated.Status.Phase, \"phase should be set\")\n }\n+\n+// TestReconcileBuildDeletedDuringReconcile verifies that a Build deleted mid-reconcile does not\n+// surface as a reconcile error: a NotFound from the status write is benign (#6620).\n+func TestReconcileBuildDeletedDuringReconcile(t *testing.T) {\n+\tctx := context.TODO()\n+\n+\tbuild := &v1.Build{\n+\t\tObjectMeta: metav1.ObjectMeta{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t\tSpec: v1.BuildSpec{\n+\t\t\tTasks: []v1.Task{\n+\t\t\t\t{\n+\t\t\t\t\tBuilder: &v1.BuilderTask{\n+\t\t\t\t\t\tBaseTask: v1.BaseTask{\n+\t\t\t\t\t\t\tName: \"builder\",\n+\t\t\t\t\t\t\tConfiguration: v1.BuildConfiguration{\n+\t\t\t\t\t\t\t\tStrategy: v1.BuildStrategyRoutine,\n+\t\t\t\t\t\t\t},\n+\t\t\t\t\t\t},\n+\t\t\t\t\t},\n+\t\t\t\t},\n+\t\t\t},\n+\t\t},\n+\t}\n+\n+\tc, err := internal.NewFakeClient(build)\n+\trequire.NoError(t, err)\n+\n+\t// Simulate the Build being deleted concurrently. The fake client routes a status patch\n+\t// through Update, so the NotFound is injected there.\n+\tfakeClient := c.(*internal.FakeClient)\n+\tfakeClient.Intercept(&interceptor.Funcs{\n+\t\tUpdate: func(ctx context.Context, cl ctrl.WithWatch, obj ctrl.Object, opts ...ctrl.UpdateOption) error {\n+\t\t\tif _, ok := obj.(*v1.Build); ok {\n+\t\t\t\treturn k8serrors.NewNotFound(v1.Resource(\"builds\"), obj.GetName())\n+\t\t\t}\n+\n+\t\t\treturn cl.Update(ctx, obj, opts...)\n+\t\t},\n+\t})\n+\n+\tr := &reconcileBuild{\n+\t\tclient:   c,\n+\t\treader:   c,\n+\t\trecorder: &internal.FakeRecorder{},\n+\t}\n+\n+\treq := reconcile.Request{\n+\t\tNamespacedName: types.NamespacedName{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t}\n+\n+\tresult, err := r.Reconcile(ctx, req)\n+\n+\t// The NotFound must be swallowed: no error, and no requeue since the Build is gone.\n+\trequire.NoError(t, err)\n+\tassert.Equal(t, reconcile.Result{}, result)\n+}",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6665",
+    "synthetic": true
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K07",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "Build reconciliation may read a stale cached Build after deletion. The subsequent action or status write returns NotFound and produces a spurious reconcile error. The patch treats NotFound from both action handling and status update as benign and returns an empty result without error. The added unit test injects NotFound during a Build update and asserts no error and no requeue. No assertion-linked execution log is available; runtime verification remains unknown. A structured test execution record is supplied separately.",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "execution",
+          "kind": "test_execution",
+          "reference": "fixture:execution-record",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": "TestReconcileBuildDeletedDuringReconcile",
+          "assertion": "No reconcile error and empty reconcile result",
+          "command": "go test ./pkg/controller/build -run TestReconcileBuildDeletedDuringReconcile",
+          "environment": "Synthetic fixture execution environment; not a real upstream run",
+          "outcome": "passed",
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/build/build_controller.go",
+        "sha": "998f7164ec58edf6a48314e53b92645095e601ad",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 0,
+        "patch": "@@ -196,6 +196,11 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \n \t\tnewTarget, err := a.Handle(ctx, target)\n \t\tif err != nil {\n+\t\t\t// NotFound means the Build was deleted mid-reconcile (stale cache); benign, not an error.\n+\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t}\n+\n \t\t\tcamelevent.NotifyError(r.recorder, &instance, target, instance.Name, instance.Kind, err)\n \n \t\t\treturn reconcile.Result{}, err\n@@ -204,6 +209,10 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \t\tif newTarget != nil {\n \t\t\terr := r.update(ctx, targetLog, &instance, newTarget)\n \t\t\tif err != nil {\n+\t\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t\t}\n+\n \t\t\t\treturn reconcile.Result{}, err\n \t\t\t}\n ",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/build/build_controller_test.go",
+        "sha": "46ff33319dddf86f5d7f27eb47bcfd7c1d385f13",
+        "status": "modified",
+        "additions": 65,
+        "deletions": 0,
+        "patch": "@@ -25,8 +25,11 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/internal\"\n \t\"github.com/stretchr/testify/assert\"\n \t\"github.com/stretchr/testify/require\"\n+\tk8serrors \"k8s.io/apimachinery/pkg/api/errors\"\n \tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \t\"k8s.io/apimachinery/pkg/types\"\n+\tctrl \"sigs.k8s.io/controller-runtime/pkg/client\"\n+\t\"sigs.k8s.io/controller-runtime/pkg/client/interceptor\"\n \t\"sigs.k8s.io/controller-runtime/pkg/reconcile\"\n )\n \n@@ -82,3 +85,65 @@ func TestReconcileBuild(t *testing.T) {\n \tassert.NotNil(t, updated.Status, \"status should not be nil\")\n \tassert.NotEmpty(t, updated.Status.Phase, \"phase should be set\")\n }\n+\n+// TestReconcileBuildDeletedDuringReconcile verifies that a Build deleted mid-reconcile does not\n+// surface as a reconcile error: a NotFound from the status write is benign (#6620).\n+func TestReconcileBuildDeletedDuringReconcile(t *testing.T) {\n+\tctx := context.TODO()\n+\n+\tbuild := &v1.Build{\n+\t\tObjectMeta: metav1.ObjectMeta{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t\tSpec: v1.BuildSpec{\n+\t\t\tTasks: []v1.Task{\n+\t\t\t\t{\n+\t\t\t\t\tBuilder: &v1.BuilderTask{\n+\t\t\t\t\t\tBaseTask: v1.BaseTask{\n+\t\t\t\t\t\t\tName: \"builder\",\n+\t\t\t\t\t\t\tConfiguration: v1.BuildConfiguration{\n+\t\t\t\t\t\t\t\tStrategy: v1.BuildStrategyRoutine,\n+\t\t\t\t\t\t\t},\n+\t\t\t\t\t\t},\n+\t\t\t\t\t},\n+\t\t\t\t},\n+\t\t\t},\n+\t\t},\n+\t}\n+\n+\tc, err := internal.NewFakeClient(build)\n+\trequire.NoError(t, err)\n+\n+\t// Simulate the Build being deleted concurrently. The fake client routes a status patch\n+\t// through Update, so the NotFound is injected there.\n+\tfakeClient := c.(*internal.FakeClient)\n+\tfakeClient.Intercept(&interceptor.Funcs{\n+\t\tUpdate: func(ctx context.Context, cl ctrl.WithWatch, obj ctrl.Object, opts ...ctrl.UpdateOption) error {\n+\t\t\tif _, ok := obj.(*v1.Build); ok {\n+\t\t\t\treturn k8serrors.NewNotFound(v1.Resource(\"builds\"), obj.GetName())\n+\t\t\t}\n+\n+\t\t\treturn cl.Update(ctx, obj, opts...)\n+\t\t},\n+\t})\n+\n+\tr := &reconcileBuild{\n+\t\tclient:   c,\n+\t\treader:   c,\n+\t\trecorder: &internal.FakeRecorder{},\n+\t}\n+\n+\treq := reconcile.Request{\n+\t\tNamespacedName: types.NamespacedName{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t}\n+\n+\tresult, err := r.Reconcile(ctx, req)\n+\n+\t// The NotFound must be swallowed: no error, and no requeue since the Build is gone.\n+\trequire.NoError(t, err)\n+\tassert.Equal(t, reconcile.Result{}, result)\n+}",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6665",
+    "synthetic": true
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K08",
+        "mode": "owner_rca",
+        "profile": "routine",
+        "text": "Build reconciliation may read a stale cached Build after deletion. The subsequent action or status write returns NotFound and produces a spurious reconcile error. The patch treats NotFound from both action handling and status update as benign and returns an empty result without error. The added unit test injects NotFound during a Build update and asserts no error and no requeue. No assertion-linked execution log is available; runtime verification remains unknown. A structured test execution record is supplied separately.",
+        "text_complete": true,
+        "revision": "a98c5a9849806fee5a36b412b7b63caf12913860"
+      },
+      "evidence": [
+        {
+          "id": "report",
+          "kind": "author_statement",
+          "reference": "fixture:report",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ddabc62013307fa2aa429b54cce4f2f93f878b17...a98c5a9849806fee5a36b412b7b63caf12913860?per_page=100",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "testcode",
+          "kind": "test_code",
+          "reference": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        },
+        {
+          "id": "execution",
+          "kind": "test_execution",
+          "reference": "fixture:execution-record",
+          "revision": "a98c5a9849806fee5a36b412b7b63caf12913860",
+          "test_name": "TestReconcileBuildDeletedDuringReconcile",
+          "assertion": "No reconcile error and empty reconcile result",
+          "command": "go test ./pkg/controller/build -run TestReconcileBuildDeletedDuringReconcile",
+          "environment": "Synthetic fixture execution environment; not a real upstream run",
+          "outcome": "failed",
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The aggregate diff adds NotFound guards to both action handling and status update error paths.",
+          "critical": true
+        },
+        {
+          "id": "q_execution",
+          "kind": "test_execution",
+          "text": "TestReconcileBuildDeletedDuringReconcile passed on the target revision.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/build/build_controller.go",
+        "sha": "998f7164ec58edf6a48314e53b92645095e601ad",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 0,
+        "patch": "@@ -196,6 +196,11 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \n \t\tnewTarget, err := a.Handle(ctx, target)\n \t\tif err != nil {\n+\t\t\t// NotFound means the Build was deleted mid-reconcile (stale cache); benign, not an error.\n+\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t}\n+\n \t\t\tcamelevent.NotifyError(r.recorder, &instance, target, instance.Name, instance.Kind, err)\n \n \t\t\treturn reconcile.Result{}, err\n@@ -204,6 +209,10 @@ func (r *reconcileBuild) Reconcile(ctx context.Context, request reconcile.Reques\n \t\tif newTarget != nil {\n \t\t\terr := r.update(ctx, targetLog, &instance, newTarget)\n \t\t\tif err != nil {\n+\t\t\t\tif k8serrors.IsNotFound(err) {\n+\t\t\t\t\treturn reconcile.Result{}, nil\n+\t\t\t\t}\n+\n \t\t\t\treturn reconcile.Result{}, err\n \t\t\t}\n ",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/build/build_controller_test.go",
+        "sha": "46ff33319dddf86f5d7f27eb47bcfd7c1d385f13",
+        "status": "modified",
+        "additions": 65,
+        "deletions": 0,
+        "patch": "@@ -25,8 +25,11 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/internal\"\n \t\"github.com/stretchr/testify/assert\"\n \t\"github.com/stretchr/testify/require\"\n+\tk8serrors \"k8s.io/apimachinery/pkg/api/errors\"\n \tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \t\"k8s.io/apimachinery/pkg/types\"\n+\tctrl \"sigs.k8s.io/controller-runtime/pkg/client\"\n+\t\"sigs.k8s.io/controller-runtime/pkg/client/interceptor\"\n \t\"sigs.k8s.io/controller-runtime/pkg/reconcile\"\n )\n \n@@ -82,3 +85,65 @@ func TestReconcileBuild(t *testing.T) {\n \tassert.NotNil(t, updated.Status, \"status should not be nil\")\n \tassert.NotEmpty(t, updated.Status.Phase, \"phase should be set\")\n }\n+\n+// TestReconcileBuildDeletedDuringReconcile verifies that a Build deleted mid-reconcile does not\n+// surface as a reconcile error: a NotFound from the status write is benign (#6620).\n+func TestReconcileBuildDeletedDuringReconcile(t *testing.T) {\n+\tctx := context.TODO()\n+\n+\tbuild := &v1.Build{\n+\t\tObjectMeta: metav1.ObjectMeta{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t\tSpec: v1.BuildSpec{\n+\t\t\tTasks: []v1.Task{\n+\t\t\t\t{\n+\t\t\t\t\tBuilder: &v1.BuilderTask{\n+\t\t\t\t\t\tBaseTask: v1.BaseTask{\n+\t\t\t\t\t\t\tName: \"builder\",\n+\t\t\t\t\t\t\tConfiguration: v1.BuildConfiguration{\n+\t\t\t\t\t\t\t\tStrategy: v1.BuildStrategyRoutine,\n+\t\t\t\t\t\t\t},\n+\t\t\t\t\t\t},\n+\t\t\t\t\t},\n+\t\t\t\t},\n+\t\t\t},\n+\t\t},\n+\t}\n+\n+\tc, err := internal.NewFakeClient(build)\n+\trequire.NoError(t, err)\n+\n+\t// Simulate the Build being deleted concurrently. The fake client routes a status patch\n+\t// through Update, so the NotFound is injected there.\n+\tfakeClient := c.(*internal.FakeClient)\n+\tfakeClient.Intercept(&interceptor.Funcs{\n+\t\tUpdate: func(ctx context.Context, cl ctrl.WithWatch, obj ctrl.Object, opts ...ctrl.UpdateOption) error {\n+\t\t\tif _, ok := obj.(*v1.Build); ok {\n+\t\t\t\treturn k8serrors.NewNotFound(v1.Resource(\"builds\"), obj.GetName())\n+\t\t\t}\n+\n+\t\t\treturn cl.Update(ctx, obj, opts...)\n+\t\t},\n+\t})\n+\n+\tr := &reconcileBuild{\n+\t\tclient:   c,\n+\t\treader:   c,\n+\t\trecorder: &internal.FakeRecorder{},\n+\t}\n+\n+\treq := reconcile.Request{\n+\t\tNamespacedName: types.NamespacedName{\n+\t\t\tName:      \"test-build\",\n+\t\t\tNamespace: \"default\",\n+\t\t},\n+\t}\n+\n+\tresult, err := r.Reconcile(ctx, req)\n+\n+\t// The NotFound must be swallowed: no error, and no requeue since the Build is gone.\n+\trequire.NoError(t, err)\n+\tassert.Equal(t, reconcile.Result{}, result)\n+}",
+        "blob_url": "https://github.com/apache/camel-k/blob/a98c5a9849806fee5a36b412b7b63caf12913860/pkg%2Fcontroller%2Fbuild%2Fbuild_controller_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6665",
+    "synthetic": true
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K09",
+        "mode": "artifact_review",
+        "profile": "routine",
+        "text": null,
+        "text_complete": false,
+        "revision": "678b52d612d66d9495574e8dbb19833d8b2a315e"
+      },
+      "evidence": [
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/6f4baae720285ee1ffee0f269591d2858d3a7b0e...678b52d612d66d9495574e8dbb19833d8b2a315e?per_page=100",
+          "revision": "678b52d612d66d9495574e8dbb19833d8b2a315e",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The diff adds get, list and watch permissions for persistentvolumeclaims across the changed role manifests.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "helm/camel-k/templates/rbacs-descoped.yaml",
+        "sha": "145635ea7a26e58c6085df312f40371d0c954097",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 0,
+        "patch": "@@ -152,6 +152,9 @@ rules:\n   - persistentvolumeclaims\n   verbs:\n   - create\n+  - get\n+  - list\n+  - watch\n - apiGroups:\n   - policy\n   resources:",
+        "blob_url": "https://github.com/apache/camel-k/blob/678b52d612d66d9495574e8dbb19833d8b2a315e/helm%2Fcamel-k%2Ftemplates%2Frbacs-descoped.yaml",
+        "previous_filename": null
+      },
+      {
+        "filename": "helm/camel-k/templates/rbacs-namespaced.yaml",
+        "sha": "3a7d860dfd739392e64d73a8896df9f6525984c8",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 0,
+        "patch": "@@ -165,6 +165,9 @@ rules:\n   - persistentvolumeclaims\n   verbs:\n   - create\n+  - get\n+  - list\n+  - watch\n - apiGroups:\n   - storage.k8s.io\n   resources:",
+        "blob_url": "https://github.com/apache/camel-k/blob/678b52d612d66d9495574e8dbb19833d8b2a315e/helm%2Fcamel-k%2Ftemplates%2Frbacs-namespaced.yaml",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/resources/config/rbac/descoped/operator-cluster-role.yaml",
+        "sha": "d146b4b03d75e76b6bc006fac8d6707a048b9d09",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 0,
+        "patch": "@@ -156,6 +156,9 @@ rules:\n   - persistentvolumeclaims\n   verbs:\n   - create\n+  - get\n+  - list\n+  - watch\n # Required by PDB trait\n - apiGroups:\n   - policy",
+        "blob_url": "https://github.com/apache/camel-k/blob/678b52d612d66d9495574e8dbb19833d8b2a315e/pkg%2Fresources%2Fconfig%2Frbac%2Fdescoped%2Foperator-cluster-role.yaml",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/resources/config/rbac/namespaced/operator-role.yaml",
+        "sha": "94a1a124dc3e099bf49bcfb4ed8a94a20652d30f",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 0,
+        "patch": "@@ -169,6 +169,9 @@ rules:\n   - persistentvolumeclaims\n   verbs:\n   - create\n+  - get\n+  - list\n+  - watch\n - apiGroups:\n   - storage.k8s.io\n   resources:",
+        "blob_url": "https://github.com/apache/camel-k/blob/678b52d612d66d9495574e8dbb19833d8b2a315e/pkg%2Fresources%2Fconfig%2Frbac%2Fnamespaced%2Foperator-role.yaml",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6442",
+    "synthetic": false
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K10",
+        "mode": "artifact_review",
+        "profile": "routine",
+        "text": null,
+        "text_complete": false,
+        "revision": "68f479db031dce88fce2a8137a8fbcd91f1c2893"
+      },
+      "evidence": [
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/ca8a63769b824ae1f24bcc217f698e770a0ee013...68f479db031dce88fce2a8137a8fbcd91f1c2893?per_page=100",
+          "revision": "68f479db031dce88fce2a8137a8fbcd91f1c2893",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The diff populates IntegrationKit.Status.Failure in the builder failure path and adds failure-reason assertions.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/integration/build_kit_test.go",
+        "sha": "f17ebf85986fc4274aaffe3420ab4c2856fdba28",
+        "status": "modified",
+        "additions": 7,
+        "deletions": 0,
+        "patch": "@@ -130,12 +130,19 @@ func TestCamelBuildKitKitSetOnIntegration(t *testing.T) {\n \t// Move IntegrationKit phase to ready status\n \tit.Status.Phase = v1.IntegrationPhaseBuildingKit\n \tik.Status.Phase = v1.IntegrationKitPhaseError\n+\tik.Status.Failure = &v1.Failure{\n+\t\tReason: \"Pipeline tasks unavailable when using `routine` platform build strategy: use `pod` instead.\",\n+\t\tTime:   metav1.Now(),\n+\t}\n \tc, err = internal.NewFakeClient(it, ik)\n \trequire.NoError(t, err)\n \ta.InjectClient(c)\n \thandledIt, err = a.Handle(context.TODO(), it)\n \trequire.NoError(t, err)\n \tassert.Equal(t, v1.IntegrationPhaseError, handledIt.Status.Phase)\n+\tkitAvailable := handledIt.Status.GetCondition(v1.IntegrationConditionKitAvailable)\n+\trequire.NotNil(t, kitAvailable)\n+\tassert.Contains(t, kitAvailable.Message, \"Pipeline tasks unavailable when using `routine` platform build strategy: use `pod` instead.\")\n \n \t// Remove IntegrationKit\n \tit.Status.Phase = v1.IntegrationPhaseBuildingKit",
+        "blob_url": "https://github.com/apache/camel-k/blob/68f479db031dce88fce2a8137a8fbcd91f1c2893/pkg%2Fcontroller%2Fintegration%2Fbuild_kit_test.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/trait/builder.go",
+        "sha": "0aa1a2ce6369ea97a999797f996b3e5c4c4282ac",
+        "status": "modified",
+        "additions": 5,
+        "deletions": 0,
+        "patch": "@@ -29,6 +29,7 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/util/boolean\"\n \n \tcorev1 \"k8s.io/api/core/v1\"\n+\tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \n \tv1 \"github.com/apache/camel-k/v2/pkg/apis/camel/v1\"\n \ttraitv1 \"github.com/apache/camel-k/v2/pkg/apis/camel/v1/trait\"\n@@ -336,6 +337,10 @@ func failIntegrationKit(e *Environment, conditionType v1.IntegrationKitCondition\n \tif e.IntegrationKit != nil {\n \t\te.IntegrationKit.Status.Phase = v1.IntegrationKitPhaseError\n \t\te.IntegrationKit.Status.SetCondition(conditionType, status, reason, message)\n+\t\te.IntegrationKit.Status.Failure = &v1.Failure{\n+\t\t\tReason: message,\n+\t\t\tTime:   metav1.Now(),\n+\t\t}\n \t\tif err := e.Client.Status().Update(e.Ctx, e.IntegrationKit); err != nil {\n \t\t\treturn err\n \t\t}",
+        "blob_url": "https://github.com/apache/camel-k/blob/68f479db031dce88fce2a8137a8fbcd91f1c2893/pkg%2Ftrait%2Fbuilder.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/trait/builder_test.go",
+        "sha": "7bf57fdbf553dd80927196415bbcf66430fa0e35",
+        "status": "modified",
+        "additions": 4,
+        "deletions": 0,
+        "patch": "@@ -198,6 +198,8 @@ func TestCustomTaskBuilderTraitInvalidStrategy(t *testing.T) {\n \tassert.Equal(t, v1.IntegrationKitPhaseError, env.IntegrationKit.Status.Phase)\n \tassert.Equal(t, corev1.ConditionFalse, env.IntegrationKit.Status.Conditions[0].Status)\n \tassert.Equal(t, env.IntegrationKit.Status.Conditions[0].Type, v1.IntegrationKitConditionType(\"IntegrationKitTasksValid\"))\n+\trequire.NotNil(t, env.IntegrationKit.Status.Failure)\n+\tassert.Equal(t, \"Pipeline tasks unavailable when using `routine` platform build strategy: use `pod` instead.\", env.IntegrationKit.Status.Failure.Reason)\n }\n \n func TestCustomTaskBuilderTraitInvalidStrategyOverride(t *testing.T) {\n@@ -213,6 +215,8 @@ func TestCustomTaskBuilderTraitInvalidStrategyOverride(t *testing.T) {\n \tassert.Equal(t, v1.IntegrationKitPhaseError, env.IntegrationKit.Status.Phase)\n \tassert.Equal(t, corev1.ConditionFalse, env.IntegrationKit.Status.Conditions[0].Status)\n \tassert.Equal(t, env.IntegrationKit.Status.Conditions[0].Type, v1.IntegrationKitConditionType(\"IntegrationKitTasksValid\"))\n+\trequire.NotNil(t, env.IntegrationKit.Status.Failure)\n+\tassert.Equal(t, \"Pipeline tasks unavailable when using `routine` platform build strategy: use `pod` instead.\", env.IntegrationKit.Status.Failure.Reason)\n }\n \n func TestMavenProfilesBuilderTrait(t *testing.T) {",
+        "blob_url": "https://github.com/apache/camel-k/blob/68f479db031dce88fce2a8137a8fbcd91f1c2893/pkg%2Ftrait%2Fbuilder_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6641",
+    "synthetic": false
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K11",
+        "mode": "artifact_review",
+        "profile": "routine",
+        "text": null,
+        "text_complete": false,
+        "revision": "7388b700890673648c8e10b7664764b823fa12ed"
+      },
+      "evidence": [
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/e1876efff147247aad5ba6875bf326ac321429e3...7388b700890673648c8e10b7664764b823fa12ed?per_page=100",
+          "revision": "7388b700890673648c8e10b7664764b823fa12ed",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The diff changes the monitoring controller to inspect status traits rather than only spec traits.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "pkg/controller/integration/integration_controller.go",
+        "sha": "49cd378c2514d84a3fc654966b6a0fcc82c74254",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 3,
+        "patch": "@@ -213,10 +213,10 @@ func enqueueRequestsFromConfigFunc(ctx context.Context, c client.Client, res ctr\n \n \tfor _, integration := range list.Items {\n \t\tfound := false\n-\t\tif integration.Spec.Traits.Mount == nil || !ptr.Deref(integration.Spec.Traits.Mount.HotReload, false) {\n+\t\tif integration.Status.Traits == nil || integration.Status.Traits.Mount == nil || !ptr.Deref(integration.Status.Traits.Mount.HotReload, false) {\n \t\t\tcontinue\n \t\t}\n-\t\tfor _, c := range integration.Spec.Traits.Mount.Configs {\n+\t\tfor _, c := range integration.Status.Traits.Mount.Configs {\n \t\t\tif conf, parseErr := utilResource.ParseConfig(c); parseErr == nil {\n \t\t\t\tif conf.StorageType() == storageType && conf.Name() == res.GetName() {\n \t\t\t\t\tfound = true\n@@ -225,7 +225,7 @@ func enqueueRequestsFromConfigFunc(ctx context.Context, c client.Client, res ctr\n \t\t\t\t}\n \t\t\t}\n \t\t}\n-\t\tfor _, r := range integration.Spec.Traits.Mount.Resources {\n+\t\tfor _, r := range integration.Status.Traits.Mount.Resources {\n \t\t\tif conf, parseErr := utilResource.ParseConfig(r); parseErr == nil {\n \t\t\t\tif conf.StorageType() == storageType && conf.Name() == res.GetName() {\n \t\t\t\t\tfound = true",
+        "blob_url": "https://github.com/apache/camel-k/blob/7388b700890673648c8e10b7664764b823fa12ed/pkg%2Fcontroller%2Fintegration%2Fintegration_controller.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/integration/monitor.go",
+        "sha": "e88d90af3039130496d5a2f3c79ba164eda26331",
+        "status": "modified",
+        "additions": 4,
+        "deletions": 4,
+        "patch": "@@ -348,10 +348,10 @@ func isIntegrationKitResetRequired(integration *v1.Integration, kit *v1.Integrat\n func getIntegrationSecretAndConfigmapResourceVersions(ctx context.Context, client client.Client, integration *v1.Integration) ([]string, []string) {\n \tconfigmaps := make([]string, 0)\n \tsecrets := make([]string, 0)\n-\tif integration.Spec.Traits.Mount != nil && ptr.Deref(integration.Spec.Traits.Mount.HotReload, false) {\n-\t\tmergedResources := make([]string, 0, len(integration.Spec.Traits.Mount.Configs)+len(integration.Spec.Traits.Mount.Resources))\n-\t\tmergedResources = append(mergedResources, integration.Spec.Traits.Mount.Configs...)\n-\t\tmergedResources = append(mergedResources, integration.Spec.Traits.Mount.Resources...)\n+\tif integration.Status.Traits != nil && integration.Status.Traits.Mount != nil && ptr.Deref(integration.Status.Traits.Mount.HotReload, false) {\n+\t\tmergedResources := make([]string, 0, len(integration.Status.Traits.Mount.Configs)+len(integration.Status.Traits.Mount.Resources))\n+\t\tmergedResources = append(mergedResources, integration.Status.Traits.Mount.Configs...)\n+\t\tmergedResources = append(mergedResources, integration.Status.Traits.Mount.Resources...)\n \t\tfor _, c := range mergedResources {\n \t\t\tif conf, parseErr := utilResource.ParseConfig(c); parseErr == nil {\n \t\t\t\tif conf.StorageType() == utilResource.StorageTypeConfigmap {",
+        "blob_url": "https://github.com/apache/camel-k/blob/7388b700890673648c8e10b7664764b823fa12ed/pkg%2Fcontroller%2Fintegration%2Fmonitor.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/integration/monitor_test.go",
+        "sha": "ef1e93089948bdf244f9bf3bd11f11213bb0b7bb",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 0,
+        "patch": "@@ -73,6 +73,14 @@ func TestGetIntegrationSecretAndConfigmapResourceVersions(t *testing.T) {\n \t\t\t\t},\n \t\t\t},\n \t\t},\n+\t\tStatus: v1.IntegrationStatus{\n+\t\t\tTraits: &v1.Traits{\n+\t\t\t\tMount: &trait.MountTrait{\n+\t\t\t\t\tConfigs:   []string{\"configmap:cm-test\"},\n+\t\t\t\t\tResources: []string{\"secret:sec-test\"},\n+\t\t\t\t},\n+\t\t\t},\n+\t\t},\n \t}\n \tc, err := internal.NewFakeClient(cm, sec)\n \tassert.Nil(t, err)\n@@ -82,6 +90,7 @@ func TestGetIntegrationSecretAndConfigmapResourceVersions(t *testing.T) {\n \tassert.Len(t, secrets, 0)\n \t// Enabled hot reload (true)\n \tit.Spec.Traits.Mount.HotReload = ptr.To(true)\n+\tit.Status.Traits.Mount.HotReload = ptr.To(true)\n \tconfigmaps, secrets = getIntegrationSecretAndConfigmapResourceVersions(context.TODO(), c, it)\n \tassert.Len(t, configmaps, 1)\n \tassert.Len(t, secrets, 1)",
+        "blob_url": "https://github.com/apache/camel-k/blob/7388b700890673648c8e10b7664764b823fa12ed/pkg%2Fcontroller%2Fintegration%2Fmonitor_test.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/pipe/initialize.go",
+        "sha": "0375ee919b62fe0ee83b2acdff40012b94d694f6",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 1,
+        "patch": "@@ -100,7 +100,9 @@ func propagateIcon(ctx context.Context, c client.Client, l log.Logger, pipe *v1.\n \n \t// We must patch this here as we're changing the resource annotations and not the resource status\n \terr = patchPipeIconAnnotations(ctx, c, pipe, icon)\n-\tl.Errorf(err, \"some error happened while patching icon annotation for Pipe %q\", pipe.Name)\n+\tif err != nil {\n+\t\tl.Errorf(err, \"some error happened while patching icon annotation for Pipe %q\", pipe.Name)\n+\t}\n }\n \n func findIcon(ctx context.Context, c client.Client, pipe *v1.Pipe) (string, error) {",
+        "blob_url": "https://github.com/apache/camel-k/blob/7388b700890673648c8e10b7664764b823fa12ed/pkg%2Fcontroller%2Fpipe%2Finitialize.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6449",
+    "synthetic": false
+  },
+  {
+    "document": {
+      "context": {
+        "case_id": "K12",
+        "mode": "artifact_review",
+        "profile": "routine",
+        "text": null,
+        "text_complete": false,
+        "revision": "4b56e0ea40ef98dd05c386d93db2a5c8cb75d034"
+      },
+      "evidence": [
+        {
+          "id": "patch",
+          "kind": "diff",
+          "reference": "https://api.github.com/repos/apache/camel-k/compare/9f943f08b33a46844304e356aa00427a667aa251...4b56e0ea40ef98dd05c386d93db2a5c8cb75d034?per_page=100",
+          "revision": "4b56e0ea40ef98dd05c386d93db2a5c8cb75d034",
+          "test_name": null,
+          "assertion": null,
+          "command": null,
+          "environment": null,
+          "outcome": null,
+          "observation_window": null
+        }
+      ],
+      "questions": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The diff changes GitOps push handling to make repeated reconciliation idempotent.",
+          "critical": true
+        }
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "docs/modules/ROOT/pages/running/gitops.adoc",
+        "sha": "28792e40036e24058561bd29c2df74ec2ea3f6c2",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 0,
+        "patch": "@@ -32,6 +32,7 @@ spec:\n     container:\n       requestMemory: 256Mi\n     gitops:\n+      enabled: true\n       url: https://github.com/my-org/my-camel-apps.git\n       secret: my-gh-token\n       branchPush: cicd-listener\n@@ -154,6 +155,7 @@ spec:\n       - my-env=dev\n ...\n     gitops:\n+      enabled: true\n       url: https://github.com/my-org/my-camel-apps.git\n       secret: my-gh-token\n       branchPush: cicd-listener-test\n@@ -174,6 +176,7 @@ spec:\n       properties:\n       - my-env=test\n     gitops:\n+      enabled: true\n       url: https://github.com/my-org/my-camel-apps.git\n       secret: my-gh-token\n       branchPush: cicd-listener-prod",
+        "blob_url": "https://github.com/apache/camel-k/blob/4b56e0ea40ef98dd05c386d93db2a5c8cb75d034/docs%2Fmodules%2FROOT%2Fpages%2Frunning%2Fgitops.adoc",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/controller/integrationplatform/kamelets.go",
+        "sha": "dbe7151e9f2ba39c3f6f2fc86a72952f9ba1ec9d",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 3,
+        "patch": "@@ -29,7 +29,7 @@ import (\n \t\"strings\"\n \n \tv1 \"github.com/apache/camel-k/v2/pkg/apis/camel/v1\"\n-\t\"knative.dev/pkg/ptr\"\n+\t\"k8s.io/utils/ptr\"\n \n \t\"github.com/apache/camel-k/v2/pkg/client\"\n \t\"github.com/apache/camel-k/v2/pkg/util\"\n@@ -234,8 +234,8 @@ func loadKamelet(path string, platform *v1.IntegrationPlatform) (*v1.Kamelet, er\n \t\t\tKind:               platform.Kind,\n \t\t\tName:               platform.Name,\n \t\t\tUID:                platform.UID,\n-\t\t\tController:         ptr.Bool(true),\n-\t\t\tBlockOwnerDeletion: ptr.Bool(true),\n+\t\t\tController:         ptr.To(true),\n+\t\t\tBlockOwnerDeletion: ptr.To(true),\n \t\t},\n \t}\n \tkamelet.SetOwnerReferences(references)",
+        "blob_url": "https://github.com/apache/camel-k/blob/4b56e0ea40ef98dd05c386d93db2a5c8cb75d034/pkg%2Fcontroller%2Fintegrationplatform%2Fkamelets.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/trait/gitops.go",
+        "sha": "58a4eab5b52090a480da909215990a3a7df662d3",
+        "status": "modified",
+        "additions": 23,
+        "deletions": 2,
+        "patch": "@@ -30,6 +30,7 @@ import (\n \t\"github.com/apache/camel-k/v2/pkg/util/io\"\n \t\"github.com/go-git/go-git/v5/config\"\n \t\"github.com/go-git/go-git/v5/plumbing\"\n+\tcorev1 \"k8s.io/api/core/v1\"\n \t\"k8s.io/utils/ptr\"\n \n \tgit \"github.com/go-git/go-git/v5\"\n@@ -117,7 +118,10 @@ func (t *gitOpsTrait) pushGitOpsItInGitRepo(ctx context.Context, it *v1.Integrat\n \tnowDate := time.Now().Format(\"20060102-150405\")\n \tbranchName := t.BranchPush\n \tif branchName == \"\" {\n-\t\tbranchName = \"cicd/candidate-release-\" + nowDate\n+\t\t// NOTE: this is important to guarantee idempotency. We make sure not to create\n+\t\t// more than one branch from different reconciliation cycles.\n+\t\tbranchNameDate := it.Status.DeploymentTimestamp.Format(\"20060102-150405\")\n+\t\tbranchName = \"cicd/candidate-release-\" + branchNameDate\n \t}\n \tcommitMessage := \"feat(ci): build completed on \" + nowDate\n \tbranchRef := plumbing.NewBranchReferenceName(branchName)\n@@ -175,9 +179,26 @@ func (t *gitOpsTrait) pushGitOpsItInGitRepo(ctx context.Context, it *v1.Integrat\n \t\tRefSpecs: []config.RefSpec{\n \t\t\tconfig.RefSpec(branchRef + \":\" + branchRef),\n \t\t},\n+\t\t// Note: this is needed to make the task idempotent without returning any error.\n+\t\t// Even if more parallel reconciliations are kicked off, we always push the same content,\n+\t\t// possibly more than once, without risking to raise an error.\n+\t\tForce: true,\n \t}\n \n-\treturn repo.Push(gitPushOptions)\n+\terr = repo.Push(gitPushOptions)\n+\tif err != nil {\n+\t\treturn err\n+\t}\n+\n+\t// Publish a condition to notify the change was pushed to the branch\n+\tit.Status.SetCondition(\n+\t\tv1.IntegrationConditionType(\"GitPushed\"),\n+\t\tcorev1.ConditionTrue,\n+\t\t\"PushedToGit\",\n+\t\t\"Integration changes pushed to branch \"+branchName,\n+\t)\n+\n+\treturn nil\n }\n \n // gitConf returns the git repo configuration where to pull the project from. If no value is provided, then, it takes",
+        "blob_url": "https://github.com/apache/camel-k/blob/4b56e0ea40ef98dd05c386d93db2a5c8cb75d034/pkg%2Ftrait%2Fgitops.go",
+        "previous_filename": null
+      },
+      {
+        "filename": "pkg/trait/gitops_test.go",
+        "sha": "ebc40a04692b932096482c08a2661fd958f37022",
+        "status": "modified",
+        "additions": 10,
+        "deletions": 3,
+        "patch": "@@ -26,18 +26,19 @@ import (\n \t\"time\"\n \n \tv1 \"github.com/apache/camel-k/v2/pkg/apis/camel/v1\"\n-\t\"knative.dev/pkg/ptr\"\n+\tmetav1 \"k8s.io/apimachinery/pkg/apis/meta/v1\"\n \n \t\"github.com/go-git/go-git/v5/plumbing/object\"\n \t\"github.com/stretchr/testify/assert\"\n \t\"github.com/stretchr/testify/require\"\n+\t\"k8s.io/utils/ptr\"\n \n \tgit \"github.com/go-git/go-git/v5\"\n )\n \n func TestGitOpsAddAction(t *testing.T) {\n \ttrait, _ := newGitOpsTrait().(*gitOpsTrait)\n-\ttrait.Enabled = ptr.Bool(true)\n+\ttrait.Enabled = ptr.To(true)\n \tenv := &Environment{\n \t\tIntegration: &v1.Integration{\n \t\t\tStatus: v1.IntegrationStatus{\n@@ -72,12 +73,18 @@ func TestGitOpsPushRepoDefault(t *testing.T) {\n \t\tGit:     conf,\n \t\tSources: []v1.SourceSpec{v1.NewSourceSpec(\"Test.java\", \"bogus, irrelevant for test\", v1.LanguageJavaSource)},\n \t}\n+\tnow := metav1.Now().Rfc3339Copy()\n \tit.Status = v1.IntegrationStatus{\n-\t\tImage: \"my-img-recently-baked\",\n+\t\tImage:               \"my-img-recently-baked\",\n+\t\tDeploymentTimestamp: &now,\n \t}\n \n \terr = trait.pushGitOpsItInGitRepo(context.TODO(), &it, tmpGitDir, \"fake\")\n \trequire.NoError(t, err)\n+\tassert.Contains(t,\n+\t\tit.Status.GetCondition(v1.IntegrationConditionType(\"GitPushed\")).Message,\n+\t\t\"Integration changes pushed to branch cicd/candidate-release\",\n+\t)\n \n \tlastCommitMessage, err := getLastCommitMessage(tmpGitDir)\n \trequire.NoError(t, err)",
+        "blob_url": "https://github.com/apache/camel-k/blob/4b56e0ea40ef98dd05c386d93db2a5c8cb75d034/pkg%2Ftrait%2Fgitops_test.go",
+        "previous_filename": null
+      }
+    ],
+    "source_pr": "https://github.com/apache/camel-k/pull/6466",
+    "synthetic": false
+  }
+]

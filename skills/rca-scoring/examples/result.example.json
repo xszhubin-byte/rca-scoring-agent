@@ -5,7 +5,8 @@
     "profile": "routine",
     "text": null,
     "text_complete": false,
-    "revision": null
+    "revision": null,
+    "review_contract": "1.0"
   },
   "evidence": [],
   "claims": [],

@@ -1,0 +1,164 @@
+{
+  "cases": [
+    {
+      "case_id": "K09",
+      "claims": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The diff adds get, list and watch permissions for persistentvolumeclaims across the changed role manifests.",
+          "status": "supported",
+          "evidence_ids": ["patch"],
+          "critical": true
+        }
+      ],
+      "items": {
+        "P1": {"basis": "unknown", "reason": "No relevant source passage exists; artifact_review contract supplies no expected-versus-actual behavior evidence.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "P2": {"basis": "unknown", "reason": "No relevant source passage exists; runtime trigger and reproduction conditions are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "P3": {"basis": "unknown", "reason": "No relevant source passage exists; affected deployments and impact boundaries are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "P4": {"basis": "unknown", "reason": "No relevant source passage exists; behavioral acceptance criteria are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "C1": {"basis": "observed", "reason": "“persistentvolumeclaims” and “- create” locate the permission gap; consuming operations and their authorization failures are not shown.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "C2": {"basis": "observed", "reason": "“+  - get” supplies a missing read permission; the caller-to-denial-to-external-symptom chain remains unavailable.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "C3": {"basis": "observed", "reason": "“+  - list” predicts changed authorization for PVC listing, but cannot distinguish missing role grants from binding or caller problems.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "C4": {"basis": "observed", "reason": "“+  - watch” directly establishes the manifest change; runtime necessity and effective authorization remain unverified.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "O1": {"basis": "unknown", "reason": "No relevant source passage exists; implementation introduction history is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O2": {"basis": "unknown", "reason": "No relevant source passage exists; historical test coverage is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O3": {"basis": "unknown", "reason": "No relevant source passage exists; prior review and detection defenses are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O4": {"basis": "unknown", "reason": "No relevant source passage exists; an earlier detection design is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "R1": {"basis": "observed", "reason": "“+  - get”, “+  - list”, and “+  - watch” directly remove the corresponding manifest permission omissions.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "R2": {"basis": "observed", "reason": "“persistentvolumeclaims” receives identical additions in all four supplied Helm and resource manifests, covering both namespaced and descoped variants.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "R3": {"basis": "observed", "reason": "“+  - watch” expands access only on the shown PVC rules and preserves create; effective privilege scope and bindings are unavailable.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "R4": {"basis": "observed", "reason": "“+  - get” is repeated consistently across four manifests; changes are confined to the required verb lists without unrelated edits.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "V1": {"basis": "unknown", "reason": "No relevant source passage exists; regression assertions are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "V2": {"basis": "unknown", "reason": "No relevant source passage exists; no target-revision assertion-linked execution record is supplied.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "V3": {"basis": "unknown", "reason": "No relevant source passage exists; boundary and negative tests are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "V4": {"basis": "unknown", "reason": "No relevant source passage exists; non-regression verification is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "L1": {"basis": "unknown", "reason": "No relevant source passage exists; a mechanism-based search beyond changed manifests is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "L2": {"basis": "observed", "reason": "“+  - list” durably corrects the same permission omission in both manifest representations and deployment variants.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "L3": {"basis": "observed", "reason": "“+  - get”, “+  - list”, and “+  - watch” define a concrete implemented action with inspectable manifest acceptance.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "L4": {"basis": "unknown", "reason": "No relevant source passage exists; an explicit closure-check plan is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null}
+      },
+      "closure_requested": "implemented"
+    },
+    {
+      "case_id": "K10",
+      "claims": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The diff populates IntegrationKit.Status.Failure in the builder failure path and adds failure-reason assertions.",
+          "status": "supported",
+          "evidence_ids": ["patch", "test_00", "test_01"],
+          "critical": true
+        }
+      ],
+      "items": {
+        "P1": {"basis": "observed", "reason": "“require.NotNil(t, env.IntegrationKit.Status.Failure)” establishes the artifact_review failure contract; exact reason assertions expose the missing diagnostic field.", "evidence_ids": ["test_01"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "P2": {"basis": "observed", "reason": "“ik.Status.Phase = v1.IntegrationKitPhaseError” specifies controller state; invalid-strategy test setup is only partially visible.", "evidence_ids": ["test_00", "test_01"], "claim_ids": [], "na_reason": "", "score": 2},
+        "P3": {"basis": "unknown", "reason": "No relevant source passage exists; deployment impact and affected-version boundaries are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "P4": {"basis": "observed", "reason": "“require.NotNil(t, kitAvailable)” and “assert.Contains(t, kitAvailable.Message” define observable reason propagation alongside the existing error-phase assertion.", "evidence_ids": ["test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "C1": {"basis": "observed", "reason": "“Reason: message” fills the previously absent Failure object while preserving error phase and condition, exposing the diagnostic-state inconsistency.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "C2": {"basis": "observed", "reason": "“ik.Status.Failure = &v1.Failure” links kit diagnostics to the integration message assertion; the consuming implementation is not shown.", "evidence_ids": ["patch", "test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "C3": {"basis": "observed", "reason": "“require.NotNil(t, env.IntegrationKit.Status.Failure)” distinguishes populated failure diagnostics from merely setting Error phase and a condition.", "evidence_ids": ["test_01", "patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "C4": {"basis": "observed", "reason": "“Reason: message” directly matches reason assertions; propagation has source-level support but no execution or full consumer implementation.", "evidence_ids": ["patch", "test_00", "test_01"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "O1": {"basis": "unknown", "reason": "No relevant source passage exists; the historical introduction path is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O2": {"basis": "unknown", "reason": "No relevant source passage exists; historical verification coverage and escape conditions are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O3": {"basis": "unknown", "reason": "No relevant source passage exists; prior defense effectiveness is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O4": {"basis": "observed", "reason": "“TestCustomTaskBuilderTraitInvalidStrategy” adds nonnil and exact-reason unit assertions, providing an early signal for missing failure diagnostics.", "evidence_ids": ["test_01"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "R1": {"basis": "observed", "reason": "“e.IntegrationKit.Status.Failure = &v1.Failure” populates message and timestamp before the status update, directly repairing missing failure metadata.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "R2": {"basis": "observed", "reason": "“if e.IntegrationKit != nil” guards the shared helper; two invalid-strategy variants are updated, but other callers and failure variants remain unseen.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "R3": {"basis": "observed", "reason": "“return err” preserves status-update error handling and the nil guard; repeated timestamp replacement and existing Failure overwrite behavior are untested.", "evidence_ids": ["patch"], "claim_ids": [], "na_reason": "", "score": 2},
+        "R4": {"basis": "observed", "reason": "“Time:   metav1.Now()” requires one import; implementation and focused tests stay within failure recording and diagnostic propagation.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "V1": {"basis": "observed", "reason": "“require.NotNil(t, env.IntegrationKit.Status.Failure)” directly detects the omitted assignment; exact-reason assertions supply a discriminating source-level regression design.", "evidence_ids": ["test_01"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "V2": {"basis": "unknown", "reason": "No relevant source passage exists; no target-revision assertion-linked execution record is supplied.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "V3": {"basis": "observed", "reason": "“TestCustomTaskBuilderTraitInvalidStrategyOverride” covers an additional configuration variant; nil-kit and status-update failure assertions are not supplied.", "evidence_ids": ["test_01"], "claim_ids": [], "na_reason": "", "score": 2},
+        "V4": {"basis": "observed", "reason": "“assert.Equal(t, corev1.ConditionFalse” retains condition checks alongside phase and propagation checks; broader failure-helper behavior is not covered.", "evidence_ids": ["test_00", "test_01"], "claim_ids": [], "na_reason": "", "score": 2},
+        "L1": {"basis": "unknown", "reason": "No relevant source passage exists; a mechanism-based search of other failure producers is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "L2": {"basis": "observed", "reason": "“require.NotNil(t, env.IntegrationKit.Status.Failure)” adds durable detection of missing diagnostics in both invalid-strategy variants.", "evidence_ids": ["patch", "test_01"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "L3": {"basis": "observed", "reason": "“Reason: message” implements a concrete helper change, with patch-linked reason assertions establishing inspectable acceptance criteria.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "L4": {"basis": "unknown", "reason": "No relevant source passage exists; an explicit closure-check plan is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null}
+      },
+      "closure_requested": "implemented"
+    },
+    {
+      "case_id": "K11",
+      "claims": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The diff changes the monitoring controller to inspect status traits rather than only spec traits.",
+          "status": "supported",
+          "evidence_ids": ["patch"],
+          "critical": true
+        }
+      ],
+      "items": {
+        "P1": {"basis": "observed", "reason": "“assert.Len(t, configmaps, 1)” defines artifact_review collection behavior; matching spec and status values leave the source-selection defect unspecified.", "evidence_ids": ["test_00"], "claim_ids": [], "na_reason": "", "score": 2},
+        "P2": {"basis": "observed", "reason": "“it.Status.Traits.Mount.HotReload = ptr.To(true)” supplies enabled status state, but the distinguishing spec/status mismatch is absent.", "evidence_ids": ["test_00"], "claim_ids": [], "na_reason": "", "score": 2},
+        "P3": {"basis": "unknown", "reason": "No relevant source passage exists; affected deployments and impact boundaries are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "P4": {"basis": "observed", "reason": "“assert.Len(t, secrets, 1)” checks enabled collection, but acceptance does not require status to prevail when spec differs.", "evidence_ids": ["test_00"], "claim_ids": [], "na_reason": "", "score": 2},
+        "C1": {"basis": "observed", "reason": "“integration.Status.Traits.Mount.Configs” replaces spec lookup in both consumers; the producer and lifecycle of effective status traits are unseen.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "C2": {"basis": "observed", "reason": "“integration.Status.Traits.Mount.Resources” connects resource discovery and enqueue matching to status; status population and resulting reload behavior remain outside the excerpts.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "C3": {"basis": "observed", "reason": "“it.Spec.Traits.Mount.HotReload = ptr.To(true)” accompanies the status toggle; the test cannot distinguish the old and new lookup sources.", "evidence_ids": ["test_00", "patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "C4": {"basis": "observed", "reason": "“integration.Status.Traits != nil” directly supports the guarded source change; tests do not substantiate behavior under spec/status divergence.", "evidence_ids": ["patch", "test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "O1": {"basis": "unknown", "reason": "No relevant source passage exists; historical introduction of spec-based lookup is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O2": {"basis": "unknown", "reason": "No relevant source passage exists; historical test escape evidence is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O3": {"basis": "unknown", "reason": "No relevant source passage exists; prior review and runtime detection defenses are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O4": {"basis": "observed", "reason": "“TestGetIntegrationSecretAndConfigmapResourceVersions” provides a suitable unit-test location, but identical trait values omit the discriminating source-selection signal.", "evidence_ids": ["test_00"], "claim_ids": [], "na_reason": "", "score": 2},
+        "R1": {"basis": "observed", "reason": "“integration.Status.Traits.Mount.Configs” changes both matching and version collection to the intended status source with appropriate nil guards.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "R2": {"basis": "observed", "reason": "“integration.Status.Traits.Mount.Resources” and Configs change in both consumers; unpopulated-status behavior and other consumers remain unestablished.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "R3": {"basis": "observed", "reason": "“integration.Status.Traits == nil” prevents nil access; skipping integrations with absent status changes compatibility behavior without supplied lifecycle validation.", "evidence_ids": ["patch"], "claim_ids": [], "na_reason": "", "score": 2},
+        "R4": {"basis": "observed", "reason": "“if err != nil” additionally changes Pipe logging; monitoring edits are localized, but the aggregate patch includes a separate behavioral fix.", "evidence_ids": ["patch"], "claim_ids": [], "na_reason": "", "score": 2},
+        "V1": {"basis": "observed", "reason": "“it.Spec.Traits.Mount.HotReload = ptr.To(true)” and the matching status toggle allow either implementation to satisfy collection assertions; the regression is not distinguished.", "evidence_ids": ["test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 0},
+        "V2": {"basis": "unknown", "reason": "No relevant source passage exists; no target-revision assertion-linked execution record is supplied.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "V3": {"basis": "observed", "reason": "“assert.Len(t, secrets, 0)” covers disabled reload and subsequent enablement; nil status and divergent trait sources remain untested.", "evidence_ids": ["test_00"], "claim_ids": [], "na_reason": "", "score": 2},
+        "V4": {"basis": "observed", "reason": "“assert.Len(t, configmaps, 1)” and secret counts preserve collection checks; enqueue behavior and the separate Pipe logging change lack supplied assertions.", "evidence_ids": ["test_00"], "claim_ids": [], "na_reason": "", "score": 2},
+        "L1": {"basis": "unknown", "reason": "No relevant source passage exists; a broader mechanism-based search for spec/status confusion is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "L2": {"basis": "observed", "reason": "“integration.Status.Traits.Mount.Configs” durably aligns two consumers, but the added fixture cannot prevent reintroducing spec lookup.", "evidence_ids": ["patch", "test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "L3": {"basis": "observed", "reason": "“integration.Status.Traits.Mount.Resources” makes the completed source migration inspectable; behavioral acceptance under differing traits remains incomplete.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "L4": {"basis": "unknown", "reason": "No relevant source passage exists; an explicit closure-check plan is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null}
+      },
+      "closure_requested": "implemented"
+    },
+    {
+      "case_id": "K12",
+      "claims": [
+        {
+          "id": "q_fix",
+          "kind": "fix",
+          "text": "The diff changes GitOps push handling to make repeated reconciliation idempotent.",
+          "status": "unresolved",
+          "evidence_ids": ["patch", "test_00"],
+          "critical": true
+        }
+      ],
+      "items": {
+        "P1": {"basis": "observed", "reason": "“require.NoError(t, err)” establishes artifact_review single-push success; the supplied test does not define repeated-reconciliation equivalence.", "evidence_ids": ["test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "P2": {"basis": "observed", "reason": "“DeploymentTimestamp: &now” provides deployment state for a default push, but no second reconciliation or parallel sequence is supplied.", "evidence_ids": ["test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "P3": {"basis": "unknown", "reason": "No relevant source passage exists; affected deployments and impact boundaries are unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "P4": {"basis": "observed", "reason": "“Integration changes pushed to branch cicd/candidate-release” checks notification text, but defines no repeated-push branch-count or content-stability acceptance.", "evidence_ids": ["test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "C1": {"basis": "observed", "reason": "“branchName = \"cicd/candidate-release-\" + nowDate” exposes time-dependent branch identity; deployment timestamp stabilizes that identity across reconciliation cycles.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 3},
+        "C2": {"basis": "observed", "reason": "“more than one branch from different reconciliation cycles” explains branch proliferation; forced pushes do not establish identical content or harmless concurrent outcomes.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "C3": {"basis": "observed", "reason": "“it.Status.DeploymentTimestamp.Format” predicts stable default branch identity; the single-push test cannot distinguish repeat success from push conflict or no-op errors.", "evidence_ids": ["patch", "test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "C4": {"basis": "observed", "reason": "“we always push the same content” is asserted without repeat or concurrency evidence; stable branch naming is directly inspectable.", "evidence_ids": ["patch", "test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "O1": {"basis": "unknown", "reason": "No relevant source passage exists; historical introduction of timestamp-based branch creation is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O2": {"basis": "unknown", "reason": "No relevant source passage exists; historical verification escape evidence is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O3": {"basis": "unknown", "reason": "No relevant source passage exists; earlier review and runtime defense evidence is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "O4": {"basis": "observed", "reason": "“TestGitOpsPushRepoDefault” offers a suitable unit-test location, but its single invocation lacks a signal distinguishing repeated-reconciliation failures.", "evidence_ids": ["test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "R1": {"basis": "observed", "reason": "“Force: true” and deployment-derived naming address branch conflicts and proliferation; unconditional push-error returns leave complete repeat semantics unresolved.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "R2": {"basis": "observed", "reason": "“if branchName == \"\"” confines naming changes to default branches; explicit branches, absent timestamps, and parallel differing content lack demonstrated coverage.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "R3": {"basis": "observed", "reason": "“Force: true” permits overwriting remote history without a visible divergence safeguard; the identical-content assumption does not establish safety.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 0},
+        "R4": {"basis": "observed", "reason": "“enabled: true” documentation and “ptr.To(true)” migration accompany the push change; the aggregate scope includes ancillary edits beyond idempotency.", "evidence_ids": ["patch"], "claim_ids": [], "na_reason": "", "score": 2},
+        "V1": {"basis": "observed", "reason": "“assert.Contains(t,” checks the new condition message, but no repeat invocation tests whether reconciliation is idempotent.", "evidence_ids": ["test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "V2": {"basis": "unknown", "reason": "No relevant source passage exists; no target-revision assertion-linked execution record is supplied.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "V3": {"basis": "observed", "reason": "“err = trait.pushGitOpsItInGitRepo” appears once; essential repeated and parallel reconciliation boundaries are absent from the supplied test.", "evidence_ids": ["test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 0},
+        "V4": {"basis": "observed", "reason": "“getLastCommitMessage(tmpGitDir)” retains a commit inspection step, but no visible assertions address remote-history preservation or explicit-branch compatibility.", "evidence_ids": ["test_00"], "claim_ids": [], "na_reason": "", "score": 2},
+        "L1": {"basis": "unknown", "reason": "No relevant source passage exists; a search for similar reconciliation side effects is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null},
+        "L2": {"basis": "observed", "reason": "“branchNameDate := it.Status.DeploymentTimestamp.Format” durably stabilizes branch naming; the test does not guard repeated-push behavior.", "evidence_ids": ["patch", "test_00"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "L3": {"basis": "observed", "reason": "“Force: true” and deployment-derived naming are concrete completed edits; acceptance for repeat success and concurrent safety is incomplete.", "evidence_ids": ["patch"], "claim_ids": ["q_fix"], "na_reason": "", "score": 2},
+        "L4": {"basis": "unknown", "reason": "No relevant source passage exists; an explicit closure-check plan is unavailable.", "evidence_ids": [], "claim_ids": [], "na_reason": "", "score": null}
+      },
+      "closure_requested": "implemented"
+    }
+  ]
+}

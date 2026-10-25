@@ -1,0 +1,273 @@
+{
+  "passed": true,
+  "model_calls": 9,
+  "distinct_sessions": 9,
+  "checks": [
+    {
+      "check": "frozen_runtime",
+      "key": "requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "frozen_runtime",
+      "key": "SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "frozen_runtime",
+      "key": "examples/result.example.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_runtime",
+      "key": "references/gerrit.md",
+      "passed": true
+    },
+    {
+      "check": "frozen_runtime",
+      "key": "references/guide.md",
+      "passed": true
+    },
+    {
+      "check": "frozen_runtime",
+      "key": "references/v2-result.schema.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_runtime",
+      "key": "references/v2-rubric.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_runtime",
+      "key": "scripts/assess_v2.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_runtime",
+      "key": "scripts/gerrit_fetch.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_runtime",
+      "key": "scripts/review_contract.py",
+      "passed": true
+    },
+    {
+      "check": "round_has_batches",
+      "key": "1",
+      "passed": true
+    },
+    {
+      "check": "response_hash",
+      "key": "round-01-batch-01",
+      "passed": true
+    },
+    {
+      "check": "clean_model_call",
+      "key": "round-01-batch-01",
+      "passed": true
+    },
+    {
+      "check": "one_fresh_session",
+      "key": "round-01-batch-01",
+      "passed": true
+    },
+    {
+      "check": "requested_model_settings",
+      "key": "round-01-batch-01",
+      "passed": true
+    },
+    {
+      "check": "response_hash",
+      "key": "round-01-batch-02",
+      "passed": true
+    },
+    {
+      "check": "clean_model_call",
+      "key": "round-01-batch-02",
+      "passed": true
+    },
+    {
+      "check": "one_fresh_session",
+      "key": "round-01-batch-02",
+      "passed": true
+    },
+    {
+      "check": "requested_model_settings",
+      "key": "round-01-batch-02",
+      "passed": true
+    },
+    {
+      "check": "response_hash",
+      "key": "round-01-batch-03",
+      "passed": true
+    },
+    {
+      "check": "clean_model_call",
+      "key": "round-01-batch-03",
+      "passed": true
+    },
+    {
+      "check": "one_fresh_session",
+      "key": "round-01-batch-03",
+      "passed": true
+    },
+    {
+      "check": "requested_model_settings",
+      "key": "round-01-batch-03",
+      "passed": true
+    },
+    {
+      "check": "round_has_batches",
+      "key": "2",
+      "passed": true
+    },
+    {
+      "check": "response_hash",
+      "key": "round-02-batch-01",
+      "passed": true
+    },
+    {
+      "check": "clean_model_call",
+      "key": "round-02-batch-01",
+      "passed": true
+    },
+    {
+      "check": "one_fresh_session",
+      "key": "round-02-batch-01",
+      "passed": true
+    },
+    {
+      "check": "requested_model_settings",
+      "key": "round-02-batch-01",
+      "passed": true
+    },
+    {
+      "check": "response_hash",
+      "key": "round-02-batch-02",
+      "passed": true
+    },
+    {
+      "check": "clean_model_call",
+      "key": "round-02-batch-02",
+      "passed": true
+    },
+    {
+      "check": "one_fresh_session",
+      "key": "round-02-batch-02",
+      "passed": true
+    },
+    {
+      "check": "requested_model_settings",
+      "key": "round-02-batch-02",
+      "passed": true
+    },
+    {
+      "check": "response_hash",
+      "key": "round-02-batch-03",
+      "passed": true
+    },
+    {
+      "check": "clean_model_call",
+      "key": "round-02-batch-03",
+      "passed": true
+    },
+    {
+      "check": "one_fresh_session",
+      "key": "round-02-batch-03",
+      "passed": true
+    },
+    {
+      "check": "requested_model_settings",
+      "key": "round-02-batch-03",
+      "passed": true
+    },
+    {
+      "check": "round_has_batches",
+      "key": "3",
+      "passed": true
+    },
+    {
+      "check": "response_hash",
+      "key": "round-03-batch-01",
+      "passed": true
+    },
+    {
+      "check": "clean_model_call",
+      "key": "round-03-batch-01",
+      "passed": true
+    },
+    {
+      "check": "one_fresh_session",
+      "key": "round-03-batch-01",
+      "passed": true
+    },
+    {
+      "check": "requested_model_settings",
+      "key": "round-03-batch-01",
+      "passed": true
+    },
+    {
+      "check": "response_hash",
+      "key": "round-03-batch-02",
+      "passed": true
+    },
+    {
+      "check": "clean_model_call",
+      "key": "round-03-batch-02",
+      "passed": true
+    },
+    {
+      "check": "one_fresh_session",
+      "key": "round-03-batch-02",
+      "passed": true
+    },
+    {
+      "check": "requested_model_settings",
+      "key": "round-03-batch-02",
+      "passed": true
+    },
+    {
+      "check": "response_hash",
+      "key": "round-03-batch-03",
+      "passed": true
+    },
+    {
+      "check": "clean_model_call",
+      "key": "round-03-batch-03",
+      "passed": true
+    },
+    {
+      "check": "one_fresh_session",
+      "key": "round-03-batch-03",
+      "passed": true
+    },
+    {
+      "check": "requested_model_settings",
+      "key": "round-03-batch-03",
+      "passed": true
+    },
+    {
+      "check": "identical_inputs_and_settings",
+      "key": "batch-01",
+      "passed": true
+    },
+    {
+      "check": "identical_inputs_and_settings",
+      "key": "batch-02",
+      "passed": true
+    },
+    {
+      "check": "identical_inputs_and_settings",
+      "key": "batch-03",
+      "passed": true
+    },
+    {
+      "check": "sessions_are_distinct",
+      "key": "all",
+      "passed": true
+    }
+  ],
+  "limitation": "Consistency of producer records, not a cryptographic service attestation or proof of expert accuracy."
+}

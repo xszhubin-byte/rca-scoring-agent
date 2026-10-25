@@ -1,0 +1,140 @@
+{
+  "cases": [
+    {
+      "case_id": "K04",
+      "claims": [
+        {"id":"q_fix","kind":"fix","text":"The aggregate diff adds NotFound guards to both action handling and status update error paths.","status":"supported","evidence_ids":["patch"],"critical":true},
+        {"id":"q_execution","kind":"test_execution","text":"TestReconcileBuildDeletedDuringReconcile passed on the target revision.","status":"unresolved","evidence_ids":["testcode"],"critical":true}
+      ],
+      "items": {
+        "P1":{"basis":"observed","reason":"“no error, and no requeue since the Build is gone.” artifact_review: assertions define the deletion contract and observable failure signals.","evidence_ids":["testcode"],"claim_ids":[],"na_reason":"","score":3},
+        "P2":{"basis":"observed","reason":"“return k8serrors.NewNotFound(v1.Resource(\"builds\"), obj.GetName())” injects the relevant Build update failure into a configured reconciliation.","evidence_ids":["testcode"],"claim_ids":[],"na_reason":"","score":3},
+        "P3":{"basis":"unknown","reason":"No relevant source passage is available for deployment impact or affected-version boundaries.","evidence_ids":[],"claim_ids":[],"na_reason":"","score":null},
+        "P4":{"basis":"observed","reason":"“require.NoError(t, err)” and “assert.Equal(t, reconcile.Result{}, result)” specify observable acceptance for error and requeue behavior.","evidence_ids":["testcode"],"claim_ids":[],"na_reason":"","score":3},
+        "C1":{"basis":"observed","reason":"“Build was deleted mid-reconcile (stale cache)” identifies the lifecycle mismatch; guards intercept its NotFound error propagation.","evidence_ids":["patch","testcode"],"claim_ids":["q_fix"],"na_reason":"","score":3},
+        "C2":{"basis":"observed","reason":"“return reconcile.Result{}, err” exposes the original propagation; injected NotFound and new benign returns connect trigger, internal failure, and external result.","evidence_ids":["patch","testcode"],"claim_ids":["q_fix"],"na_reason":"","score":3},
+        "C3":{"basis":"observed","reason":"“if k8serrors.IsNotFound(err)” distinguishes deletion errors from other failures through explicit control flow; runtime branch reachability remains unverified.","evidence_ids":["patch","testcode"],"claim_ids":[],"na_reason":"","score":3},
+        "C4":{"basis":"observed","reason":"“The fake client routes a status patch” documents a test assumption; supplied surrounding implementation does not independently establish routing or actual execution.","evidence_ids":["patch","testcode"],"claim_ids":["q_execution"],"na_reason":"","score":2},
+        "O1":{"basis":"unknown","reason":"No relevant source passage is available establishing how the defect entered the implementation.","evidence_ids":[],"claim_ids":[],"na_reason":"","score":null},
+        "O2":{"basis":"unknown","reason":"No relevant source passage is available establishing historical validation coverage and its missed trigger.","evidence_ids":[],"claim_ids":[],"na_reason":"","score":null},
+        "O3":{"basis":"unknown","reason":"No relevant source passage is available establishing why historical preventive or detection defenses failed.","evidence_ids":[],"claim_ids":[],"na_reason":"","score":null},
+        "O4":{"basis":"observed","reason":"“func TestReconcileBuildDeletedDuringReconcile(t *testing.T)” supplies a unit-stage deletion simulation with no-error and empty-result assertions.","evidence_ids":["testcode"],"claim_ids":[],"na_reason":"","score":3},
+        "R1":{"basis":"observed","reason":"“if k8serrors.IsNotFound(err)” returns benign completion before error propagation in both affected branches.","evidence_ids":["patch"],"claim_ids":["q_fix"],"na_reason":"","score":3},
+        "R2":{"basis":"observed","reason":"“a.Handle(ctx, target)” and “r.update(ctx, targetLog, &instance, newTarget)” both receive guards; broader action variants and error provenance remain unestablished.","evidence_ids":["patch"],"claim_ids":["q_fix"],"na_reason":"","score":2},
+        "R3":{"basis":"observed","reason":"“return reconcile.Result{}, err” preserves other errors, but broad NotFound suppression does not distinguish deleted Builds from missing dependencies.","evidence_ids":["patch"],"claim_ids":[],"na_reason":"","score":2},
+        "R4":{"basis":"observed","reason":"“if k8serrors.IsNotFound(err)” adds local guards without unrelated restructuring; existing non-NotFound handling remains inspectably intact.","evidence_ids":["patch"],"claim_ids":["q_fix"],"na_reason":"","score":3},
+        "V1":{"basis":"observed","reason":"“require.NoError(t, err)” checks reconciliation after injected Build NotFound; no explicit bad-version control or execution establishes interception reachability.","evidence_ids":["testcode"],"claim_ids":[],"na_reason":"","score":3},
+        "V2":{"basis":"unknown","reason":"No relevant source passage supplies assertion-linked execution at the target revision; test source cannot establish a passing run.","evidence_ids":[],"claim_ids":["q_execution"],"na_reason":"","score":null},
+        "V3":{"basis":"observed","reason":"“if _, ok := obj.(*v1.Build); ok” targets update failure; action-originated errors and non-NotFound propagation lack dedicated boundary assertions.","evidence_ids":["testcode"],"claim_ids":[],"na_reason":"","score":2},
+        "V4":{"basis":"observed","reason":"“assert.NotEmpty(t, updated.Status.Phase, \"phase should be set\")” retains normal-status coverage, but does not cover all error-handling side effects.","evidence_ids":["testcode"],"claim_ids":[],"na_reason":"","score":2},
+        "L1":{"basis":"unknown","reason":"No relevant source passage is available establishing a mechanism-based search of analogous paths.","evidence_ids":[],"claim_ids":[],"na_reason":"","score":null},
+        "L2":{"basis":"observed","reason":"“func TestReconcileBuildDeletedDuringReconcile(t *testing.T)” adds durable detection for the repaired deletion-error mechanism, proportionate to the local change.","evidence_ids":["patch","testcode"],"claim_ids":[],"na_reason":"","score":3},
+        "L3":{"basis":"observed","reason":"“return reconcile.Result{}, nil” implements a concrete, inspectable action with observable acceptance in both error branches.","evidence_ids":["patch"],"claim_ids":["q_fix"],"na_reason":"","score":3},
+        "L4":{"basis":"unknown","reason":"No relevant source passage is available defining a closure-check plan or subsequent effectiveness assessment.","evidence_ids":[],"claim_ids":[],"na_reason":"","score":null}
+      },
+      "closure_requested":"implemented"
+    },
+    {
+      "case_id":"K01",
+      "claims":[
+        {"id":"q_fix","kind":"fix","text":"The aggregate diff adds NotFound guards to both action handling and status update error paths.","status":"supported","evidence_ids":["patch"],"critical":true},
+        {"id":"q_execution","kind":"test_execution","text":"TestReconcileBuildDeletedDuringReconcile passed on the target revision.","status":"unresolved","evidence_ids":["report","testcode"],"critical":true}
+      ],
+      "items":{
+        "P1":{"basis":"observed","reason":"“produces a spurious reconcile error” and “no error and no requeue” define actual and expected behavior. owner_rca: report explanation only.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "P2":{"basis":"observed","reason":"“read a stale cached Build after deletion” specifies the relevant state and ordering before action or status write.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "P3":{"basis":"observed","reason":"“Build reconciliation” and “spurious reconcile error” identify the affected object and consequence; versions and exclusion boundaries are omitted.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":2},
+        "P4":{"basis":"observed","reason":"“asserts no error and no requeue” gives two observable acceptance criteria for the deletion scenario.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "C1":{"basis":"observed","reason":"“stale cached Build after deletion” explains the state mismatch that makes subsequent writes return NotFound and propagate a benign condition as error.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "C2":{"basis":"observed","reason":"“The subsequent action or status write returns NotFound” connects stale reads, deletion, operation failure, and the external reconcile error.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "C3":{"basis":"observed","reason":"“injects NotFound during a Build update” provides a testable causal prediction, but no explicit alternative or counterfactual comparison.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":2},
+        "C4":{"basis":"observed","reason":"“runtime verification remains unknown” separates inspectable repair and test design from execution uncertainty; the supplied artifacts corroborate the central account.","evidence_ids":["report","patch","testcode"],"claim_ids":["q_fix","q_execution"],"na_reason":"","score":3},
+        "O1":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits implementation introduction history and does not explicitly identify that history as unknown.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "O2":{"basis":"observed","reason":"No relevant source passage exists; the complete report does not identify historical validation coverage or its specific missed scenario.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "O3":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits analysis of why preventive or detection defenses failed.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "O4":{"basis":"observed","reason":"“unit test injects NotFound during a Build update” specifies an early validation stage, distinguishing trigger, and no-error/no-requeue signals.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "R1":{"basis":"observed","reason":"“treats NotFound from both action handling and status update as benign” explains how the repair interrupts erroneous propagation.","evidence_ids":["report"],"claim_ids":["q_fix"],"na_reason":"","score":3},
+        "R2":{"basis":"observed","reason":"“both action handling and status update” identifies two repaired paths; other error variants and exclusion boundaries are not discussed.","evidence_ids":["report"],"claim_ids":["q_fix"],"na_reason":"","score":2},
+        "R3":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits compatibility and side-effect analysis, including preservation of legitimate errors.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "R4":{"basis":"observed","reason":"“both action handling and status update” identifies concrete modification scope and purpose; coupling and maintenance tradeoffs are omitted.","evidence_ids":["report"],"claim_ids":["q_fix"],"na_reason":"","score":2},
+        "V1":{"basis":"observed","reason":"“injects NotFound during a Build update and asserts no error and no requeue” maps trigger to discriminating assertions.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "V2":{"basis":"unknown","reason":"No relevant execution passage exists; “No assertion-linked execution log is available” confirms target-revision assertion execution remains unavailable.","evidence_ids":["report"],"claim_ids":["q_execution"],"na_reason":"","score":null},
+        "V3":{"basis":"observed","reason":"“injects NotFound during a Build update” covers deletion failure, but the report omits action-error and non-NotFound test variants.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":2},
+        "V4":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits checks of unaffected normal behavior and legitimate error propagation.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "L1":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits a mechanism-based search of analogous paths and its boundaries.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "L2":{"basis":"observed","reason":"“The added unit test injects NotFound” describes durable, proportionate regression detection directly tied to the failure mechanism.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "L3":{"basis":"observed","reason":"“The patch treats NotFound” identifies the implemented action; “asserts no error and no requeue” supplies concrete acceptance criteria.","evidence_ids":["report"],"claim_ids":["q_fix"],"na_reason":"","score":3},
+        "L4":{"basis":"observed","reason":"“runtime verification remains unknown” acknowledges current uncertainty, but the complete report omits an explicit future closure-check plan.","evidence_ids":["report"],"claim_ids":["q_execution"],"na_reason":"","score":0}
+      },
+      "closure_requested":"implemented"
+    },
+    {
+      "case_id":"K03",
+      "claims":[
+        {"id":"q_fix","kind":"fix","text":"The aggregate diff adds a sync.Mutex field and Lock/Unlock calls in build_controller.go.","status":"refuted","evidence_ids":["patch"],"critical":true},
+        {"id":"q_execution","kind":"test_execution","text":"TestReconcileBuildDeletedDuringReconcile passed on the target revision.","status":"unresolved","evidence_ids":["report","testcode"],"critical":true}
+      ],
+      "items":{
+        "P1":{"basis":"observed","reason":"“the Build error” names only a vague failure without expected behavior or a failure signal. owner_rca: report explanation only.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":1},
+        "P2":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits triggering input, state, and operation ordering.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "P3":{"basis":"observed","reason":"“the Build error” identifies the main affected object and a generic consequence; affected versions and boundaries remain unspecified.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":2},
+        "P4":{"basis":"observed","reason":"No relevant source passage exists; the complete report provides no observable repair acceptance criterion.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "C1":{"basis":"observed","reason":"“This mutex is the implemented fix” substitutes a contradicted repair assertion for an explanation of the failing state or invariant.","evidence_ids":["report","patch"],"claim_ids":["q_fix"],"na_reason":"","score":0},
+        "C2":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits a chain connecting trigger, internal state, failure, and external symptom.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "C3":{"basis":"observed","reason":"“This mutex is the implemented fix” ignores the supplied NotFound guards that directly contradict the asserted implementation explanation.","evidence_ids":["report","patch"],"claim_ids":["q_fix"],"na_reason":"","score":0},
+        "C4":{"basis":"observed","reason":"“The diff adds a sync.Mutex field” contradicts the aggregate patch, which adds NotFound guards without mutex operations.","evidence_ids":["report","patch"],"claim_ids":["q_fix"],"na_reason":"","score":0},
+        "O1":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits how the defect entered the implementation and does not acknowledge unknown history.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "O2":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits the scenario missed by original validation.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "O3":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits any explanation of failed preventive or detection defenses.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "O4":{"basis":"observed","reason":"No relevant source passage exists; “The regression passed” supplies no earlier detection stage, trigger, or distinguishing signal.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "R1":{"basis":"observed","reason":"“This mutex is the implemented fix” is contradicted by the actual NotFound guards and cannot explain their causal action.","evidence_ids":["report","patch"],"claim_ids":["q_fix"],"na_reason":"","score":0},
+        "R2":{"basis":"observed","reason":"“Lock/Unlock calls in build_controller.go” describes nonexistent repair paths; the report does not explain the actual two guarded branches.","evidence_ids":["report","patch"],"claim_ids":["q_fix"],"na_reason":"","score":0},
+        "R3":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits compatibility, error-handling, and other relevant side-effect analysis.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "R4":{"basis":"observed","reason":"“adds a sync.Mutex field and Lock/Unlock calls” gives a concrete scope statement directly refuted by the aggregate diff.","evidence_ids":["report","patch"],"claim_ids":["q_fix"],"na_reason":"","score":0},
+        "V1":{"basis":"observed","reason":"“The regression passed.” provides only a passing assertion, without the test trigger or actual assertions.","evidence_ids":["report"],"claim_ids":["q_execution"],"na_reason":"","score":1},
+        "V2":{"basis":"unknown","reason":"No relevant source passage supplies target-revision assertion-linked execution; “The regression passed” is an unsupported author statement.","evidence_ids":["report"],"claim_ids":["q_execution"],"na_reason":"","score":null},
+        "V3":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits boundary and negative test conditions.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "V4":{"basis":"observed","reason":"No relevant source passage exists; “The regression passed” identifies no checks of other behavior potentially affected by the change.","evidence_ids":["report"],"claim_ids":["q_execution"],"na_reason":"","score":0},
+        "L1":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits analogous-path investigation and search boundaries.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "L2":{"basis":"observed","reason":"“This mutex is the implemented fix” claims a nonexistent durable measure; no mechanism-linked prevention or detection improvement is explained.","evidence_ids":["report","patch"],"claim_ids":["q_fix"],"na_reason":"","score":0},
+        "L3":{"basis":"observed","reason":"“This mutex is the implemented fix” misidentifies the completed action; the report supplies no correct action with usable acceptance criteria.","evidence_ids":["report","patch"],"claim_ids":["q_fix"],"na_reason":"","score":0},
+        "L4":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits an explicit closure-check plan and does not distinguish execution from longer-term effectiveness.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0}
+      },
+      "closure_requested":"implemented"
+    },
+    {
+      "case_id":"K02",
+      "claims":[
+        {"id":"q_fix","kind":"fix","text":"The aggregate diff adds NotFound guards to both action handling and status update error paths.","status":"supported","evidence_ids":["patch"],"critical":true},
+        {"id":"q_execution","kind":"test_execution","text":"TestReconcileBuildDeletedDuringReconcile passed on the target revision.","status":"unresolved","evidence_ids":["report","testcode"],"critical":true}
+      ],
+      "items":{
+        "P1":{"basis":"observed","reason":"“produces a spurious reconcile error” and “no error and no requeue” define actual and expected behavior. owner_rca: report explanation only.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "P2":{"basis":"observed","reason":"“read a stale cached Build after deletion” specifies the relevant state and ordering before action or status write.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "P3":{"basis":"observed","reason":"“Build reconciliation” and “spurious reconcile error” identify the affected object and consequence; versions and exclusion boundaries are omitted.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":2},
+        "P4":{"basis":"observed","reason":"“asserts no error and no requeue” gives two observable acceptance criteria for the deletion scenario.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "C1":{"basis":"observed","reason":"“stale cached Build after deletion” explains the state mismatch that makes subsequent writes return NotFound and propagate a benign condition as error.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "C2":{"basis":"observed","reason":"“The subsequent action or status write returns NotFound” connects stale reads, deletion, operation failure, and the external reconcile error.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "C3":{"basis":"observed","reason":"“injects NotFound during a Build update” provides a testable causal prediction, but no explicit alternative or counterfactual comparison.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":2},
+        "C4":{"basis":"observed","reason":"“runtime verification remains unknown” separates inspectable repair and test design from execution uncertainty; the supplied artifacts corroborate the central account.","evidence_ids":["report","patch","testcode"],"claim_ids":["q_fix","q_execution"],"na_reason":"","score":3},
+        "O1":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits implementation introduction history and does not explicitly identify that history as unknown.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "O2":{"basis":"observed","reason":"No relevant source passage exists; the complete report does not identify historical validation coverage or its specific missed scenario.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "O3":{"basis":"observed","reason":"No relevant source passage exists; repeated review assurances do not explain why preventive or detection defenses failed.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "O4":{"basis":"observed","reason":"“unit test injects NotFound during a Build update” specifies an early validation stage, distinguishing trigger, and no-error/no-requeue signals.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "R1":{"basis":"observed","reason":"“treats NotFound from both action handling and status update as benign” explains how the repair interrupts erroneous propagation.","evidence_ids":["report"],"claim_ids":["q_fix"],"na_reason":"","score":3},
+        "R2":{"basis":"observed","reason":"“both action handling and status update” identifies two repaired paths; other error variants and exclusion boundaries are not discussed.","evidence_ids":["report"],"claim_ids":["q_fix"],"na_reason":"","score":2},
+        "R3":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits compatibility and side-effect analysis, including preservation of legitimate errors.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "R4":{"basis":"observed","reason":"“both action handling and status update” identifies concrete modification scope and purpose; coupling and maintenance tradeoffs are omitted.","evidence_ids":["report"],"claim_ids":["q_fix"],"na_reason":"","score":2},
+        "V1":{"basis":"observed","reason":"“injects NotFound during a Build update and asserts no error and no requeue” maps trigger to discriminating assertions.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "V2":{"basis":"unknown","reason":"No relevant execution passage exists; “No assertion-linked execution log is available” confirms target-revision assertion execution remains unavailable.","evidence_ids":["report"],"claim_ids":["q_execution"],"na_reason":"","score":null},
+        "V3":{"basis":"observed","reason":"“injects NotFound during a Build update” covers deletion failure, but the report omits action-error and non-NotFound test variants.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":2},
+        "V4":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits checks of unaffected normal behavior and legitimate error propagation.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "L1":{"basis":"observed","reason":"No relevant source passage exists; the complete report omits a mechanism-based search of analogous paths and its boundaries.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":0},
+        "L2":{"basis":"observed","reason":"“The added unit test injects NotFound” describes durable, proportionate regression detection directly tied to the failure mechanism.","evidence_ids":["report"],"claim_ids":[],"na_reason":"","score":3},
+        "L3":{"basis":"observed","reason":"“The patch treats NotFound” identifies the implemented action; “asserts no error and no requeue” supplies concrete acceptance criteria.","evidence_ids":["report"],"claim_ids":["q_fix"],"na_reason":"","score":3},
+        "L4":{"basis":"observed","reason":"“runtime verification remains unknown” acknowledges current uncertainty, but the complete report omits an explicit future closure-check plan.","evidence_ids":["report"],"claim_ids":["q_execution"],"na_reason":"","score":0}
+      },
+      "closure_requested":"implemented"
+    }
+  ]
+}

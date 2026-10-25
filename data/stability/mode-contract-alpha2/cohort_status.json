@@ -1,0 +1,8 @@
+{
+  "status": "stopped_due_to_test_oracle_defect",
+  "completed_batches": 2,
+  "reason": "K07 had valid matching execution evidence and no unknown ratings; requiring needs_evidence was not implied by the scenario. Original model correctly returned reviewable.",
+  "amendment": "Remove only the unsupported fixed decision expectation for positive execution. Decision consistency across rounds remains mandatory.",
+  "model_responses_rewritten": false,
+  "next_cohort": "acceptance-alpha2"
+}

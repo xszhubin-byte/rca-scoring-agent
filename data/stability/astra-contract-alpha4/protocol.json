@@ -1,0 +1,25 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "rounds": 3,
+  "case_count": 12,
+  "gates": {
+    "valid_and_behaviorally_accepted": 1.0,
+    "decision_closure_claim_basis_consistency": 1.0,
+    "max_item_span": 1,
+    "mean_pairwise_absolute_delta": 0.25
+  },
+  "artifact_claims": "Fixed before grading, without statuses in model prompts",
+  "runtime_hashes": {
+    "requirements.txt": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6",
+    "SKILL.md": "f6fd99bfc790122c4b4d4be08918d96bf9d3aeb1b60b883c9580f63774a84240",
+    "examples/result.example.json": "7ee56abae0ae873a2d7e648e888eb6c479d1f95463c86c5ca901c4266d7ba4b8",
+    "references/gerrit.md": "48761fac79f354248efdb6497a652a6c48d0b585df543cab48bec2fda9b1b0e9",
+    "references/guide.md": "d17ffa6543ec2fa4290c949c3b3658f81a57de6ff3b996a44759d3615a2776df",
+    "references/v2-result.schema.json": "507c09fce5b72373f3edb8d7c584b33ce83e03c68777216905091a2eefa10981",
+    "references/v2-rubric.json": "5c099f9ff394e02e6ccf1996aa68f4b44dc4df3d5f4857a40927d48ab2c7eb42",
+    "scripts/assess_v2.py": "edb668dff5d3da0253d25cf3788187ff652b277f550b39a4b5b956d81f440edf",
+    "scripts/gerrit_fetch.py": "2626146d56ec269146f278cbe94706c32dac9349dca4405e205cb746d38cfe50",
+    "scripts/review_contract.py": "3d4871ae0135b1f06eafd4885b7737a1d44236416e8ec2d81bc19e7acce3bdd7"
+  }
+}

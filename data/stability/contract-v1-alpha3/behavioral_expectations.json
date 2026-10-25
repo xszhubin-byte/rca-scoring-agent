@@ -1,0 +1,62 @@
+{
+  "K01": {
+    "q_fix": "supported",
+    "q_execution": "unresolved",
+    "closure": "implemented",
+    "decision": "needs_evidence"
+  },
+  "K02": {
+    "q_fix": "supported",
+    "q_execution": "unresolved",
+    "closure": "implemented",
+    "decision": "needs_evidence"
+  },
+  "K03": {
+    "q_fix": "refuted",
+    "q_execution": "unresolved",
+    "closure": "implemented",
+    "decision": "revise"
+  },
+  "K04": {
+    "q_fix": "supported",
+    "q_execution": "unresolved",
+    "closure": "implemented",
+    "decision": "needs_evidence"
+  },
+  "K05": {
+    "q_fix": "supported",
+    "q_execution": "unresolved",
+    "closure": "implemented",
+    "decision": "revise",
+    "q_ci_inference": "refuted"
+  },
+  "K06": {
+    "q_fix": "supported",
+    "q_execution": "unresolved",
+    "closure": "implemented",
+    "decision": "needs_evidence"
+  },
+  "K07": {
+    "q_fix": "supported",
+    "q_execution": "supported",
+    "closure": "executed"
+  },
+  "K08": {
+    "q_fix": "supported",
+    "q_execution": "refuted",
+    "closure": "executed",
+    "decision": "revise"
+  },
+  "K09": {
+    "closure": "implemented"
+  },
+  "K10": {
+    "closure": "implemented"
+  },
+  "K11": {
+    "closure": "implemented"
+  },
+  "K12": {
+    "closure": "implemented"
+  }
+}

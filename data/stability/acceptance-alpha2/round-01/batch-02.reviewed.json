@@ -1,0 +1,226 @@
+[
+  {
+    "case_id": "K08",
+    "accepted": false,
+    "issues": [
+      "Behavior mismatch: closure"
+    ],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K08",
+      "mode": "owner_rca",
+      "decision": "revise",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.5,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": 0.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 1.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": 1.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 18,
+        "not_demonstrated": 6
+      },
+      "critical_refuted_claims": [
+        "q_execution"
+      ],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "K06",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K06",
+      "mode": "owner_rca",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": 0.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 1.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 17,
+        "not_demonstrated": 6,
+        "unknown": 1
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "K07",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K07",
+      "mode": "owner_rca",
+      "decision": "reviewable",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.5,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": 0.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 1.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": 2.5,
+          "known": 4,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 18,
+        "not_demonstrated": 6
+      },
+      "critical_refuted_claims": [],
+      "closure": "executed",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "K05",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K05",
+      "mode": "owner_rca",
+      "decision": "revise",
+      "profile": {
+        "problem": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.25,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": 0.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 1.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": 1.5,
+          "known": 4,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 17,
+        "not_demonstrated": 6,
+        "unknown": 1
+      },
+      "critical_refuted_claims": [
+        "q_ci_inference"
+      ],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  }
+]

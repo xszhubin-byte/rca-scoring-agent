@@ -1,0 +1,808 @@
+{
+  "type": "object",
+  "properties": {
+    "cases": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "string",
+                "enum": [
+                  "K04"
+                ]
+              },
+              "claims": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "enum": [
+                        "causal",
+                        "fix",
+                        "test_execution",
+                        "ci_status",
+                        "impact",
+                        "process",
+                        "effectiveness"
+                      ]
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "enum": [
+                        "supported",
+                        "refuted",
+                        "unresolved"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "critical": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "kind",
+                    "text",
+                    "status",
+                    "evidence_ids",
+                    "critical"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "items": {
+                "type": "object",
+                "properties": {
+                  "P1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P3": {
+                    "$ref": "#/$defs/unknown"
+                  },
+                  "P4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O1": {
+                    "$ref": "#/$defs/unknown"
+                  },
+                  "O2": {
+                    "$ref": "#/$defs/unknown"
+                  },
+                  "O3": {
+                    "$ref": "#/$defs/unknown"
+                  },
+                  "O4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V2": {
+                    "$ref": "#/$defs/unknown"
+                  },
+                  "V3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L1": {
+                    "$ref": "#/$defs/unknown"
+                  },
+                  "L2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L4": {
+                    "$ref": "#/$defs/unknown"
+                  }
+                },
+                "required": [
+                  "P1",
+                  "P2",
+                  "P3",
+                  "P4",
+                  "C1",
+                  "C2",
+                  "C3",
+                  "C4",
+                  "O1",
+                  "O2",
+                  "O3",
+                  "O4",
+                  "R1",
+                  "R2",
+                  "R3",
+                  "R4",
+                  "V1",
+                  "V2",
+                  "V3",
+                  "V4",
+                  "L1",
+                  "L2",
+                  "L3",
+                  "L4"
+                ],
+                "additionalProperties": false
+              },
+              "closure_requested": {
+                "enum": [
+                  "implemented"
+                ]
+              }
+            },
+            "required": [
+              "case_id",
+              "claims",
+              "items",
+              "closure_requested"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "string",
+                "enum": [
+                  "K01"
+                ]
+              },
+              "claims": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "enum": [
+                        "causal",
+                        "fix",
+                        "test_execution",
+                        "ci_status",
+                        "impact",
+                        "process",
+                        "effectiveness"
+                      ]
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "enum": [
+                        "supported",
+                        "refuted",
+                        "unresolved"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "critical": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "kind",
+                    "text",
+                    "status",
+                    "evidence_ids",
+                    "critical"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "items": {
+                "type": "object",
+                "properties": {
+                  "P1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V2": {
+                    "$ref": "#/$defs/unknown"
+                  },
+                  "V3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L4": {
+                    "$ref": "#/$defs/observed"
+                  }
+                },
+                "required": [
+                  "P1",
+                  "P2",
+                  "P3",
+                  "P4",
+                  "C1",
+                  "C2",
+                  "C3",
+                  "C4",
+                  "O1",
+                  "O2",
+                  "O3",
+                  "O4",
+                  "R1",
+                  "R2",
+                  "R3",
+                  "R4",
+                  "V1",
+                  "V2",
+                  "V3",
+                  "V4",
+                  "L1",
+                  "L2",
+                  "L3",
+                  "L4"
+                ],
+                "additionalProperties": false
+              },
+              "closure_requested": {
+                "enum": [
+                  "implemented"
+                ]
+              }
+            },
+            "required": [
+              "case_id",
+              "claims",
+              "items",
+              "closure_requested"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "string",
+                "enum": [
+                  "K03"
+                ]
+              },
+              "claims": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "enum": [
+                        "causal",
+                        "fix",
+                        "test_execution",
+                        "ci_status",
+                        "impact",
+                        "process",
+                        "effectiveness"
+                      ]
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "enum": [
+                        "supported",
+                        "refuted",
+                        "unresolved"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "critical": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "kind",
+                    "text",
+                    "status",
+                    "evidence_ids",
+                    "critical"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "items": {
+                "type": "object",
+                "properties": {
+                  "P1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V2": {
+                    "$ref": "#/$defs/unknown"
+                  },
+                  "V3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L4": {
+                    "$ref": "#/$defs/observed"
+                  }
+                },
+                "required": [
+                  "P1",
+                  "P2",
+                  "P3",
+                  "P4",
+                  "C1",
+                  "C2",
+                  "C3",
+                  "C4",
+                  "O1",
+                  "O2",
+                  "O3",
+                  "O4",
+                  "R1",
+                  "R2",
+                  "R3",
+                  "R4",
+                  "V1",
+                  "V2",
+                  "V3",
+                  "V4",
+                  "L1",
+                  "L2",
+                  "L3",
+                  "L4"
+                ],
+                "additionalProperties": false
+              },
+              "closure_requested": {
+                "enum": [
+                  "implemented"
+                ]
+              }
+            },
+            "required": [
+              "case_id",
+              "claims",
+              "items",
+              "closure_requested"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "string",
+                "enum": [
+                  "K02"
+                ]
+              },
+              "claims": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "enum": [
+                        "causal",
+                        "fix",
+                        "test_execution",
+                        "ci_status",
+                        "impact",
+                        "process",
+                        "effectiveness"
+                      ]
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "enum": [
+                        "supported",
+                        "refuted",
+                        "unresolved"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "critical": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "kind",
+                    "text",
+                    "status",
+                    "evidence_ids",
+                    "critical"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "items": {
+                "type": "object",
+                "properties": {
+                  "P1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "P4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "C4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "O4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "R4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V2": {
+                    "$ref": "#/$defs/unknown"
+                  },
+                  "V3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "V4": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L1": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L2": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L3": {
+                    "$ref": "#/$defs/observed"
+                  },
+                  "L4": {
+                    "$ref": "#/$defs/observed"
+                  }
+                },
+                "required": [
+                  "P1",
+                  "P2",
+                  "P3",
+                  "P4",
+                  "C1",
+                  "C2",
+                  "C3",
+                  "C4",
+                  "O1",
+                  "O2",
+                  "O3",
+                  "O4",
+                  "R1",
+                  "R2",
+                  "R3",
+                  "R4",
+                  "V1",
+                  "V2",
+                  "V3",
+                  "V4",
+                  "L1",
+                  "L2",
+                  "L3",
+                  "L4"
+                ],
+                "additionalProperties": false
+              },
+              "closure_requested": {
+                "enum": [
+                  "implemented"
+                ]
+              }
+            },
+            "required": [
+              "case_id",
+              "claims",
+              "items",
+              "closure_requested"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "cases"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "observed": {
+      "type": "object",
+      "properties": {
+        "basis": {
+          "enum": [
+            "observed"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "na_reason": {
+          "type": "string"
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        }
+      },
+      "required": [
+        "basis",
+        "reason",
+        "evidence_ids",
+        "claim_ids",
+        "na_reason",
+        "score"
+      ],
+      "additionalProperties": false
+    },
+    "unknown": {
+      "type": "object",
+      "properties": {
+        "basis": {
+          "enum": [
+            "unknown"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "na_reason": {
+          "type": "string"
+        },
+        "score": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "basis",
+        "reason",
+        "evidence_ids",
+        "claim_ids",
+        "na_reason",
+        "score"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

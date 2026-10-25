@@ -31,6 +31,9 @@ python tools/calibration/run_v2_behavioral_probe.py --private-run-dir ../private
 
 ## 模块边界
 
+固定模型的重复性检查入口及门槛见 [stability-protocol.md](testing/stability-protocol.md)。
+该检查保留独立原始结果，测试失败时不会把若干成功响应拼成一轮通过结果。
+
 - 运行时只读取技能目录内的资源，不依赖 `docs/`、`data/`、`tests/` 或 `legacy/`。
 - 校准工具按需加载 `legacy/v1.4` 作对照，不进入当前交付包。
 - 修改运行资源时同步核对 `release/manifest.json`；遗漏或额外文件会使构建失败。

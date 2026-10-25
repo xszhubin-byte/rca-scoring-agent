@@ -6,6 +6,7 @@ from collections import Counter
 from pathlib import Path
 
 import jsonschema
+from review_contract import build_contract
 
 ROOT = Path(__file__).resolve().parents[1]
 RUBRIC = json.loads((ROOT/'references/v2-rubric.json').read_text(encoding='utf-8'))
@@ -16,6 +17,7 @@ def assess(document):
     schema = json.loads((ROOT/'references/v2-result.schema.json').read_text(encoding='utf-8'))
     jsonschema.validate(d, schema)
     context = d['context']; evidence = {e['id']: e for e in d['evidence']}
+    contract=build_contract(context,d['evidence']) if context.get('review_contract')=='1.0' else None
     claims = {c['id']: c for c in d['claims']}
     if len(evidence) != len(d['evidence']) or len(claims) != len(d['claims']):
         raise ValueError('Duplicate evidence or claim ID')
@@ -45,6 +47,8 @@ def assess(document):
     counts=Counter(); domains={name:[] for name in RUBRIC['dimensions']}
     for rule in RUBRIC['items']:
         key=rule['id']; item=d['items'][key]; basis=item['basis']; score=item['score']
+        if contract and basis!=contract['items'][key]['basis']:
+            raise ValueError(key+': rating state differs from frozen source-availability contract')
         counts[basis]+=1
         if set(item['evidence_ids'])-set(evidence) or set(item['claim_ids'])-set(claims):
             raise ValueError(key+': unknown evidence/claim reference')
@@ -68,6 +72,8 @@ def assess(document):
             raise ValueError('No original Owner RCA; use unknown or explicitly switch to artifact review')
         domains[rule['dimension']].append(item)
     stage=d['closure_requested']
+    if contract and stage!=contract['closure_from_records']:
+        raise ValueError('Closure stage differs from recorded execution/implementation facts')
     if stage in ('implemented','executed','effectiveness_observed'):
         if not any(e['kind'] in ('diff','test_code','action_record') for e in evidence.values()):
             raise ValueError('Implementation maturity requires an implementation artifact')
@@ -90,6 +96,7 @@ def assess(document):
                        if applicable and len(known)==len(applicable) else None,
                        'known':len(known),'applicable':len(applicable)}
     return dict(version='2.0-experimental',case_id=context['case_id'],mode=context['mode'],
+                review_contract=contract['version'] if contract else None,
                 decision=decision,profile=profile,basis_counts=dict(counts),
                 critical_refuted_claims=critical_refuted,closure=stage,
                 overall=None,limitations=['Experimental profile, not validated weights or a personnel ranking.',

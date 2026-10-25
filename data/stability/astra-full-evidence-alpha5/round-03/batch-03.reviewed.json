@@ -1,0 +1,222 @@
+[
+  {
+    "case_id": "K09",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K09",
+      "mode": "artifact_review",
+      "review_contract": "1.0",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": null,
+          "known": 0,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.0,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": null,
+          "known": 0,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 0,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": null,
+          "known": 2,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "unknown": 14,
+        "observed": 10
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "K10",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K10",
+      "mode": "artifact_review",
+      "review_contract": "1.0",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": null,
+          "known": 1,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 2.75,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": null,
+          "known": 2,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 17,
+        "unknown": 7
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "K11",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K11",
+      "mode": "artifact_review",
+      "review_contract": "1.0",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.5,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": null,
+          "known": 1,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 2.5,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": null,
+          "known": 2,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 17,
+        "unknown": 7
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  },
+  {
+    "case_id": "K12",
+    "accepted": true,
+    "issues": [],
+    "result": {
+      "version": "2.0-experimental",
+      "case_id": "K12",
+      "mode": "artifact_review",
+      "review_contract": "1.0",
+      "decision": "needs_evidence",
+      "profile": {
+        "problem": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "causality": {
+          "ordinal_mean": 2.5,
+          "known": 4,
+          "applicable": 4
+        },
+        "origin_escape": {
+          "ordinal_mean": null,
+          "known": 1,
+          "applicable": 4
+        },
+        "repair": {
+          "ordinal_mean": 1.5,
+          "known": 4,
+          "applicable": 4
+        },
+        "verification": {
+          "ordinal_mean": null,
+          "known": 3,
+          "applicable": 4
+        },
+        "learning": {
+          "ordinal_mean": null,
+          "known": 2,
+          "applicable": 4
+        }
+      },
+      "basis_counts": {
+        "observed": 17,
+        "unknown": 7
+      },
+      "critical_refuted_claims": [],
+      "closure": "implemented",
+      "overall": null,
+      "limitations": [
+        "Experimental profile, not validated weights or a personnel ranking.",
+        "Evidence labels and judgments still require semantic review."
+      ]
+    }
+  }
+]

@@ -1,39 +1,58 @@
-# Runtime guide — 2.0.0-alpha.1
+# Runtime guide — 2.0.0-alpha.3
 
-This package reviews daily software-defect RCA. It produces six-domain diagnostic
-profiles, not a calibrated overall rank. A domain mean is available only when all
-applicable criteria in that domain are known. Unknown items and justified N/A are
-not zeros and their weights are not redistributed.
+The six-domain diagnostic profile is experimental. Material availability, factual
+claim support, quality and execution maturity are distinct outputs.
 
-## Input
+## Freeze before rating
 
-Follow `v2-result.schema.json`. The structural example is
-[`../examples/result.example.json`](../examples/result.example.json); it intentionally
-contains unknown items and no invented defect evidence. Replace it with actual input.
+Set `context.review_contract` to `1.0`. For an owner/proxy report include the
+unchanged text, text_complete flag and a located author_statement evidence record.
+Freeze typed evidence before grading. Evidence kinds are declarations that require
+provenance review; the program cannot establish their authenticity.
 
-- Choose `owner_rca`, `pr_author_proxy` or `artifact_review` in context.
-- Preserve supplied text. Set `text_complete=false` for absent/truncated text;
-  a truncated report cannot establish that an author omitted a requirement.
-- Freeze the revision when making technical claims. Collect located evidence and
-  keep author statements, diffs, test source, CI status and execution records distinct.
-- Rate each of the 24 named items using `v2-rubric.json`. For observed items provide
-  a score and evidence IDs; use null for unknown/N/A and a scope reason for N/A.
-- Resolve material claims as supported, refuted or unresolved. A supported technical
-  claim needs matching-revision technical evidence, not just its author's assertion.
-- An observed V2 execution rating requires a revision-linked execution claim with
-  test name, assertion, command, environment and outcome. CI status alone is unknown.
-- Derive closure from evidence: planned, implemented, executed or effectiveness_observed.
-  Executed does not imply successful. Long-term effectiveness requires follow-up evidence.
+```text
+python scripts/review_contract.py INPUT.json --output CONTRACT.json
+```
+
+Contract 1.0 fixes the appraisal subject, each item's material-availability basis,
+and the maximum stage actually represented by the supplied records. It does not
+assign quality scores or factual claim statuses. A complete report is evaluable
+content: grade only its explanation, using 0 for known missing required content.
+A patch cannot supply explanations that its author omitted. Artifacts can support
+or refute existing claims, but do not become additional report text.
+
+For artifact review, source kinds determine available fields: current diffs cannot
+reveal introduction history, process escape or an unprovided follow-up plan.
+Observed means material is available for appraisal, not that a claim is true.
+Unknown means unavailable material and stays null. Older unconstrained records
+remain readable, but do not carry the contract's repeatability claim. Contract 1.0
+has no implicit N/A exclusions; explicit applicability-policy support needs a new
+version rather than ad hoc exclusions by the grading model.
+
+O1 concerns introduction history/implementation assumptions, not the failure's
+runtime trigger. L4 concerns an explicit closure-check plan; describing the current
+regression test belongs to V1 and does not itself supply a follow-up plan.
+
+## Execution facts
+
+A matching-revision record must identify the test, assertion, command, environment
+and outcome to establish recorded execution. A failed execution is still executed.
+V2 grades the record's verifiability, not success; whether a passing claim is false
+is judged separately as a claim and can require revision regardless of quality scores.
+CI status and test source alone do not prove a specific assertion ran. A structured
+record is still subject to authenticity review; source labels are not calibrated confidence.
 
 ## Validate
 
+[The structural example](../examples/result.example.json) has no defect evidence and
+therefore returns needs_evidence. Replace it with actual input and item judgments.
+
 ```text
 python -m pip install -r requirements.txt
-python scripts/assess_v2.py examples/result.example.json
 python scripts/assess_v2.py YOUR_RESULT.json --output YOUR_REVIEW.json
 ```
 
-Schema and reference checks do not prove semantic correctness. Review whether each
-citation really supports the stated mechanism and whether relevant variants were
-covered. Prioritize critical contradictions and the smallest useful missing evidence.
-Keep credentials and private source evidence in your approved environment.
+The validator rejects item states or closure inconsistent with contract 1.0.
+It validates located references and assertion-linked execution requirements but
+cannot prove the cited material supports the causal mechanism. Keep evidence gaps,
+critical contradictions and minimal prioritized follow-up actions visible.

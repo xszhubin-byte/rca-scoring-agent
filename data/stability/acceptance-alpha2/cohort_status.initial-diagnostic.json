@@ -1,0 +1,8 @@
+{
+  "status": "stopped_after_identical_prompt_drift_found",
+  "reason": "Identical prompt compared against prior mode-contract-alpha2 call changed basis and exceeded one-band score span. Do not count a lucky subset as stable.",
+  "diagnostic_comparison": "mode-contract-alpha2/round-01/batch-01 versus acceptance-alpha2/round-01/batch-01",
+  "partial_active_call_may_have_been_aborted": true,
+  "raw_completed_responses_preserved": true,
+  "next_protocol": "Explicit item appraisal subject and deterministic source-availability contract; same numerical gates retained."
+}

@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.5",
   "channel": "prerelease",
   "skill_name": "rca-scoring",
   "source_directory": "skills/rca-scoring",
@@ -14,6 +14,7 @@
     "references/gerrit.md",
     "references/v2-rubric.json",
     "references/v2-result.schema.json",
-    "examples/result.example.json"
+    "examples/result.example.json",
+    "scripts/review_contract.py"
   ]
 }

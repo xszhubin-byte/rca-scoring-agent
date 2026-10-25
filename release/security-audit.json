@@ -1,0 +1,14 @@
+{
+  "files_scanned": 282,
+  "credential_hits": [],
+  "documented_public_placeholders": [
+    {
+      "path": "data/calibration/evidence_v1_4/snapshots.json",
+      "type": "credential_url",
+      "reason": "Public upstream documentation placeholder; literal username/password angle-bracket labels."
+    }
+  ],
+  "active_document_broken_links": [],
+  "response_decoding_replacement_files": [],
+  "limitation": "Pattern scan plus private-file exclusion; not proof that arbitrary source text can never contain an undiscovered secret."
+}

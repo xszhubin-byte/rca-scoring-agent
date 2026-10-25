@@ -36,6 +36,11 @@
         },
         "text_complete": {
           "type": "boolean"
+        },
+        "review_contract": {
+          "enum": [
+            "1.0"
+          ]
         }
       },
       "required": [
@@ -67,7 +72,13 @@
               "effectiveness_observation",
               "issue",
               "design",
-              "action_record"
+              "action_record",
+              "introduction_history",
+              "verification_history",
+              "process_record",
+              "sweep_record",
+              "test_scope_record",
+              "closure_plan"
             ]
           },
           "reference": {

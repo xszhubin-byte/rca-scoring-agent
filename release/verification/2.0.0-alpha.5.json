@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0-alpha.5",
+  "validation_date": "2026-10-25",
+  "scope": "Fixed structured input repeatability, deterministic source contract, and runtime-only prerelease packaging; no expert accuracy or 50-case V2 repeatability claim.",
+  "tests_passed": 44,
+  "runtime_source_files": 10,
+  "archive_files": 12,
+  "archive_bytes": 20119,
+  "archive_sha256": "efd6e05dc7ae60ccb5f40f815984722548bd313ecbe2de7e8de5ea121319a5b3",
+  "runtime_fingerprint_sha256": "81c03fd5d7441d02d8a8f4d8382ac877823a02bfb77ccc4b92b9ba10eced57be",
+  "skill_structure_validation": "passed",
+  "active_document_links": "passed",
+  "unpacked_independent_execution": "passed",
+  "deterministic_rebuild": "passed",
+  "frozen_50_case_snapshot_integrity": "passed",
+  "stability": {
+    "cohort": "astra-full-evidence-alpha5",
+    "rounds": 3,
+    "cases": 12,
+    "ratings": 36,
+    "model_calls": 9,
+    "distinct_sessions": 9,
+    "model": "gpt-6-astra",
+    "reasoning": "medium",
+    "cli_version": "0.164.0-alpha.11.1",
+    "resolved_snapshot": null,
+    "all_predeclared_gates_passed": true,
+    "numeric_items": 241,
+    "unknown_items": 47,
+    "varying_items": 16,
+    "max_item_span": 1,
+    "max_case_mean_pairwise_absolute_delta": 0.1333
+  },
+  "raw_failed_cohorts_preserved": true,
+  "release_assets": "Generated outside source tree; not yet a GitHub Release or uploaded Release assets.",
+  "limitations": [
+    "Iterated development acceptance set, not independent holdout",
+    "No independent expert gold labels",
+    "No upstream Go tests executed",
+    "No free-text extraction repeatability measurement",
+    "Model identifier does not pin a permanent backend snapshot"
+  ]
+}

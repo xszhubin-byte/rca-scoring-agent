@@ -1,0 +1,7 @@
+{
+  "status": "failed_before_completion",
+  "completed_batches": 1,
+  "planned_rounds": 3,
+  "reason": "Artifact-only review incorrectly used report omission state; raw response rejected.",
+  "automatic_retry": false
+}

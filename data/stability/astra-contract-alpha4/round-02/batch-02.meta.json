@@ -1,0 +1,20 @@
+{
+  "cli_version": "codex-cli 0.164.0-alpha.11.1",
+  "requested_model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "resolved_snapshot": null,
+  "exit_code": 0,
+  "elapsed_seconds": 113.2,
+  "usage": [
+    {
+      "input_tokens": 32217,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 6031,
+      "reasoning_output_tokens": 143
+    }
+  ],
+  "tool_item_types": [],
+  "prompt_sha256": "aa37314418236c59dfbcc5e644f3c61b94b49094cb54ed7c9539e87be35686a8",
+  "response_sha256": "5ac3e71e343b63e3eed005af08c263d1639832e3d217e797214b8fcf6639f9b9"
+}

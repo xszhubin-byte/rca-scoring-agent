@@ -1,0 +1,20 @@
+{
+  "cli_version": "codex-cli 0.164.0-alpha.11.1",
+  "requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "resolved_snapshot": null,
+  "exit_code": 0,
+  "elapsed_seconds": 93.71,
+  "usage": [
+    {
+      "input_tokens": 31948,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 7508,
+      "reasoning_output_tokens": 239
+    }
+  ],
+  "tool_item_types": [],
+  "prompt_sha256": "fb6fd629eb3172e608d3ef9504f56fe85665c96eb48d52b9a053ee5500bad28c",
+  "response_sha256": "1eeaad3b17f1a021ff5c6204d64ccfe771760a8c3d2771ec5ffcb8b18e8e6272"
+}
