@@ -1,0 +1,16 @@
+{
+  "mode": "jira_lenient_v1_4",
+  "score": 55,
+  "level": "基本有效",
+  "jira_pass": true,
+  "technical_verification": "unverified",
+  "manual_review_required": false,
+  "dimension_scores": {
+    "specificity": 25,
+    "cause_or_condition": 10,
+    "actionability": 10,
+    "verifiability": 10
+  },
+  "reason": "具体测试对象和单跑/整模块执行差异明确，但缺少单跑失败的技术机制。",
+  "suggestion": "补充单跑失败的日志或初始化、执行顺序差异。"
+}
