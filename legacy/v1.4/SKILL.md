@@ -27,7 +27,7 @@ For bulk use, run `scripts/batch_score.py --input FILE.jsonl --outdir DIR --mode
 1. Read `references/jira_lenient.md` once per scoring run; score the four dimensions at their explicit anchors. No arbitrary bonus/penalty, no scoring by prose length or presence of headings.
 2. Capture concrete objects, observed conditions, claimed cause, and the action separately. Do not promote an operation/workaround into a proven cause or permanent fix.
 3. Sum exactly to 0–100. <30 `信息不足`; 30–59 `基本有效` (JIRA text gate passes); >=60 `有效` (text gate passes).
-4. Mark `technical_verification=unverified` unless *actual independent technical evidence* has been inspected and supports the claim. A reported test pass is a claim, not independent proof.
+4. Always mark `technical_verification=unverified` in this text-only contract. If independent evidence was inspected and technical verification is requested, run the separate strict mode instead. A reported test pass is a claim, not independent proof.
 5. Escalate explicit contradiction, unsafe repair, impossible technical statement or material high-risk ambiguity to manual review. Even with >=30, `manual_review_required=true` blocks automatic acceptance.
 6. Write standalone JSON with `mode, score, level, jira_pass, technical_verification, manual_review_required, dimension_scores, reason, suggestion`. Give one concise, non-accusatory improvement. Validate with `scripts/validate_jira_lenient.py`.
 7. Keep the difference explicit: `jira_pass` is a recommendation for **text-quality admission**, not evidence that a software fix works.
