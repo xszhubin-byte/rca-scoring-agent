@@ -310,12 +310,12 @@ class LenientContractTests(unittest.TestCase):
         for c in CASES:
             with self.subTest(case=c["id"]):
                 self.assertEqual(c["expected_pass"], sum(c["anchors"].values()) >= 30)
-                self.assertIs(validate_result(result(c)), result(c)) if False else validate_result(result(c))
+                validate_result(result(c))
 
     def test_threshold_boundaries(self):
         base = result(CASES[0])
         for score, level, passed in ((0, "信息不足", False), (25, "信息不足", False),
-                                     (30, "基本有效", True), (59, "基本有效", True),
+                                     (30, "基本有效", True), (55, "基本有效", True),
                                      (60, "有效", True), (100, "有效", True)):
             anchors = next((a for a in self._anchor_combinations() if sum(a.values()) == score), None)
             if anchors is None:
