@@ -5,6 +5,13 @@ argument-hint: "defect details / JSON file"
 ---
 
 # RCA scoring (Claude Code)
+## V1.4 JIRA 简短文本宽松模式（新增、独立于严格评分）
+
+当用户要求审核日常 JIRA 中的一到三句话根因，**默认使用 `jira_lenient` 模式**，阅读 `references/jira_lenient.md`，依据四维锚点评估文字的可用性；不要求 Gerrit、代码证据、5 Why 或完整因果链。输出宽松模式独立 JSON，注明 `technical_verification=unverified`，不能把执行规避说成修复，也不能把文字初审分数说成已经验证的技术根因质量。
+
+当用户明确要求严格取证、五维评分、Gerrit 一致性、历史评分对照时才执行下方原 V1.4 规则和 `scripts/validate_result.py`。两种模式的分数衡量对象不同，禁止直接比较或混用 schema。根因文字仅一两句话本身**不是**扣分理由；`基本有效`（30–59）允许最低 JIRA 质量准入，并给出一条简短补充建议。
+
+
 
 Evaluate defect RCA; preserve original Owner text exactly. Produce one validated JSON file per defect. Never fabricate Gerrit, code, test or deployment evidence.
 
