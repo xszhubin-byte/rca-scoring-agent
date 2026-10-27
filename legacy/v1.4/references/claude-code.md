@@ -12,7 +12,7 @@ The fetcher snapshots a pinned current revision, message, files and bounded diff
 
 ## Batch
 
-`python scripts/batch_score.py --input defects.jsonl --outdir rca-results/`
+`python scripts/batch_score.py --input defects.jsonl --outdir rca-results/ --mode jira_lenient` (default, short JIRA screening).\n\nTo preserve the old five-dimensional Gerrit evidence assessment, pass `--mode strict_evidence`. For mixed datasets, use `--mode auto` and supply each record with `review_mode` (`jira_lenient` or `strict_evidence`). Run `--dry-run` to validate records and show selected modes without starting Claude. The lenient output has a separate JSON contract and is checked by `scripts/validate_jira_lenient.py`; strict output uses the old `scripts/validate_result.py`. Do not compare their 0–100 numbers as equivalent measures.
 
 Requires installed authenticated `claude` CLI, Python 3.10+, jsonschema, network access and tool permissions. This wrapper calls `claude -p` and expects Claude to create the result. The `acceptEdits` mode still depends on the user's CLI/tool policy and does not guarantee access to Bash or external endpoints. Test on one defect interactively before batch use. Avoid running untrusted prompts or private Gerrit code outside approved infrastructure.
 
