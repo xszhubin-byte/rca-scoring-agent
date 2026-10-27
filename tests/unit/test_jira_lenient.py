@@ -341,6 +341,7 @@ class LenientContractTests(unittest.TestCase):
         d = result(CASES[5])
         for changed in ({"score": 100}, {"jira_pass": False},
                         {"technical_verification": "assumed"},
+                        {"technical_verification": "verified"},
                         {"dimension_scores": {**d["dimension_scores"], "specificity": 34}}):
             broken = copy.deepcopy(d)
             broken.update(changed)
