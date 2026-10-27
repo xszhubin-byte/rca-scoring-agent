@@ -17,8 +17,8 @@ def validate_result(data):
         raise ValueError("missing or extra result keys")
     if data["mode"] != "jira_lenient_v1_4":
         raise ValueError("unexpected mode")
-    if data["technical_verification"] not in {"unverified", "verified"}:
-        raise ValueError("invalid technical verification")
+    if data["technical_verification"] != "unverified":
+        raise ValueError("lenient text-only report cannot claim technical verification")
     for key in ("jira_pass", "manual_review_required"):
         if type(data[key]) is not bool:
             raise ValueError(f"{key} must be boolean")
