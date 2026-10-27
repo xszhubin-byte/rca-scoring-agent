@@ -34,7 +34,7 @@
 ```json
 {
   "mode": "jira_lenient_v1_4",
-  "score": 45,
+  "score": 55,
   "level": "基本有效",
   "jira_pass": true,
   "technical_verification": "unverified",
@@ -43,9 +43,9 @@
     "specificity": 25,
     "cause_or_condition": 10,
     "actionability": 10,
-    "verifiability": 0
+    "verifiability": 10
   },
-  "reason": "列出具体测试对象和运行差异，但缺少故障机制。",
+  "reason": "列出具体测试对象和运行差异，但缺少故障机制，执行差异可比较。",
   "suggestion": "建议补充单独执行失败的错误和条件差异。"
 }
 ```
